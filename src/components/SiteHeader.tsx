@@ -94,11 +94,31 @@ const SiteHeader = ({ onToggleCarousel, carouselOpen, scrollRef }: SiteHeaderPro
             boxShadow: "inset 0 1px 0 rgba(255,255,255,0.22), inset 0 -1px 0 rgba(0,0,0,0.12), 0 4px 12px rgba(0,0,0,0.3)",
           }}
         >
-          <div
-            className="text-[11px] font-semibold tracking-[0.22em] uppercase mb-1.5"
-            style={{ color: "rgba(255,255,255,0.93)", textShadow: "0 1px 4px rgba(0,0,0,0.35)" }}
-          >
-            Architects for Public Service
+          <div className="flex items-center justify-between w-full mb-1.5">
+            <a
+              href="https://rayaani.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-[11px] font-bold tracking-[0.18em] uppercase transition-opacity duration-200 hover:opacity-80"
+              style={{ color: "rgba(255,255,255,0.9)", textShadow: "0 1px 4px rgba(0,0,0,0.4)" }}
+            >
+              RAW
+            </a>
+            <div
+              className="text-[11px] font-semibold tracking-[0.22em] uppercase"
+              style={{ color: "rgba(255,255,255,0.93)", textShadow: "0 1px 4px rgba(0,0,0,0.35)" }}
+            >
+              Architects for Public Service
+            </div>
+            <a
+              href="https://raw-nyc.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-[9px] font-medium tracking-[0.12em] uppercase transition-opacity duration-200 hover:opacity-80"
+              style={{ color: "rgba(255,255,255,0.6)" }}
+            >
+              raw-nyc.com
+            </a>
           </div>
 
           <div className="w-full flex items-center justify-between relative min-h-[58px]">
