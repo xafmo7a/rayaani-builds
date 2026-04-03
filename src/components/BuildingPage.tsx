@@ -1,5 +1,6 @@
 import { useEffect, useState, useRef } from "react";
 import portraitImage from "@/assets/raya-ani-portrait.png";
+import buildingImage from "@/assets/building.png";
 
 const BuildingPage = () => {
   const [revealed, setRevealed] = useState(false);
@@ -64,20 +65,12 @@ const BuildingPage = () => {
             animation: revealed ? "buildReveal 5s cubic-bezier(0.4, 0, 0.2, 1) forwards" : "none",
           }}
         >
-          {/* Placeholder building silhouette */}
-          <div className="h-full w-[300px] md:w-[400px] flex flex-col items-center justify-end relative">
-            <div
-              className="w-full h-full rounded-t-lg flex items-center justify-center"
-              style={{
-                background: "linear-gradient(180deg, rgba(192,57,43,0.1) 0%, rgba(192,57,43,0.05) 100%)",
-                border: "1px solid rgba(255,255,255,0.06)",
-              }}
-            >
-              <p className="text-foreground/20 text-sm tracking-[0.2em] uppercase text-center px-4">
-                Building Image<br />Coming Soon
-              </p>
-            </div>
-          </div>
+          <img
+            src={buildingImage}
+            alt="Building evolution from foundation to full structure"
+            className="h-full w-auto max-w-full object-contain"
+            style={{ filter: "brightness(1.1) contrast(1.05)" }}
+          />
         </div>
       </div>
 
