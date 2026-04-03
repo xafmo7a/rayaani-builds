@@ -4,6 +4,7 @@ import FeatureBar from "@/components/sections/FeatureBar";
 import TwoColumn from "@/components/sections/TwoColumn";
 import ImagePanel from "@/components/sections/ImagePanel";
 import PressArchive from "@/components/sections/PressArchive";
+import ImageLightbox from "@/components/ui/ImageLightbox";
 
 const stats = [
   { value: "128K+", label: "Global Followers" },
