@@ -39,22 +39,21 @@ const SiteHeader = ({ onToggleCarousel, carouselOpen }: SiteHeaderProps) => {
       const scrollY = window.scrollY || document.documentElement.scrollTop;
       const viewportH = window.innerHeight;
       
-      // Retract fully when scrolled past ~40% of viewport (entering building page)
       if (scrollY > viewportH * 0.4) {
+        // At building page — retract everything
+        setHideState("hide-all");
         setHeaderRetracted(true);
-        setHideState("hide-all");
-      } else if (scrollY >= 120) {
-        setHeaderRetracted(false);
-        setHideState("hide-all");
       } else if (scrollY >= 80) {
-        setHeaderRetracted(false);
+        // Carousel tucks under red bar
         setHideState("hide-videos");
+        setHeaderRetracted(false);
       } else if (scrollY >= 20) {
-        setHeaderRetracted(false);
+        // CTA tucks under carousel
         setHideState("hide-cta");
-      } else {
         setHeaderRetracted(false);
+      } else {
         setHideState("");
+        setHeaderRetracted(false);
       }
     };
     window.addEventListener("scroll", handleScroll, { passive: true });
