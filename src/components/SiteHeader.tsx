@@ -39,22 +39,21 @@ const SiteHeader = ({ onToggleCarousel, carouselOpen }: SiteHeaderProps) => {
       const scrollY = window.scrollY || document.documentElement.scrollTop;
       const viewportH = window.innerHeight;
       
-      // Retract fully when scrolled past ~40% of viewport (entering building page)
       if (scrollY > viewportH * 0.4) {
+        // At building page — retract everything
+        setHideState("hide-all");
         setHeaderRetracted(true);
-        setHideState("hide-all");
-      } else if (scrollY >= 120) {
-        setHeaderRetracted(false);
-        setHideState("hide-all");
       } else if (scrollY >= 80) {
-        setHeaderRetracted(false);
+        // Carousel tucks under red bar
         setHideState("hide-videos");
+        setHeaderRetracted(false);
       } else if (scrollY >= 20) {
-        setHeaderRetracted(false);
+        // CTA tucks under carousel
         setHideState("hide-cta");
-      } else {
         setHeaderRetracted(false);
+      } else {
         setHideState("");
+        setHeaderRetracted(false);
       }
     };
     window.addEventListener("scroll", handleScroll, { passive: true });
@@ -74,25 +73,24 @@ const SiteHeader = ({ onToggleCarousel, carouselOpen }: SiteHeaderProps) => {
       <DropdownMenu open={menuOpen} onClose={() => setMenuOpen(false)} />
 
       <header
-        className="fixed top-0 left-0 right-0 z-[1000] flex flex-col overflow-visible"
+        className="fixed top-0 left-0 right-0 z-[1000] flex flex-col overflow-hidden"
         style={{
           borderRadius: "0 0 20px 20px",
           boxShadow: headerRetracted ? "none" : "0 8px 32px rgba(0,0,0,0.45)",
           animation: "slideDown 0.5s cubic-bezier(0.22,1,0.36,1) forwards",
-          transform: headerRetracted ? "translateY(-110%)" : "translateY(0)",
+          transform: headerRetracted ? "translateY(-100%)" : "translateY(0)",
           opacity: headerRetracted ? 0 : 1,
-          transition: "transform 0.6s cubic-bezier(0.65, 0, 0.35, 1), opacity 0.5s ease, box-shadow 0.4s ease",
+          transition: "transform 0.7s cubic-bezier(0.65, 0, 0.35, 1), opacity 0.6s ease, box-shadow 0.4s ease",
         }}
       >
-        {/* Red Bar */}
+        {/* Red Bar — top layer z-30 */}
         <div
-          className="flex flex-col items-center px-4 py-2 transition-transform duration-300"
+          className="relative z-30 flex flex-col items-center px-4 py-2"
           style={{
             background: "rgba(172,32,20,0.78)",
             backdropFilter: "blur(20px) saturate(1.8)",
             WebkitBackdropFilter: "blur(20px) saturate(1.8)",
-            boxShadow: "inset 0 1px 0 rgba(255,255,255,0.22), inset 0 -1px 0 rgba(0,0,0,0.12)",
-            transform: hideState === "hide-all" ? "translateY(-100%)" : "translateY(0)",
+            boxShadow: "inset 0 1px 0 rgba(255,255,255,0.22), inset 0 -1px 0 rgba(0,0,0,0.12), 0 4px 12px rgba(0,0,0,0.3)",
           }}
         >
           <div
@@ -176,18 +174,19 @@ const SiteHeader = ({ onToggleCarousel, carouselOpen }: SiteHeaderProps) => {
           </div>
         </div>
 
-        {/* Gray Videos Bar — auto-scrolling thumbnails */}
+        {/* Gray Videos Bar — middle layer z-20, tucks under red bar */}
         <div
-          className="overflow-hidden transition-transform duration-300 cursor-pointer"
+          className="relative z-20 overflow-hidden cursor-pointer"
           style={{
             background: "rgba(90,90,100,0.6)",
             backdropFilter: "blur(20px) saturate(1.4)",
             WebkitBackdropFilter: "blur(20px) saturate(1.4)",
-            boxShadow: "inset 0 1px 0 rgba(255,255,255,0.1)",
-            transform:
+            boxShadow: "inset 0 1px 0 rgba(255,255,255,0.1), 0 4px 8px rgba(0,0,0,0.2)",
+            marginTop:
               hideState === "hide-videos" || hideState === "hide-all"
-                ? "translateY(-100%)"
-                : "translateY(0)",
+                ? "-60px"
+                : "0",
+            transition: "margin-top 0.5s cubic-bezier(0.65, 0, 0.35, 1)",
           }}
           onClick={onToggleCarousel}
         >
@@ -214,18 +213,19 @@ const SiteHeader = ({ onToggleCarousel, carouselOpen }: SiteHeaderProps) => {
           </div>
         </div>
 
-        {/* CTA Bar */}
+        {/* CTA Bar — bottom layer z-10, tucks under carousel */}
         <div
-          className="flex items-center justify-center px-4 py-2 transition-transform duration-200"
+          className="relative z-10 flex items-center justify-center px-4 py-2"
           style={{
             background: "rgba(18,18,22,0.65)",
             backdropFilter: "blur(20px) saturate(1.2)",
             WebkitBackdropFilter: "blur(20px) saturate(1.2)",
             boxShadow: "inset 0 1px 0 rgba(255,255,255,0.07)",
-            transform:
+            marginTop:
               hideState === "hide-cta" || hideState === "hide-videos" || hideState === "hide-all"
-                ? "translateY(-100%)"
-                : "translateY(0)",
+                ? "-50px"
+                : "0",
+            transition: "margin-top 0.4s cubic-bezier(0.65, 0, 0.35, 1)",
           }}
         >
           <div className="overflow-hidden w-full">
