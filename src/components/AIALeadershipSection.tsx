@@ -139,7 +139,7 @@ const SectionCard = ({
 const AIALeadershipSection = () => {
   return (
     <section
-      className="relative w-full min-h-screen flex items-center py-16 md:py-24 overflow-hidden"
+      className="relative w-full min-h-screen flex items-center pt-[160px] pb-16 md:pb-24 overflow-hidden"
       style={{
         background:
           "radial-gradient(ellipse at 50% 0%, hsl(var(--aia-red) / 0.06) 0%, transparent 50%), linear-gradient(180deg, hsl(0 0% 0%) 0%, hsl(0 0% 3%) 30%, hsl(0 0% 2%) 70%, hsl(0 0% 0%) 100%)",
