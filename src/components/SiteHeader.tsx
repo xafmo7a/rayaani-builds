@@ -174,7 +174,7 @@ const SiteHeader = ({ onToggleCarousel, carouselOpen }: SiteHeaderProps) => {
           </div>
         </div>
 
-        {/* Gray Videos Bar — middle layer z-20, tucks under red bar */}
+        {/* Gray Videos Bar — tucks under red bar */}
         <div
           className="relative z-20 overflow-hidden cursor-pointer"
           style={{
@@ -182,11 +182,15 @@ const SiteHeader = ({ onToggleCarousel, carouselOpen }: SiteHeaderProps) => {
             backdropFilter: "blur(20px) saturate(1.4)",
             WebkitBackdropFilter: "blur(20px) saturate(1.4)",
             boxShadow: "inset 0 1px 0 rgba(255,255,255,0.1), 0 4px 8px rgba(0,0,0,0.2)",
-            marginTop:
+            maxHeight:
               hideState === "hide-videos" || hideState === "hide-all"
-                ? "-60px"
-                : "0",
-            transition: "margin-top 0.5s cubic-bezier(0.65, 0, 0.35, 1)",
+                ? "0px"
+                : "80px",
+            opacity:
+              hideState === "hide-videos" || hideState === "hide-all"
+                ? 0
+                : 1,
+            transition: "max-height 0.5s cubic-bezier(0.65, 0, 0.35, 1), opacity 0.4s ease",
           }}
           onClick={onToggleCarousel}
         >
@@ -213,19 +217,27 @@ const SiteHeader = ({ onToggleCarousel, carouselOpen }: SiteHeaderProps) => {
           </div>
         </div>
 
-        {/* CTA Bar — bottom layer z-10, tucks under carousel */}
+        {/* CTA Bar — tucks under carousel */}
         <div
-          className="relative z-10 flex items-center justify-center px-4 py-2"
+          className="relative z-10 flex items-center justify-center px-4 py-2 overflow-hidden"
           style={{
             background: "rgba(18,18,22,0.65)",
             backdropFilter: "blur(20px) saturate(1.2)",
             WebkitBackdropFilter: "blur(20px) saturate(1.2)",
             boxShadow: "inset 0 1px 0 rgba(255,255,255,0.07)",
-            marginTop:
+            maxHeight:
               hideState === "hide-cta" || hideState === "hide-videos" || hideState === "hide-all"
-                ? "-50px"
-                : "0",
-            transition: "margin-top 0.4s cubic-bezier(0.65, 0, 0.35, 1)",
+                ? "0px"
+                : "50px",
+            opacity:
+              hideState === "hide-cta" || hideState === "hide-videos" || hideState === "hide-all"
+                ? 0
+                : 1,
+            padding:
+              hideState === "hide-cta" || hideState === "hide-videos" || hideState === "hide-all"
+                ? "0 16px"
+                : undefined,
+            transition: "max-height 0.4s cubic-bezier(0.65, 0, 0.35, 1), opacity 0.3s ease, padding 0.4s ease",
           }}
         >
           <div className="overflow-hidden w-full">
