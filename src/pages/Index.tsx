@@ -18,8 +18,7 @@ const Index = () => {
       />
       <div
         ref={scrollRef}
-        className="snap-y snap-mandatory h-screen overflow-y-scroll"
-        style={{ scrollSnapType: "y mandatory" }}
+        className="h-screen overflow-y-auto"
       >
         <div className="snap-start snap-always">
           <HeroPage />
