@@ -1,6 +1,7 @@
 import { useState, useEffect, useCallback, RefObject } from "react";
 import { Facebook, Instagram, Linkedin, Youtube, Mail, Phone, X, Play } from "lucide-react";
 import DropdownMenu from "./DropdownMenu";
+import rawLogo from "@/assets/raw-logo.png";
 
 const videoIds = [
   "P1UgHTA8DP8", "EBs2KYQk1Mw", "xkYiWUhd-Qw", "GF6qOeUbyhU",
