@@ -165,14 +165,16 @@ const SiteHeader = ({ onToggleCarousel, carouselOpen, scrollRef }: SiteHeaderPro
             {/* Contact Buttons */}
             <div className="flex gap-[7px] items-center">
               <a
-                href="mailto:info@rayaaniforpresident.com"
+                href="https://www.aia.org/"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="w-[28px] h-[28px] rounded-[5px] flex items-center justify-center transition-all duration-200 hover:scale-110"
                 style={{
                   border: "1px solid rgba(255,255,255,0.5)",
                   background: "transparent",
                 }}
               >
-                <Mail className="w-[13px] h-[13px] text-foreground" strokeWidth={1.5} />
+                <img src={aiaLogo} alt="AIA" className="w-[16px] h-[16px] object-contain" />
               </a>
               <a
                 href="tel:+1"
