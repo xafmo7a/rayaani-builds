@@ -4,9 +4,7 @@ import { Toaster as Sonner } from "@/components/ui/sonner";
 import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import Index from "./pages/Index";
-import ServicePageRoute from "./pages/ServicePageRoute";
-import BuildingPageRoute from "./pages/BuildingPageRoute";
-import LeadershipPageRoute from "./pages/LeadershipPageRoute";
+import { AIAPage, PublicPage, ServicesPage } from "./pages/SectionPages";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -19,9 +17,9 @@ const App = () => (
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Index />} />
-          <Route path="/building" element={<BuildingPageRoute />} />
-          <Route path="/service" element={<ServicePageRoute />} />
-          <Route path="/leadership" element={<LeadershipPageRoute />} />
+          <Route path="/aia" element={<AIAPage />} />
+          <Route path="/public" element={<PublicPage />} />
+          <Route path="/services" element={<ServicesPage />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>

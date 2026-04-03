@@ -1,6 +1,8 @@
 import { useState, useRef } from "react";
 import SiteHeader from "@/components/SiteHeader";
 import HeroPage from "@/components/HeroPage";
+import BuildingPage from "@/components/BuildingPage";
+import AIALeadershipSection from "@/components/AIALeadershipSection";
 import Ticker from "@/components/Ticker";
 
 const Index = () => {
@@ -16,6 +18,8 @@ const Index = () => {
       />
       <div ref={scrollRef} className="h-screen overflow-y-auto">
         <HeroPage />
+        <BuildingPage />
+        <AIALeadershipSection />
       </div>
       <Ticker />
     </div>
