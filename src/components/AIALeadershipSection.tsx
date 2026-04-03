@@ -172,11 +172,24 @@ const AIALeadershipSection = () => {
       <div className="relative z-10 w-full max-w-5xl mx-auto px-5 md:px-10">
         {/* Title block */}
         <div className="text-center mb-10 md:mb-14">
-          <div
-            className="text-[10px] md:text-[11px] font-bold tracking-[0.3em] uppercase mb-3"
-            style={{ color: "hsl(var(--aia-red) / 0.7)" }}
-          >
-            Organizational Structure
+          <div className="flex items-center justify-center gap-3 mb-3">
+            <button
+              onClick={() => navigate("/")}
+              className="w-8 h-8 rounded-full flex items-center justify-center cursor-pointer transition-all duration-200 hover:scale-110 flex-shrink-0"
+              style={{
+                background: "hsl(var(--aia-red) / 0.12)",
+                border: "1px solid hsl(var(--aia-red) / 0.25)",
+                boxShadow: "0 2px 8px hsl(var(--aia-red) / 0.1)",
+              }}
+            >
+              <ArrowLeft className="w-4 h-4" style={{ color: "hsl(var(--aia-red))" }} />
+            </button>
+            <div
+              className="text-[10px] md:text-[11px] font-bold tracking-[0.3em] uppercase"
+              style={{ color: "hsl(var(--aia-red) / 0.7)" }}
+            >
+              Organizational Structure
+            </div>
           </div>
           <h2 className="font-display text-[clamp(26px,5vw,44px)] text-foreground tracking-[0.06em] leading-[1.15] mb-4">
             The{" "}
