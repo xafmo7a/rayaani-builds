@@ -9,7 +9,7 @@ import MediaGrid from "@/components/sections/MediaGrid";
 import PressArchive from "@/components/sections/PressArchive";
 
 const stats = [
-  { value: "100K+", label: "Global Followers" },
+  { value: "128K+", label: "Global Followers" },
   { value: "2019", label: "Elevated to FAIA" },
   { value: "10+", label: "Power List Years" },
   { value: "30+", label: "Global Speaking Engagements" },
