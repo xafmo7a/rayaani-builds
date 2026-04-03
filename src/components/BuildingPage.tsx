@@ -1,6 +1,4 @@
 import { useEffect, useState, useRef } from "react";
-import { useNavigate } from "react-router-dom";
-import { ArrowLeft } from "lucide-react";
 import portraitImage from "@/assets/raya-ani-portrait.png";
 import buildingImage from "@/assets/building.png";
 
