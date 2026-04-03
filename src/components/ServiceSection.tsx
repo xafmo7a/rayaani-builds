@@ -223,6 +223,23 @@ const PracticeAreaCard = ({
   </div>
 );
 
+const BackButton = () => {
+  const navigate = useNavigate();
+  return (
+    <button
+      onClick={() => navigate("/")}
+      className="w-8 h-8 rounded-full flex items-center justify-center cursor-pointer transition-all duration-200 hover:scale-110 flex-shrink-0"
+      style={{
+        background: "hsl(var(--aia-red) / 0.12)",
+        border: "1px solid hsl(var(--aia-red) / 0.25)",
+        boxShadow: "0 2px 8px hsl(var(--aia-red) / 0.1)",
+      }}
+    >
+      <ArrowLeft className="w-4 h-4" style={{ color: "hsl(var(--aia-red))" }} />
+    </button>
+  );
+};
+
 const ServiceSection = () => {
   const [expandedIndex, setExpandedIndex] = useState<number | null>(0);
 
