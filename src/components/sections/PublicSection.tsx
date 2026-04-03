@@ -6,6 +6,7 @@ import TwoColumn from "@/components/sections/TwoColumn";
 import AwardsCarousel from "@/components/sections/AwardsCarousel";
 import AwardsGrid from "@/components/sections/AwardsGrid";
 import MediaGrid from "@/components/sections/MediaGrid";
+import PressArchive from "@/components/sections/PressArchive";
 
 const stats = [
   { value: "100K+", label: "Global Followers" },
