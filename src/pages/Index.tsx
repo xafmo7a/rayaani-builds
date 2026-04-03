@@ -20,15 +20,9 @@ const Index = () => {
         ref={scrollRef}
         className="h-screen overflow-y-auto"
       >
-        <div className="snap-start snap-always">
-          <HeroPage />
-        </div>
-        <div className="snap-start snap-always">
-          <BuildingPage />
-        </div>
-        <div className="snap-start snap-always">
-          <AIALeadershipSection />
-        </div>
+        <HeroPage />
+        <BuildingPage />
+        <AIALeadershipSection />
       </div>
       <Ticker />
     </div>
