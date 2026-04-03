@@ -1,9 +1,9 @@
 import { useState, useRef } from "react";
 import SiteHeader from "@/components/SiteHeader";
-import HeroPage from "@/components/HeroPage";
+import BuildingPage from "@/components/BuildingPage";
 import Ticker from "@/components/Ticker";
 
-const Index = () => {
+const BuildingPageRoute = () => {
   const [carouselOpen, setCarouselOpen] = useState(false);
   const scrollRef = useRef<HTMLDivElement>(null);
 
@@ -15,11 +15,11 @@ const Index = () => {
         scrollRef={scrollRef}
       />
       <div ref={scrollRef} className="h-screen overflow-y-auto">
-        <HeroPage />
+        <BuildingPage />
       </div>
       <Ticker />
     </div>
   );
 };
 
-export default Index;
+export default BuildingPageRoute;
