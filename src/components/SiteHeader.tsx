@@ -82,6 +82,7 @@ const SiteHeader = ({ onToggleCarousel, carouselOpen, scrollRef }: SiteHeaderPro
           animation: "slideDown 0.5s cubic-bezier(0.22,1,0.36,1) forwards",
           transform: (headerRetracted || menuOpen) ? "translateY(-100%)" : "translateY(0)",
           opacity: (headerRetracted || menuOpen) ? 0 : 1,
+          pointerEvents: (headerRetracted || menuOpen) ? "none" : "auto",
           transition: "transform 0.7s cubic-bezier(0.65, 0, 0.35, 1), opacity 0.6s ease, box-shadow 0.4s ease",
         }}
       >
