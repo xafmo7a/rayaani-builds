@@ -174,7 +174,7 @@ const SiteHeader = ({ onToggleCarousel, carouselOpen }: SiteHeaderProps) => {
           </div>
         </div>
 
-        {/* Gray Videos Bar — middle layer z-20, tucks under red bar */}
+        {/* Gray Videos Bar — tucks under red bar */}
         <div
           className="relative z-20 overflow-hidden cursor-pointer"
           style={{
@@ -182,11 +182,15 @@ const SiteHeader = ({ onToggleCarousel, carouselOpen }: SiteHeaderProps) => {
             backdropFilter: "blur(20px) saturate(1.4)",
             WebkitBackdropFilter: "blur(20px) saturate(1.4)",
             boxShadow: "inset 0 1px 0 rgba(255,255,255,0.1), 0 4px 8px rgba(0,0,0,0.2)",
-            marginTop:
+            maxHeight:
               hideState === "hide-videos" || hideState === "hide-all"
-                ? "-60px"
-                : "0",
-            transition: "margin-top 0.5s cubic-bezier(0.65, 0, 0.35, 1)",
+                ? "0px"
+                : "80px",
+            opacity:
+              hideState === "hide-videos" || hideState === "hide-all"
+                ? 0
+                : 1,
+            transition: "max-height 0.5s cubic-bezier(0.65, 0, 0.35, 1), opacity 0.4s ease",
           }}
           onClick={onToggleCarousel}
         >
