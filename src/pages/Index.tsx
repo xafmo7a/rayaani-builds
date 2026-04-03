@@ -2,6 +2,7 @@ import { useState, useRef } from "react";
 import SiteHeader from "@/components/SiteHeader";
 import HeroPage from "@/components/HeroPage";
 import BuildingPage from "@/components/BuildingPage";
+import AIALeadershipSection from "@/components/AIALeadershipSection";
 import Ticker from "@/components/Ticker";
 
 const Index = () => {
@@ -25,6 +26,9 @@ const Index = () => {
         </div>
         <div className="snap-start snap-always">
           <BuildingPage />
+        </div>
+        <div className="snap-start snap-always">
+          <AIALeadershipSection />
         </div>
       </div>
       <Ticker />
