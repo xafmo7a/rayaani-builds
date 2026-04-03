@@ -246,38 +246,36 @@ const SiteHeader = ({ onToggleCarousel, carouselOpen }: SiteHeaderProps) => {
           <h3 className="font-display text-[clamp(22px,5vw,36px)] text-foreground tracking-[0.1em] mb-6">
             Videos
           </h3>
-          <div
-            className="w-full overflow-hidden"
-            style={{
-              maskImage: "linear-gradient(90deg, transparent 0%, black 5%, black 95%, transparent 100%)",
-              WebkitMaskImage: "linear-gradient(90deg, transparent 0%, black 5%, black 95%, transparent 100%)",
-            }}
-          >
+          <div className="w-full overflow-hidden">
             <div
-              className="flex gap-4 px-6 py-2 w-max"
+              className="flex gap-0 py-2 w-max"
               style={{ animation: "tickerScroll 50s linear infinite" }}
             >
-              {[...videoIds, ...videoIds, ...videoIds].map((id, i) => (
+              {[...videoIds, ...videoIds].map((id, i) => (
                 <div
                   key={`overlay-${id}-${i}`}
-                  className="flex-shrink-0 w-[280px] md:w-[360px] rounded-xl overflow-hidden cursor-pointer relative group transition-all duration-200 hover:scale-[1.03]"
-                  style={{
-                    border: "1px solid rgba(255,255,255,0.12)",
-                    boxShadow: "0 4px 20px rgba(0,0,0,0.4)",
-                  }}
-                  onClick={(e) => { e.stopPropagation(); setActiveVideoId(id); }}
+                  className="flex-shrink-0 w-[284px] md:w-[364px] px-2"
                 >
-                  <img
-                    src={`https://img.youtube.com/vi/${id}/hqdefault.jpg`}
-                    alt=""
-                    className="w-full aspect-video object-cover block"
-                  />
-                  <div className="absolute inset-0 flex items-center justify-center bg-black/20 group-hover:bg-black/5 transition-all">
-                    <div
-                      className="w-14 h-14 rounded-full flex items-center justify-center transition-transform group-hover:scale-110"
-                      style={{ background: "rgba(192,57,43,0.9)", boxShadow: "0 4px 16px rgba(192,57,43,0.5)" }}
-                    >
-                      <Play className="w-5 h-5 fill-foreground text-foreground ml-0.5" />
+                  <div
+                    className="rounded-xl overflow-hidden cursor-pointer relative group transition-all duration-200 hover:scale-[1.03]"
+                    style={{
+                      border: "1px solid rgba(255,255,255,0.12)",
+                      boxShadow: "0 4px 20px rgba(0,0,0,0.4)",
+                    }}
+                    onClick={(e) => { e.stopPropagation(); setActiveVideoId(id); }}
+                  >
+                    <img
+                      src={`https://img.youtube.com/vi/${id}/hqdefault.jpg`}
+                      alt=""
+                      className="w-full aspect-video object-cover block"
+                    />
+                    <div className="absolute inset-0 flex items-center justify-center bg-black/20 group-hover:bg-black/5 transition-all">
+                      <div
+                        className="w-14 h-14 rounded-full flex items-center justify-center transition-transform group-hover:scale-110"
+                        style={{ background: "rgba(192,57,43,0.9)", boxShadow: "0 4px 16px rgba(192,57,43,0.5)" }}
+                      >
+                        <Play className="w-5 h-5 fill-foreground text-foreground ml-0.5" />
+                      </div>
                     </div>
                   </div>
                 </div>
