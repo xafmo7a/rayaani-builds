@@ -41,6 +41,7 @@ const buildCards = [
 
 
 const BuildingPage = () => {
+  const navigate = useNavigate();
   const [revealed, setRevealed] = useState(false);
   const [activeCard, setActiveCard] = useState<number | null>(null);
   const pageRef = useRef<HTMLDivElement>(null);
