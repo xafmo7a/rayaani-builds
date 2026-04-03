@@ -37,22 +37,6 @@ const buildCards = [
   },
 ];
 
-const aiaMembers = [
-  ["AIA Local Chapters", "AIA International Chapters"],
-  ["AIA State Chapters", "AIA Students (AIAS)"],
-];
-
-const aiaCouncils = [
-  ["AIA Strategic Council", "AIA National Associates Committee (NAC)"],
-  ["AIA Knowledge Advisory Forum (KAF)", "AIA Component Executives (CACE)"],
-  ["AIA Young Architects Forum (YAF)", "AIA Former Presidents"],
-];
-
-const aiaBoard = [
-  ["AIA Board of Directors", "AIA Architects Foundation"],
-  ["AIA Board Committees", "AIA Trust"],
-  ["AIA Staff", "AIA College of Fellows"],
-];
 
 const BuildingPage = () => {
   const [revealed, setRevealed] = useState(false);
