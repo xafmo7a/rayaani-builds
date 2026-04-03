@@ -88,7 +88,14 @@ const panelData: Record<
   },
 };
 
+const tabRoutes: Record<TabId, string> = {
+  aia: "/leadership",
+  public: "/building",
+  service: "/service",
+};
+
 const DropdownMenu = ({ open, onClose }: DropdownMenuProps) => {
+  const navigate = useNavigate();
   const [activeTab, setActiveTab] = useState<TabId>("aia");
   const panel = panelData[activeTab];
 
