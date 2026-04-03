@@ -1,6 +1,11 @@
 import { useState, useEffect, useCallback } from "react";
-import { Facebook, Instagram, Linkedin, Youtube, Mail, Phone, Menu, X } from "lucide-react";
+import { Facebook, Instagram, Linkedin, Youtube, Mail, Phone, X, Play } from "lucide-react";
 import DropdownMenu from "./DropdownMenu";
+
+const videoIds = [
+  "P1UgHTA8DP8", "EBs2KYQk1Mw", "xkYiWUhd-Qw", "GF6qOeUbyhU",
+  "kgIr6sUIglI", "K_Skn9w68wc", "kt9HqoJ7tmU",
+];
 
 interface SiteHeaderProps {
   onToggleCarousel?: () => void;
