@@ -36,20 +36,20 @@ const SiteHeader = ({ onToggleCarousel, carouselOpen, scrollRef }: SiteHeaderPro
   const [headerRetracted, setHeaderRetracted] = useState(false);
 
   useEffect(() => {
+    const el = scrollRef?.current;
+    if (!el) return;
+
     const handleScroll = () => {
-      const scrollY = window.scrollY || document.documentElement.scrollTop;
+      const scrollY = el.scrollTop;
       const viewportH = window.innerHeight;
       
-      if (scrollY > viewportH * 0.4) {
-        // At building page — retract everything
+      if (scrollY > viewportH * 0.3) {
         setHideState("hide-all");
         setHeaderRetracted(true);
       } else if (scrollY >= 80) {
-        // Carousel tucks under red bar
         setHideState("hide-videos");
         setHeaderRetracted(false);
       } else if (scrollY >= 20) {
-        // CTA tucks under carousel
         setHideState("hide-cta");
         setHeaderRetracted(false);
       } else {
@@ -57,9 +57,9 @@ const SiteHeader = ({ onToggleCarousel, carouselOpen, scrollRef }: SiteHeaderPro
         setHeaderRetracted(false);
       }
     };
-    window.addEventListener("scroll", handleScroll, { passive: true });
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+    el.addEventListener("scroll", handleScroll, { passive: true });
+    return () => el.removeEventListener("scroll", handleScroll);
+  }, [scrollRef]);
 
   useEffect(() => {
     const handleKey = (e: KeyboardEvent) => {
