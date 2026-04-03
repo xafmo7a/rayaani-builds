@@ -47,10 +47,10 @@ const HeroPage = () => {
             }}
           />
           <div className="bg-background rounded-[0.65em] px-[22px] py-2.5 flex flex-col items-center gap-1">
-            <span className="font-light text-[clamp(13px,3.8vw,17px)] text-foreground/90 tracking-[0.07em]">
+            <span className="font-light text-[clamp(13px,3.8vw,17px)] text-foreground/90 tracking-[0.07em]" style={{ fontFamily: "'Arial Narrow', 'Arial', sans-serif" }}>
               Candidate
             </span>
-            <span className="font-light text-[clamp(11px,3vw,14px)] text-foreground/65 tracking-[0.04em]">
+            <span className="font-light text-[clamp(11px,3vw,14px)] text-foreground/65 tracking-[0.04em]" style={{ fontFamily: "'Arial', sans-serif" }}>
               AIA President Elect | President 2027|2028
             </span>
           </div>
