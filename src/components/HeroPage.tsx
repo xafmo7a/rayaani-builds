@@ -26,8 +26,8 @@ const HeroPage = () => {
       <div className="absolute bottom-0 left-0 right-0 z-[3] flex flex-col items-center text-center px-7 pb-[50px]">
         {/* Name */}
         <h1
-          className="font-display font-normal text-[clamp(38px,10vw,58px)] text-foreground tracking-[0.14em] leading-[1.1] mb-2.5 opacity-0"
-          style={{ animation: "fadeUp 0.9s ease 0.4s forwards" }}
+          className="font-normal text-[clamp(38px,10vw,58px)] text-foreground tracking-[0.14em] leading-[1.1] mb-2.5 opacity-0"
+          style={{ animation: "fadeUp 0.9s ease 0.4s forwards", fontFamily: "'Arial Narrow', 'Arial', sans-serif" }}
         >
           RAYA ANI
         </h1>
