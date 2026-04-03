@@ -129,14 +129,13 @@ const SiteHeader = ({ onToggleCarousel, carouselOpen, scrollRef }: SiteHeaderPro
                   key={label}
                   href={href}
                   aria-label={label}
-                  className="w-[30px] h-[30px] rounded-full flex items-center justify-center transition-all duration-200 hover:scale-110"
+                  className="w-[28px] h-[28px] rounded-[5px] flex items-center justify-center transition-all duration-200 hover:scale-110"
                   style={{
-                    border: "1.5px solid rgba(255,255,255,0.65)",
-                    background: "rgba(255,255,255,0.1)",
-                    boxShadow: "inset 0 1px 0 rgba(255,255,255,0.25)",
+                    border: "1px solid rgba(255,255,255,0.5)",
+                    background: "transparent",
                   }}
                 >
-                  <Icon className="w-[13px] h-[13px] text-foreground" strokeWidth={1.8} />
+                  <Icon className="w-[13px] h-[13px] text-foreground" strokeWidth={1.5} />
                 </a>
               ))}
             </div>
