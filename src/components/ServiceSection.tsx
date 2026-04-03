@@ -246,7 +246,7 @@ const ServiceSection = () => {
 
   return (
     <section
-      className="relative w-full min-h-screen overflow-hidden pt-[160px] pb-16 md:pb-24"
+      className="relative w-full min-h-screen overflow-hidden pt-[200px] pb-16 md:pb-24"
       style={{
         background:
           "radial-gradient(ellipse at 50% 0%, hsl(var(--aia-red) / 0.04) 0%, transparent 50%), linear-gradient(180deg, hsl(0 0% 0%) 0%, hsl(0 0% 3%) 20%, hsl(0 0% 2%) 80%, hsl(0 0% 0%) 100%)",
