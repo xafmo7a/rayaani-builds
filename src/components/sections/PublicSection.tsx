@@ -48,19 +48,12 @@ const PublicSection = () => {
             A Trajectory of<br />
             <span className="italic text-foreground/60">Grit and Excellence</span>
           </h2>
-          <div
-            className="aspect-square rounded-md flex items-center justify-center"
-            style={{
-              background: "hsl(0 0% 8%)",
-              border: "1px dashed hsl(0 0% 15%)",
-            }}
-          >
-            <span
-              className="text-[9px] tracking-[0.12em] uppercase"
-              style={{ color: "hsl(0 0% 25%)" }}
-            >
-              Portrait Photo
-            </span>
+          <div className="aspect-square rounded-md overflow-hidden">
+            <img
+              src="/images/portrait.png"
+              alt="Raya Ani portrait"
+              className="w-full h-full object-cover"
+            />
           </div>
         </div>
         <div className="hidden md:block" style={{ background: "hsl(0 0% 12%)" }} />
