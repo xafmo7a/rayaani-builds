@@ -243,11 +243,14 @@ const ServiceSection = () => {
       <div className="relative z-10 max-w-5xl mx-auto px-5 md:px-10">
         {/* ===== LEADERSHIP THROUGH PRACTICE ===== */}
         <div className="mb-16 md:mb-20">
-          <div
-            className="text-[9px] md:text-[10px] font-bold tracking-[0.3em] uppercase mb-3"
-            style={{ color: "hsl(var(--aia-red) / 0.7)" }}
-          >
-            Service & Practice
+          <div className="flex items-center gap-3 mb-3">
+            <BackButton />
+            <div
+              className="text-[9px] md:text-[10px] font-bold tracking-[0.3em] uppercase"
+              style={{ color: "hsl(var(--aia-red) / 0.7)" }}
+            >
+              Service & Practice
+            </div>
           </div>
           <h1 className="font-display text-[clamp(28px,6vw,48px)] text-foreground tracking-[0.05em] leading-[1.1] mb-6">
             Leadership Through{" "}
