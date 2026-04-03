@@ -1,4 +1,4 @@
-import { useState, useEffect, useCallback } from "react";
+import { useState, useEffect, useCallback, RefObject } from "react";
 import { Facebook, Instagram, Linkedin, Youtube, Mail, Phone, X, Play } from "lucide-react";
 import DropdownMenu from "./DropdownMenu";
 
