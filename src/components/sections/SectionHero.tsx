@@ -13,7 +13,7 @@ const SectionHero = ({ eyebrow, title, label, sublabel }: SectionHeroProps) => {
 
   return (
     <div
-      className="flex flex-col md:flex-row md:items-end justify-between gap-6 px-5 md:px-10 pt-8 pb-8"
+      className="flex flex-col md:flex-row md:items-end justify-between gap-6 px-5 md:px-10 pt-[200px] pb-8"
       style={{ borderBottom: "1px solid hsl(0 0% 12%)" }}
     >
       <div>
