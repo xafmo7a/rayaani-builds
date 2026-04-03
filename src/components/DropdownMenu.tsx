@@ -89,9 +89,9 @@ const panelData: Record<
 };
 
 const tabRoutes: Record<TabId, string> = {
-  aia: "/leadership",
-  public: "/building",
-  service: "/service",
+  aia: "/aia",
+  public: "/public",
+  service: "/services",
 };
 
 const DropdownMenu = ({ open, onClose }: DropdownMenuProps) => {
