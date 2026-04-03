@@ -32,13 +32,30 @@ const SiteHeader = ({ onToggleCarousel, carouselOpen }: SiteHeaderProps) => {
     };
   }, [menuOpen]);
 
+  const [headerRetracted, setHeaderRetracted] = useState(false);
+
   useEffect(() => {
     const handleScroll = () => {
       const scrollY = window.scrollY || document.documentElement.scrollTop;
-      if (scrollY >= 120) setHideState("hide-all");
-      else if (scrollY >= 80) setHideState("hide-videos");
-      else if (scrollY >= 20) setHideState("hide-cta");
-      else setHideState("");
+      const viewportH = window.innerHeight;
+      
+      // Retract fully when scrolled past ~40% of viewport (entering building page)
+      if (scrollY > viewportH * 0.4) {
+        setHeaderRetracted(true);
+        setHideState("hide-all");
+      } else if (scrollY >= 120) {
+        setHeaderRetracted(false);
+        setHideState("hide-all");
+      } else if (scrollY >= 80) {
+        setHeaderRetracted(false);
+        setHideState("hide-videos");
+      } else if (scrollY >= 20) {
+        setHeaderRetracted(false);
+        setHideState("hide-cta");
+      } else {
+        setHeaderRetracted(false);
+        setHideState("");
+      }
     };
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
@@ -60,8 +77,11 @@ const SiteHeader = ({ onToggleCarousel, carouselOpen }: SiteHeaderProps) => {
         className="fixed top-0 left-0 right-0 z-[1000] flex flex-col overflow-visible"
         style={{
           borderRadius: "0 0 20px 20px",
-          boxShadow: "0 8px 32px rgba(0,0,0,0.45)",
+          boxShadow: headerRetracted ? "none" : "0 8px 32px rgba(0,0,0,0.45)",
           animation: "slideDown 0.5s cubic-bezier(0.22,1,0.36,1) forwards",
+          transform: headerRetracted ? "translateY(-110%)" : "translateY(0)",
+          opacity: headerRetracted ? 0 : 1,
+          transition: "transform 0.6s cubic-bezier(0.65, 0, 0.35, 1), opacity 0.5s ease, box-shadow 0.4s ease",
         }}
       >
         {/* Red Bar */}
