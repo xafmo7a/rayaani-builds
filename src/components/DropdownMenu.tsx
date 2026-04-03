@@ -193,7 +193,22 @@ const DropdownMenu = ({ open, onClose }: DropdownMenuProps) => {
           </div>
         </div>
 
-        {/* Close */}
+
+          {/* Go to section button */}
+          <div className="flex justify-center mt-5">
+            <button
+              onClick={() => { navigate(tabRoutes[activeTab]); onClose(); }}
+              className="flex items-center gap-2 px-6 py-2.5 rounded-full text-[12px] font-bold tracking-[0.15em] uppercase cursor-pointer transition-all duration-200 hover:scale-105"
+              style={{
+                background: "linear-gradient(135deg, hsl(var(--aia-red)), hsl(var(--aia-red-glow)))",
+                border: "1px solid rgba(255,120,80,0.3)",
+                color: "white",
+                boxShadow: "0 4px 20px hsl(var(--aia-red) / 0.4), inset 0 1px 0 rgba(255,255,255,0.2)",
+              }}
+            >
+              Go to {panel.title} <ArrowRight className="w-3.5 h-3.5" />
+            </button>
+          </div>
         <div
           className="text-center mt-6 text-[11px] font-semibold tracking-[0.18em] uppercase text-foreground/30 cursor-pointer transition-colors duration-200 hover:text-foreground/60"
           onClick={onClose}
