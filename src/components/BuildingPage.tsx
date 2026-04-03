@@ -2,8 +2,57 @@ import { useEffect, useState, useRef } from "react";
 import portraitImage from "@/assets/raya-ani-portrait.png";
 import buildingImage from "@/assets/building.png";
 
+const leftCards = [
+  {
+    title: "FUTURE SYSTEMS",
+    sub: "Intelligence",
+    items: ["Digital Fluency", "AI Integration", "Regenerative Knowledge", "Evolving Practice Models"],
+    top: "8%",
+    delay: 4.6,
+  },
+  {
+    title: "ENVELOPE",
+    sub: "Advocacy",
+    items: ["Policy Leadership", "Value of Architects", "Strategic Partnerships", "Procurement Access"],
+    top: "30%",
+    delay: 3.4,
+  },
+  {
+    title: "STRUCTURE",
+    sub: "Alignment",
+    items: ["Institutional Continuity", "Coordinated Systems", "Firm Support", "Shared Capability"],
+    top: "52%",
+    delay: 2.2,
+  },
+  {
+    title: "FOUNDATION",
+    sub: "Legitimacy",
+    items: ["Standards & Ethics", "Governance & Oversight", "Equitable Access", "Public Responsibility"],
+    top: "74%",
+    delay: 1.2,
+  },
+];
+
+const aiaMembers = [
+  ["AIA Local Chapters", "AIA International Chapters"],
+  ["AIA State Chapters", "AIA Students (AIAS)"],
+];
+
+const aiaCouncils = [
+  ["AIA Strategic Council", "AIA National Associates Committee (NAC)"],
+  ["AIA Knowledge Advisory Forum (KAF)", "AIA Component Executives (CACE)"],
+  ["AIA Young Architects Forum (YAF)", "AIA Former Presidents"],
+];
+
+const aiaBoard = [
+  ["AIA Board of Directors", "AIA Architects Foundation"],
+  ["AIA Board Committees", "AIA Trust"],
+  ["AIA Staff", "AIA College of Fellows"],
+];
+
 const BuildingPage = () => {
   const [revealed, setRevealed] = useState(false);
+  const [activeCard, setActiveCard] = useState<number | null>(null);
   const pageRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -12,8 +61,7 @@ const BuildingPage = () => {
         entries.forEach((e) => {
           if (e.isIntersecting && e.intersectionRatio > 0.3) {
             setRevealed(true);
-            // Reset after animation completes so replay works
-            setTimeout(() => setRevealed(false), 6000);
+            setTimeout(() => setRevealed(false), 7000);
           }
         });
       },
@@ -27,25 +75,18 @@ const BuildingPage = () => {
     document.getElementById("page1")?.scrollIntoView({ behavior: "smooth" });
   };
 
-  const levels = [
-    { id: "hb1", title: "FUTURE SYSTEMS", sub: "Innovation", top: "10vh", align: "left" },
-    { id: "hb2", title: "ENVELOPE", sub: "Performance", top: "30vh", align: "right" },
-    { id: "hb3", title: "STRUCTURE", sub: "Engineering", top: "50vh", align: "left" },
-    { id: "hb4", title: "FOUNDATION", sub: "Core Values", top: "70vh", align: "right" },
-  ];
-
   return (
     <div
       ref={pageRef}
       className="relative h-screen w-full overflow-hidden flex-shrink-0 bg-background"
       id="page2"
+      onClick={() => setActiveCard(null)}
     >
       {/* Sweep line */}
       <div
         className="absolute top-0 w-[6px] h-full z-[30] pointer-events-none"
         style={{
-          background:
-            "linear-gradient(180deg, transparent 0%, hsl(var(--aia-red)) 30%, hsl(var(--aia-red-glow)) 50%, hsl(var(--aia-red)) 70%, transparent 100%)",
+          background: "linear-gradient(180deg, transparent 0%, hsl(var(--aia-red)) 30%, hsl(var(--aia-red-glow)) 50%, hsl(var(--aia-red)) 70%, transparent 100%)",
           boxShadow: "0 0 20px 6px rgba(192,57,43,0.7)",
           opacity: revealed ? 1 : 0,
           left: "-6px",
@@ -53,14 +94,13 @@ const BuildingPage = () => {
         }}
       />
 
-      {/* Building placeholder */}
-      <div className="absolute inset-0 z-[5] flex items-center justify-center pt-[60px]">
+      {/* Building with clip animation */}
+      <div className="absolute inset-0 z-[2] flex items-center justify-center pt-[60px] pointer-events-none">
         <div
-          className="relative"
           style={{
             height: "92vh",
             width: "auto",
-            maxWidth: "96%",
+            maxWidth: "50%",
             clipPath: revealed ? undefined : "inset(100% 0% 0% 0%)",
             animation: revealed ? "buildReveal 5s cubic-bezier(0.4, 0, 0.2, 1) forwards" : "none",
           }}
@@ -74,27 +114,54 @@ const BuildingPage = () => {
         </div>
       </div>
 
-      {/* Level cards */}
-      {levels.map((level, i) => (
+      {/* Build stage lines */}
+      <div className="absolute inset-0 z-[3] pointer-events-none pt-[60px] flex flex-col justify-around">
+        {[0, 1, 2, 3].map((i) => (
+          <div
+            key={i}
+            className="w-full h-px"
+            style={{
+              background: "linear-gradient(90deg, transparent 0%, rgba(192,57,43,0) 10%, rgba(192,57,43,0.6) 30%, rgba(192,57,43,0.8) 50%, rgba(192,57,43,0.6) 70%, rgba(192,57,43,0) 90%, transparent 100%)",
+              opacity: 0,
+              transform: "scaleX(0)",
+              transformOrigin: "center",
+              animation: revealed ? `linePulse 0.6s ease ${[4.5, 3.4, 2.2, 1]![i]}s forwards` : "none",
+            }}
+          />
+        ))}
+      </div>
+
+      {/* Blur overlay for active card */}
+      <div
+        className="absolute inset-0 z-[4] pointer-events-none transition-all duration-300"
+        style={{
+          background: activeCard !== null ? "rgba(0,0,0,0.6)" : "rgba(0,0,0,0)",
+        }}
+      />
+
+      {/* LEFT CARDS */}
+      {leftCards.map((card, i) => (
         <div
-          key={level.id}
-          className="absolute left-0 right-0 z-[10] flex items-center pointer-events-none"
+          key={card.title}
+          className="absolute z-[15] pointer-events-auto"
           style={{
-            top: level.top,
-            height: "20vh",
-            justifyContent: level.align === "left" ? "flex-start" : "flex-end",
-            paddingLeft: level.align === "left" ? "clamp(10px, 5vw, calc(50vw - 320px))" : undefined,
-            paddingRight: level.align === "right" ? "clamp(10px, 5vw, calc(50vw - 320px))" : undefined,
-            opacity: revealed ? 1 : 0,
-            transform: revealed ? "translateY(0)" : "translateY(8px)",
-            transition: `opacity 0.7s ease ${1.2 + i * 0.3}s, transform 0.7s ease ${1.2 + i * 0.3}s`,
+            left: "2%",
+            top: card.top,
+            opacity: 0,
+            animation: revealed ? `cardReveal 0.7s ease ${card.delay}s forwards` : "none",
           }}
+          onClick={(e) => { e.stopPropagation(); setActiveCard(activeCard === i ? null : i); }}
         >
           <div
-            className="pointer-events-auto w-[185px] rounded-xl p-[1.5px] cursor-pointer transition-all duration-200 hover:scale-105 relative"
+            className="relative rounded-xl p-[1.5px] cursor-pointer transition-all duration-300"
             style={{
-              background: "var(--gradient-red)",
-              boxShadow: "0 4px 24px rgba(192,57,43,0.25)",
+              background: activeCard === i
+                ? "linear-gradient(135deg, rgba(220,60,40,1) 0%, rgba(255,120,80,0.7) 40%, rgba(192,57,43,0.5) 100%)"
+                : "linear-gradient(135deg, rgba(192,57,43,0.85) 0%, rgba(120,20,10,0.4) 50%, rgba(192,57,43,0.25) 100%)",
+              boxShadow: activeCard === i
+                ? "0 8px 36px rgba(192,57,43,0.6), 0 0 0 1px rgba(255,80,60,0.5)"
+                : "0 4px 24px rgba(192,57,43,0.25)",
+              transform: activeCard === i ? "scale(1.05)" : "scale(1)",
             }}
           >
             {/* Animated dot */}
@@ -108,45 +175,132 @@ const BuildingPage = () => {
             />
 
             <div
-              className="rounded-[11px] px-3.5 py-4 relative overflow-hidden"
+              className="rounded-[11px] px-3 py-3 relative overflow-hidden w-[160px] md:w-[185px]"
               style={{
-                background: "rgba(35,5,3,0.28)",
+                background: "rgba(8,4,4,0.65)",
                 backdropFilter: "blur(22px) saturate(1.9)",
                 WebkitBackdropFilter: "blur(22px) saturate(1.9)",
                 border: "1px solid rgba(255,80,60,0.14)",
                 boxShadow: "inset 0 1px 0 rgba(255,255,255,0.15), inset 0 -1px 0 rgba(0,0,0,0.25)",
               }}
             >
-              {/* Ray */}
+              {/* Shine ray */}
               <div
                 className="absolute w-[140px] h-[30px] rounded-full pointer-events-none"
                 style={{
-                  background: "rgba(255,120,100,0.22)",
+                  background: "rgba(255,120,100,0.18)",
                   filter: "blur(10px)",
                   transformOrigin: "10%",
-                  top: 0,
-                  left: 0,
+                  top: 0, left: 0,
                   transform: "rotate(40deg)",
                 }}
               />
-              <div className="text-[13px] font-black tracking-[0.18em] uppercase text-foreground text-center mb-1 relative z-[1]" style={{ textShadow: "0 1px 8px rgba(0,0,0,0.8)" }}>
-                {level.title}
+              {/* Corner lines */}
+              <div className="absolute w-full h-px" style={{ top: "12%", left: 0, background: "linear-gradient(90deg, rgba(192,57,43,0.6), rgba(192,57,43,0.05))" }} />
+              <div className="absolute w-full h-px" style={{ bottom: "12%", left: 0, background: "linear-gradient(90deg, rgba(192,57,43,0.05), rgba(192,57,43,0.6))" }} />
+              <div className="absolute w-px h-full" style={{ left: "12%", top: 0, background: "linear-gradient(180deg, rgba(192,57,43,0.6), rgba(192,57,43,0.05))" }} />
+              <div className="absolute w-px h-full" style={{ right: "12%", top: 0, background: "linear-gradient(180deg, rgba(192,57,43,0.05), rgba(192,57,43,0.6))" }} />
+
+              <div className="text-[11px] md:text-[13px] font-black tracking-[0.16em] uppercase text-foreground text-center mb-0.5 relative z-[1]" style={{ textShadow: "0 1px 8px rgba(0,0,0,0.8)" }}>
+                {card.title}
               </div>
-              <div className="text-[11px] font-bold tracking-[0.1em] text-center relative z-[1]" style={{ color: "rgba(255,160,140,1)" }}>
-                {level.sub}
+              <div className="text-[9px] md:text-[10px] font-medium tracking-[0.1em] text-center mb-2 relative z-[1]" style={{ color: "rgba(255,140,120,0.95)" }}>
+                ({card.sub})
+              </div>
+              {/* Dotted divider */}
+              <div className="h-[2px] mb-2 opacity-60" style={{ background: "repeating-linear-gradient(90deg, rgba(192,57,43,1) 0px, rgba(192,57,43,1) 4px, transparent 4px, transparent 8px)" }} />
+              <div className="flex flex-col gap-0.5 relative z-[1]">
+                {card.items.map((item) => (
+                  <div
+                    key={item}
+                    className="text-[9px] md:text-[10px] font-medium text-foreground/85 pl-3 relative leading-[1.6] tracking-[0.04em]"
+                    style={{ borderBottom: "1px solid rgba(192,57,43,0.12)" }}
+                  >
+                    <span className="absolute left-0 text-[9px]" style={{ color: "rgba(192,57,43,0.9)" }}>▪</span>
+                    {item}
+                  </div>
+                ))}
               </div>
             </div>
           </div>
+
+          {/* Connector line toward building */}
+          <div
+            className="absolute top-1/2 -translate-y-1/2 h-px"
+            style={{
+              right: "-28px",
+              width: "26px",
+              background: "linear-gradient(90deg, rgba(192,57,43,0.8), transparent)",
+            }}
+          />
         </div>
       ))}
+
+      {/* RIGHT PANEL — AIA Leadership + Network */}
+      <div
+        className="absolute z-[15] right-[2%] top-[8%] hidden md:block"
+        style={{
+          opacity: 0,
+          animation: revealed ? "cardReveal 0.8s ease 4.8s forwards" : "none",
+        }}
+      >
+        <div
+          className="rounded-xl px-4 py-4 w-[280px] lg:w-[320px] relative overflow-hidden"
+          style={{
+            background: "rgba(8,4,4,0.5)",
+            backdropFilter: "blur(18px) saturate(1.6)",
+            WebkitBackdropFilter: "blur(18px) saturate(1.6)",
+            border: "1px solid rgba(255,255,255,0.1)",
+            boxShadow: "inset 0 1px 0 rgba(255,255,255,0.1), 0 8px 32px rgba(0,0,0,0.5)",
+          }}
+        >
+          {/* Title */}
+          <div className="font-display text-[15px] lg:text-[17px] text-foreground tracking-[0.06em] mb-1 leading-[1.3] text-center">
+            The <span style={{ color: "rgba(192,57,43,0.9)" }}>AIA</span> Leadership + Network
+          </div>
+          <div className="h-[2px] mb-3 opacity-60" style={{ background: "repeating-linear-gradient(90deg, rgba(192,57,43,1) 0px, rgba(192,57,43,1) 4px, transparent 4px, transparent 8px)" }} />
+
+          {/* AIA Members */}
+          <div className="text-[10px] font-medium tracking-[0.1em] text-center mb-2" style={{ color: "rgba(192,57,43,0.9)" }}>
+            AIA Members
+          </div>
+          <div className="grid grid-cols-2 gap-x-3 gap-y-0.5 mb-3">
+            {aiaMembers.flat().map((m) => (
+              <div key={m} className="text-[8.5px] lg:text-[9px] font-medium text-foreground/70 leading-[1.5]">
+                • <span style={{ color: "rgba(192,57,43,0.9)" }}>AIA</span> {m.replace("AIA ", "")}
+              </div>
+            ))}
+          </div>
+          <div className="h-px mb-2 opacity-30" style={{ background: "repeating-linear-gradient(90deg, rgba(192,57,43,1) 0px, rgba(192,57,43,1) 3px, transparent 3px, transparent 7px)" }} />
+
+          {/* Councils */}
+          <div className="grid grid-cols-2 gap-x-3 gap-y-0.5 mb-3">
+            {aiaCouncils.flat().map((m) => (
+              <div key={m} className="text-[8.5px] lg:text-[9px] font-medium text-foreground/70 leading-[1.5]">
+                • <span style={{ color: "rgba(192,57,43,0.9)" }}>AIA</span> {m.replace("AIA ", "")}
+              </div>
+            ))}
+          </div>
+          <div className="h-px mb-2 opacity-30" style={{ background: "repeating-linear-gradient(90deg, rgba(192,57,43,1) 0px, rgba(192,57,43,1) 3px, transparent 3px, transparent 7px)" }} />
+
+          {/* Board */}
+          <div className="grid grid-cols-2 gap-x-3 gap-y-0.5">
+            {aiaBoard.flat().map((m) => (
+              <div key={m} className="text-[8.5px] lg:text-[9px] font-medium text-foreground/70 leading-[1.5]">
+                • <span style={{ color: "rgba(192,57,43,0.9)" }}>AIA</span> {m.replace("AIA ", "")}
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
 
       {/* Back to top */}
       <div
         className="absolute bottom-4 left-1/2 -translate-x-1/2 z-[25] cursor-pointer"
         onClick={scrollToTop}
         style={{
-          opacity: revealed ? 1 : 0,
-          transition: "opacity 0.5s ease 1.9s",
+          opacity: 0,
+          animation: revealed ? "cardReveal 0.5s ease 5.5s forwards" : "none",
         }}
       >
         <div
