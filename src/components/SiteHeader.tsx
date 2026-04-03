@@ -213,18 +213,19 @@ const SiteHeader = ({ onToggleCarousel, carouselOpen }: SiteHeaderProps) => {
           </div>
         </div>
 
-        {/* CTA Bar */}
+        {/* CTA Bar — bottom layer z-10, tucks under carousel */}
         <div
-          className="flex items-center justify-center px-4 py-2 transition-transform duration-200"
+          className="relative z-10 flex items-center justify-center px-4 py-2"
           style={{
             background: "rgba(18,18,22,0.65)",
             backdropFilter: "blur(20px) saturate(1.2)",
             WebkitBackdropFilter: "blur(20px) saturate(1.2)",
             boxShadow: "inset 0 1px 0 rgba(255,255,255,0.07)",
-            transform:
+            marginTop:
               hideState === "hide-cta" || hideState === "hide-videos" || hideState === "hide-all"
-                ? "translateY(-100%)"
-                : "translateY(0)",
+                ? "-50px"
+                : "0",
+            transition: "margin-top 0.4s cubic-bezier(0.65, 0, 0.35, 1)",
           }}
         >
           <div className="overflow-hidden w-full">
