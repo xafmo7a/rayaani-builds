@@ -2,13 +2,14 @@ import { useEffect, useState, useRef } from "react";
 import portraitImage from "@/assets/raya-ani-portrait.png";
 import buildingImage from "@/assets/building.png";
 
-const leftCards = [
+const buildCards = [
   {
     title: "FUTURE SYSTEMS",
     sub: "Intelligence",
     items: ["Digital Fluency", "AI Integration", "Regenerative Knowledge", "Evolving Practice Models"],
     top: "8%",
     delay: 4.6,
+    side: "left" as const,
   },
   {
     title: "ENVELOPE",
@@ -16,6 +17,7 @@ const leftCards = [
     items: ["Policy Leadership", "Value of Architects", "Strategic Partnerships", "Procurement Access"],
     top: "30%",
     delay: 3.4,
+    side: "right" as const,
   },
   {
     title: "STRUCTURE",
@@ -23,6 +25,7 @@ const leftCards = [
     items: ["Institutional Continuity", "Coordinated Systems", "Firm Support", "Shared Capability"],
     top: "52%",
     delay: 2.2,
+    side: "left" as const,
   },
   {
     title: "FOUNDATION",
@@ -30,6 +33,7 @@ const leftCards = [
     items: ["Standards & Ethics", "Governance & Oversight", "Equitable Access", "Public Responsibility"],
     top: "74%",
     delay: 1.2,
+    side: "right" as const,
   },
 ];
 
