@@ -1,5 +1,6 @@
 import { useEffect, useState, useRef } from "react";
 import portraitImage from "@/assets/raya-ani-portrait.png";
+import buildingImage from "@/assets/building.png";
 
 const BuildingPage = () => {
   const [revealed, setRevealed] = useState(false);
