@@ -65,7 +65,7 @@ const BuildingPage = () => {
         entries.forEach((e) => {
           if (e.isIntersecting && e.intersectionRatio > 0.3) {
             setRevealed(true);
-            setTimeout(() => setRevealed(false), 7000);
+            observer.disconnect();
           }
         });
       },
