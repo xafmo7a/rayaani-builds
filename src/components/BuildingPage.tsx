@@ -104,10 +104,11 @@ const BuildingPage = () => {
           style={{
             height: "92vh",
             width: "auto",
-            maxWidth: "50%",
+            maxWidth: "90%",
             clipPath: revealed ? undefined : "inset(100% 0% 0% 0%)",
             animation: revealed ? "buildReveal 5s cubic-bezier(0.4, 0, 0.2, 1) forwards" : "none",
           }}
+          className="md:!max-w-[50%]"
         >
           <img
             src={buildingImage}
