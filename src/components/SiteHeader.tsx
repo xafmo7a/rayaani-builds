@@ -15,6 +15,7 @@ interface SiteHeaderProps {
 const SiteHeader = ({ onToggleCarousel, carouselOpen }: SiteHeaderProps) => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [hideState, setHideState] = useState<"" | "hide-cta" | "hide-videos" | "hide-all">("");
+  const [activeVideoId, setActiveVideoId] = useState<string | null>(null);
 
   const toggleMenu = useCallback(() => {
     setMenuOpen((prev) => !prev);
