@@ -1,6 +1,7 @@
 import { useState, useEffect, useCallback, RefObject } from "react";
 import { Facebook, Instagram, Linkedin, Youtube, Mail, Phone, X, Play } from "lucide-react";
 import DropdownMenu from "./DropdownMenu";
+import rawLogo from "@/assets/raw-logo.png";
 
 const videoIds = [
   "P1UgHTA8DP8", "EBs2KYQk1Mw", "xkYiWUhd-Qw", "GF6qOeUbyhU",
@@ -99,17 +100,10 @@ const SiteHeader = ({ onToggleCarousel, carouselOpen, scrollRef }: SiteHeaderPro
               href="https://rayaani.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-[11px] font-bold tracking-[0.18em] uppercase transition-opacity duration-200 hover:opacity-80"
-              style={{ color: "rgba(255,255,255,0.9)", textShadow: "0 1px 4px rgba(0,0,0,0.4)" }}
+              className="transition-opacity duration-200 hover:opacity-80"
             >
-              RAW
+              <img src={rawLogo} alt="RAW" className="h-[22px] w-auto" />
             </a>
-            <div
-              className="text-[11px] font-semibold tracking-[0.22em] uppercase"
-              style={{ color: "rgba(255,255,255,0.93)", textShadow: "0 1px 4px rgba(0,0,0,0.35)" }}
-            >
-              Architects for Public Service
-            </div>
             <a
               href="https://raw-nyc.com"
               target="_blank"
