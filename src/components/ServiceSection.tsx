@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { ArrowLeft } from "lucide-react";
+import ImagePanel from "@/components/sections/ImagePanel";
 
 const practiceAreas = [
   {
@@ -480,6 +481,23 @@ const ServiceSection = () => {
               Through my practice, I have also led site construction coordination, supervision, and project management, demonstrating the role of women in construction leadership and technical execution.
             </p>
           </div>
+        </div>
+
+        {/* ===== PROJECT GALLERIES ===== */}
+        <div className="mt-16 md:mt-20 space-y-6">
+          <h2 className="font-display text-[clamp(22px,4vw,36px)] text-foreground tracking-[0.06em] leading-[1.2] mb-8">
+            Selected <span style={{ color: "hsl(var(--aia-red))" }}>Work</span>
+          </h2>
+          <ImagePanel src="/images/service/spheres.png" alt="Multiple Spheres of Influence" label="Multiple Spheres of Influence — Global Reach" />
+          <ImagePanel src="/images/service/education.png" alt="Education & Institutional Projects" label="Education & Institutional Projects" />
+          <ImagePanel src="/images/service/cultural.png" alt="Cultural & Sacred Architecture" label="Cultural & Sacred Architecture" />
+          <ImagePanel src="/images/service/masterplan.png" alt="Master Planning & Urban Design" label="Master Planning & Urban Design" />
+          <ImagePanel src="/images/service/corporate.png" alt="Corporate & Interior Architecture" label="Corporate & Interior Architecture" />
+          <ImagePanel src="/images/service/innovation.png" alt="Innovation & Research" label="Innovation & Research" />
+          <ImagePanel src="/images/service/urban.png" alt="Urban Development & Waterfront" label="Urban Development & Waterfront" />
+          <ImagePanel src="/images/service/iraq-pavilion.png" alt="Iraq Pavilion" label="Iraq Pavilion — Built Work" />
+          <ImagePanel src="/images/service/timeline.png" alt="Iraq Pavilion Timeline" label="Iraq Pavilion — Project Timeline" />
+          <ImagePanel src="/images/service/nyc-cultural.png" alt="NYC Cultural Projects" label="NYC Cultural & Sustainability Projects" />
         </div>
       </div>
     </section>
