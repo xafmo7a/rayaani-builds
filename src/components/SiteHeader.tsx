@@ -32,13 +32,30 @@ const SiteHeader = ({ onToggleCarousel, carouselOpen }: SiteHeaderProps) => {
     };
   }, [menuOpen]);
 
+  const [headerRetracted, setHeaderRetracted] = useState(false);
+
   useEffect(() => {
     const handleScroll = () => {
       const scrollY = window.scrollY || document.documentElement.scrollTop;
-      if (scrollY >= 120) setHideState("hide-all");
-      else if (scrollY >= 80) setHideState("hide-videos");
-      else if (scrollY >= 20) setHideState("hide-cta");
-      else setHideState("");
+      const viewportH = window.innerHeight;
+      
+      // Retract fully when scrolled past ~40% of viewport (entering building page)
+      if (scrollY > viewportH * 0.4) {
+        setHeaderRetracted(true);
+        setHideState("hide-all");
+      } else if (scrollY >= 120) {
+        setHeaderRetracted(false);
+        setHideState("hide-all");
+      } else if (scrollY >= 80) {
+        setHeaderRetracted(false);
+        setHideState("hide-videos");
+      } else if (scrollY >= 20) {
+        setHeaderRetracted(false);
+        setHideState("hide-cta");
+      } else {
+        setHeaderRetracted(false);
+        setHideState("");
+      }
     };
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
