@@ -10,9 +10,10 @@ const videoIds = [
 interface SiteHeaderProps {
   onToggleCarousel?: () => void;
   carouselOpen?: boolean;
+  scrollRef?: RefObject<HTMLDivElement>;
 }
 
-const SiteHeader = ({ onToggleCarousel, carouselOpen }: SiteHeaderProps) => {
+const SiteHeader = ({ onToggleCarousel, carouselOpen, scrollRef }: SiteHeaderProps) => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [hideState, setHideState] = useState<"" | "hide-cta" | "hide-videos" | "hide-all">("");
   const [activeVideoId, setActiveVideoId] = useState<string | null>(null);
