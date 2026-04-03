@@ -73,25 +73,24 @@ const SiteHeader = ({ onToggleCarousel, carouselOpen }: SiteHeaderProps) => {
       <DropdownMenu open={menuOpen} onClose={() => setMenuOpen(false)} />
 
       <header
-        className="fixed top-0 left-0 right-0 z-[1000] flex flex-col overflow-visible"
+        className="fixed top-0 left-0 right-0 z-[1000] flex flex-col overflow-hidden"
         style={{
           borderRadius: "0 0 20px 20px",
           boxShadow: headerRetracted ? "none" : "0 8px 32px rgba(0,0,0,0.45)",
           animation: "slideDown 0.5s cubic-bezier(0.22,1,0.36,1) forwards",
-          transform: headerRetracted ? "translateY(-110%)" : "translateY(0)",
+          transform: headerRetracted ? "translateY(-100%)" : "translateY(0)",
           opacity: headerRetracted ? 0 : 1,
-          transition: "transform 0.6s cubic-bezier(0.65, 0, 0.35, 1), opacity 0.5s ease, box-shadow 0.4s ease",
+          transition: "transform 0.7s cubic-bezier(0.65, 0, 0.35, 1), opacity 0.6s ease, box-shadow 0.4s ease",
         }}
       >
-        {/* Red Bar */}
+        {/* Red Bar — top layer z-30 */}
         <div
-          className="flex flex-col items-center px-4 py-2 transition-transform duration-300"
+          className="relative z-30 flex flex-col items-center px-4 py-2"
           style={{
             background: "rgba(172,32,20,0.78)",
             backdropFilter: "blur(20px) saturate(1.8)",
             WebkitBackdropFilter: "blur(20px) saturate(1.8)",
-            boxShadow: "inset 0 1px 0 rgba(255,255,255,0.22), inset 0 -1px 0 rgba(0,0,0,0.12)",
-            transform: hideState === "hide-all" ? "translateY(-100%)" : "translateY(0)",
+            boxShadow: "inset 0 1px 0 rgba(255,255,255,0.22), inset 0 -1px 0 rgba(0,0,0,0.12), 0 4px 12px rgba(0,0,0,0.3)",
           }}
         >
           <div
