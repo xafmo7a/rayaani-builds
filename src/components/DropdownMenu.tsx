@@ -155,17 +155,16 @@ const DropdownMenu = ({ open, onClose }: DropdownMenuProps) => {
             {panel.subtitle}
           </p>
 
-          {/* Cards carousel */}
+          {/* Cards grid */}
           <div
-            className="flex gap-2.5 overflow-x-auto pb-2 snap-x snap-mandatory"
-            style={{ scrollbarWidth: "none", WebkitOverflowScrolling: "touch" }}
+            className="grid grid-cols-1 md:grid-cols-3 gap-3 md:gap-4 max-w-3xl mx-auto"
           >
             {panel.cards.map((card) => {
               const Icon = card.icon;
               return (
                 <div
                   key={card.label}
-                  className="flex-shrink-0 w-[75vw] max-w-[260px] snap-start rounded-[14px] p-[18px]"
+                  className="rounded-[14px] p-[18px] md:p-5"
                   style={{
                     background: "rgba(255,255,255,0.06)",
                     border: "1px solid rgba(255,255,255,0.12)",
