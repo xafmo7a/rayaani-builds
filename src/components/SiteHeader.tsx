@@ -190,9 +190,28 @@ const SiteHeader = ({ onToggleCarousel, carouselOpen }: SiteHeaderProps) => {
                 : "translateY(0)",
           }}
         >
-          <span className="text-[clamp(13px,3.5vw,16px)] font-normal tracking-[0.08em] text-foreground/80">
-            Join the Movement
-          </span>
+          <div className="overflow-hidden w-full">
+            <div
+              className="flex gap-16 whitespace-nowrap w-max"
+              style={{ animation: "tickerScroll 25s linear infinite" }}
+            >
+              {[...Array(2)].flatMap((_, r) =>
+                [
+                  "✦ Vote Raya Ani for AIA President Elect",
+                  "🏛️ Architects at Public Service",
+                  "✦ Vote Raya Ani for AIA President Elect",
+                  "🏛️ Leadership · Vision · Service",
+                ].map((msg, i) => (
+                  <span
+                    key={`${r}-${i}`}
+                    className="text-[clamp(13px,3.5vw,16px)] font-normal tracking-[0.08em] text-foreground/80"
+                  >
+                    {msg}
+                  </span>
+                ))
+              )}
+            </div>
+          </div>
         </div>
       </header>
     </>
