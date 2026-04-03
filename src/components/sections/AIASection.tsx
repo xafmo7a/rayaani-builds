@@ -2,6 +2,7 @@ import SectionHero from "@/components/sections/SectionHero";
 import StatsRow from "@/components/sections/StatsRow";
 import FeatureBar from "@/components/sections/FeatureBar";
 import TwoColumn from "@/components/sections/TwoColumn";
+import ImageLightbox from "@/components/ui/ImageLightbox";
 
 const stats = [
   { value: "FAIA", label: "Fellow, AIA" },
