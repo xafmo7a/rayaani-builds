@@ -99,15 +99,15 @@ const BuildingPage = () => {
       />
 
       {/* Building with clip animation */}
-      <div className="absolute inset-0 z-[2] flex items-center justify-center pt-[20px] md:pt-[60px] pointer-events-none">
+      <div className="absolute inset-0 z-[2] flex items-end md:items-center justify-center pt-0 md:pt-[60px] pointer-events-none">
         <div
           style={{
-            height: "95vh",
+            height: "100vh",
             width: "auto",
             clipPath: revealed ? undefined : "inset(100% 0% 0% 0%)",
             animation: revealed ? "buildReveal 5s cubic-bezier(0.4, 0, 0.2, 1) forwards" : "none",
           }}
-          className="max-w-[100%] md:!max-w-[50%]"
+          className="max-w-[130%] md:!max-w-[50%]"
         >
           <img
             src={buildingImage}
