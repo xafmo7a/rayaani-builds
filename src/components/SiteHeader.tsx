@@ -156,9 +156,9 @@ const SiteHeader = ({ onToggleCarousel, carouselOpen }: SiteHeaderProps) => {
           </div>
         </div>
 
-        {/* Gray Videos Bar */}
+        {/* Gray Videos Bar — auto-scrolling thumbnails */}
         <div
-          className="flex items-center justify-center px-4 py-2.5 cursor-pointer select-none transition-all duration-300"
+          className="overflow-hidden transition-transform duration-300 cursor-pointer"
           style={{
             background: "rgba(90,90,100,0.6)",
             backdropFilter: "blur(20px) saturate(1.4)",
@@ -171,15 +171,28 @@ const SiteHeader = ({ onToggleCarousel, carouselOpen }: SiteHeaderProps) => {
           }}
           onClick={onToggleCarousel}
         >
-          <span className="text-[clamp(15px,4vw,20px)] font-light tracking-[0.1em] text-foreground/70">
-            Videos
-          </span>
-          <span
-            className="ml-2 text-[10px] text-foreground/40 inline-block transition-transform duration-300"
-            style={{ transform: carouselOpen ? "rotate(180deg)" : "rotate(0)" }}
+          <div
+            className="flex gap-2 py-1.5 px-2 w-max"
+            style={{
+              animation: "tickerScroll 40s linear infinite",
+              maskImage: "linear-gradient(90deg, transparent 0%, black 3%, black 97%, transparent 100%)",
+              WebkitMaskImage: "linear-gradient(90deg, transparent 0%, black 3%, black 97%, transparent 100%)",
+            }}
           >
-            ▼
-          </span>
+            {[...videoIds, ...videoIds, ...videoIds].map((id, i) => (
+              <div
+                key={`${id}-${i}`}
+                className="flex-shrink-0 w-[80px] rounded-md overflow-hidden relative"
+                style={{ border: "1px solid rgba(255,255,255,0.15)" }}
+              >
+                <img
+                  src={`https://img.youtube.com/vi/${id}/mqdefault.jpg`}
+                  alt=""
+                  className="w-full aspect-video object-cover block"
+                />
+              </div>
+            ))}
+          </div>
         </div>
 
         {/* CTA Bar */}
