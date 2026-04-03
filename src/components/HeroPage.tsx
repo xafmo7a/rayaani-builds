@@ -68,7 +68,7 @@ const HeroPage = () => {
         {/* Tagline */}
         <p
           className="font-bold text-[clamp(15px,4.2vw,21px)] text-foreground tracking-[0.12em] uppercase leading-[1.35] opacity-0"
-          style={{ animation: "fadeUp 0.9s ease 1.2s forwards" }}
+          style={{ animation: "fadeUp 0.9s ease 1.2s forwards", fontFamily: "'Arial Narrow', 'Arial', sans-serif" }}
         >
           ARCHITECTS at PUBLIC SERVICE
         </p>
