@@ -1,6 +1,4 @@
 import { useEffect, useState, useRef } from "react";
-import { useNavigate } from "react-router-dom";
-import { ArrowLeft } from "lucide-react";
 import portraitImage from "@/assets/raya-ani-portrait.png";
 import buildingImage from "@/assets/building.png";
 
@@ -41,7 +39,6 @@ const buildCards = [
 
 
 const BuildingPage = () => {
-  const navigate = useNavigate();
   const [revealed, setRevealed] = useState(false);
   const [activeCard, setActiveCard] = useState<number | null>(null);
   const pageRef = useRef<HTMLDivElement>(null);
@@ -85,19 +82,6 @@ const BuildingPage = () => {
         }}
       />
 
-      {/* Back button */}
-      <button
-        onClick={(e) => { e.stopPropagation(); navigate("/"); }}
-        className="absolute top-[170px] left-4 z-[20] w-9 h-9 rounded-full flex items-center justify-center cursor-pointer transition-all duration-200 hover:scale-110 pointer-events-auto"
-        style={{
-          background: "hsl(var(--aia-red) / 0.15)",
-          border: "1px solid hsl(var(--aia-red) / 0.3)",
-          boxShadow: "0 2px 8px hsl(var(--aia-red) / 0.15)",
-          backdropFilter: "blur(12px)",
-        }}
-      >
-        <ArrowLeft className="w-4 h-4" style={{ color: "hsl(var(--aia-red))" }} />
-      </button>
 
       <div className="absolute inset-0 z-[2] flex items-end md:items-center justify-center pt-0 md:pt-[60px] pointer-events-none">
         <div
