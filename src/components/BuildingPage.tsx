@@ -241,63 +241,6 @@ const BuildingPage = () => {
         </div>
       ))}
 
-      {/* RIGHT PANEL — AIA Leadership + Network */}
-      <div
-        className="absolute z-[15] right-[2%] top-[8%] hidden md:block"
-        style={{
-          opacity: 0,
-          animation: revealed ? "cardReveal 0.8s ease 4.8s forwards" : "none",
-        }}
-      >
-        <div
-          className="rounded-xl px-4 py-4 w-[280px] lg:w-[320px] relative overflow-hidden"
-          style={{
-            background: "rgba(8,4,4,0.5)",
-            backdropFilter: "blur(18px) saturate(1.6)",
-            WebkitBackdropFilter: "blur(18px) saturate(1.6)",
-            border: "1px solid rgba(255,255,255,0.1)",
-            boxShadow: "inset 0 1px 0 rgba(255,255,255,0.1), 0 8px 32px rgba(0,0,0,0.5)",
-          }}
-        >
-          {/* Title */}
-          <div className="font-display text-[15px] lg:text-[17px] text-foreground tracking-[0.06em] mb-1 leading-[1.3] text-center">
-            The <span style={{ color: "rgba(192,57,43,0.9)" }}>AIA</span> Leadership + Network
-          </div>
-          <div className="h-[2px] mb-3 opacity-60" style={{ background: "repeating-linear-gradient(90deg, rgba(192,57,43,1) 0px, rgba(192,57,43,1) 4px, transparent 4px, transparent 8px)" }} />
-
-          {/* AIA Members */}
-          <div className="text-[10px] font-medium tracking-[0.1em] text-center mb-2" style={{ color: "rgba(192,57,43,0.9)" }}>
-            AIA Members
-          </div>
-          <div className="grid grid-cols-2 gap-x-3 gap-y-0.5 mb-3">
-            {aiaMembers.flat().map((m) => (
-              <div key={m} className="text-[8.5px] lg:text-[9px] font-medium text-foreground/70 leading-[1.5]">
-                • <span style={{ color: "rgba(192,57,43,0.9)" }}>AIA</span> {m.replace("AIA ", "")}
-              </div>
-            ))}
-          </div>
-          <div className="h-px mb-2 opacity-30" style={{ background: "repeating-linear-gradient(90deg, rgba(192,57,43,1) 0px, rgba(192,57,43,1) 3px, transparent 3px, transparent 7px)" }} />
-
-          {/* Councils */}
-          <div className="grid grid-cols-2 gap-x-3 gap-y-0.5 mb-3">
-            {aiaCouncils.flat().map((m) => (
-              <div key={m} className="text-[8.5px] lg:text-[9px] font-medium text-foreground/70 leading-[1.5]">
-                • <span style={{ color: "rgba(192,57,43,0.9)" }}>AIA</span> {m.replace("AIA ", "")}
-              </div>
-            ))}
-          </div>
-          <div className="h-px mb-2 opacity-30" style={{ background: "repeating-linear-gradient(90deg, rgba(192,57,43,1) 0px, rgba(192,57,43,1) 3px, transparent 3px, transparent 7px)" }} />
-
-          {/* Board */}
-          <div className="grid grid-cols-2 gap-x-3 gap-y-0.5">
-            {aiaBoard.flat().map((m) => (
-              <div key={m} className="text-[8.5px] lg:text-[9px] font-medium text-foreground/70 leading-[1.5]">
-                • <span style={{ color: "rgba(192,57,43,0.9)" }}>AIA</span> {m.replace("AIA ", "")}
-              </div>
-            ))}
-          </div>
-        </div>
-      </div>
 
       {/* Back to top */}
       <div
