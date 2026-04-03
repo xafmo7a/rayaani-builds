@@ -2,13 +2,14 @@ import { useEffect, useState, useRef } from "react";
 import portraitImage from "@/assets/raya-ani-portrait.png";
 import buildingImage from "@/assets/building.png";
 
-const leftCards = [
+const buildCards = [
   {
     title: "FUTURE SYSTEMS",
     sub: "Intelligence",
     items: ["Digital Fluency", "AI Integration", "Regenerative Knowledge", "Evolving Practice Models"],
     top: "8%",
     delay: 4.6,
+    side: "left" as const,
   },
   {
     title: "ENVELOPE",
@@ -16,6 +17,7 @@ const leftCards = [
     items: ["Policy Leadership", "Value of Architects", "Strategic Partnerships", "Procurement Access"],
     top: "30%",
     delay: 3.4,
+    side: "right" as const,
   },
   {
     title: "STRUCTURE",
@@ -23,6 +25,7 @@ const leftCards = [
     items: ["Institutional Continuity", "Coordinated Systems", "Firm Support", "Shared Capability"],
     top: "52%",
     delay: 2.2,
+    side: "left" as const,
   },
   {
     title: "FOUNDATION",
@@ -30,6 +33,7 @@ const leftCards = [
     items: ["Standards & Ethics", "Governance & Oversight", "Equitable Access", "Public Responsibility"],
     top: "74%",
     delay: 1.2,
+    side: "right" as const,
   },
 ];
 
@@ -139,13 +143,13 @@ const BuildingPage = () => {
         }}
       />
 
-      {/* LEFT CARDS */}
-      {leftCards.map((card, i) => (
+      {/* ALTERNATING CARDS */}
+      {buildCards.map((card, i) => (
         <div
           key={card.title}
           className="absolute z-[15] pointer-events-auto"
           style={{
-            left: "2%",
+            [card.side === "left" ? "left" : "right"]: "2%",
             top: card.top,
             opacity: 0,
             animation: revealed ? `cardReveal 0.7s ease ${card.delay}s forwards` : "none",
@@ -207,7 +211,6 @@ const BuildingPage = () => {
               <div className="text-[9px] md:text-[10px] font-medium tracking-[0.1em] text-center mb-2 relative z-[1]" style={{ color: "rgba(255,140,120,0.95)" }}>
                 ({card.sub})
               </div>
-              {/* Dotted divider */}
               <div className="h-[2px] mb-2 opacity-60" style={{ background: "repeating-linear-gradient(90deg, rgba(192,57,43,1) 0px, rgba(192,57,43,1) 4px, transparent 4px, transparent 8px)" }} />
               <div className="flex flex-col gap-0.5 relative z-[1]">
                 {card.items.map((item) => (
@@ -228,9 +231,11 @@ const BuildingPage = () => {
           <div
             className="absolute top-1/2 -translate-y-1/2 h-px"
             style={{
-              right: "-28px",
+              [card.side === "left" ? "right" : "left"]: "-28px",
               width: "26px",
-              background: "linear-gradient(90deg, rgba(192,57,43,0.8), transparent)",
+              background: card.side === "left"
+                ? "linear-gradient(90deg, rgba(192,57,43,0.8), transparent)"
+                : "linear-gradient(270deg, rgba(192,57,43,0.8), transparent)",
             }}
           />
         </div>
