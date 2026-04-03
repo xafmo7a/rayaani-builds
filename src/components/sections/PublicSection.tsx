@@ -234,6 +234,9 @@ const PublicSection = () => {
 
       {/* Media */}
       <MediaGrid items={mediaItems} />
+
+      {/* Press Archive */}
+      <PressArchive />
     </div>
   );
 };
