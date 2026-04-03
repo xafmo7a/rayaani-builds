@@ -1,4 +1,6 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { ArrowLeft } from "lucide-react";
 
 const practiceAreas = [
   {
@@ -221,12 +223,29 @@ const PracticeAreaCard = ({
   </div>
 );
 
+const BackButton = () => {
+  const navigate = useNavigate();
+  return (
+    <button
+      onClick={() => navigate("/")}
+      className="w-8 h-8 rounded-full flex items-center justify-center cursor-pointer transition-all duration-200 hover:scale-110 flex-shrink-0"
+      style={{
+        background: "hsl(var(--aia-red) / 0.12)",
+        border: "1px solid hsl(var(--aia-red) / 0.25)",
+        boxShadow: "0 2px 8px hsl(var(--aia-red) / 0.1)",
+      }}
+    >
+      <ArrowLeft className="w-4 h-4" style={{ color: "hsl(var(--aia-red))" }} />
+    </button>
+  );
+};
+
 const ServiceSection = () => {
   const [expandedIndex, setExpandedIndex] = useState<number | null>(0);
 
   return (
     <section
-      className="relative w-full min-h-screen overflow-hidden py-16 md:py-24"
+      className="relative w-full min-h-screen overflow-hidden pt-[160px] pb-16 md:pb-24"
       style={{
         background:
           "radial-gradient(ellipse at 50% 0%, hsl(var(--aia-red) / 0.04) 0%, transparent 50%), linear-gradient(180deg, hsl(0 0% 0%) 0%, hsl(0 0% 3%) 20%, hsl(0 0% 2%) 80%, hsl(0 0% 0%) 100%)",
@@ -241,11 +260,14 @@ const ServiceSection = () => {
       <div className="relative z-10 max-w-5xl mx-auto px-5 md:px-10">
         {/* ===== LEADERSHIP THROUGH PRACTICE ===== */}
         <div className="mb-16 md:mb-20">
-          <div
-            className="text-[9px] md:text-[10px] font-bold tracking-[0.3em] uppercase mb-3"
-            style={{ color: "hsl(var(--aia-red) / 0.7)" }}
-          >
-            Service & Practice
+          <div className="flex items-center gap-3 mb-3">
+            <BackButton />
+            <div
+              className="text-[9px] md:text-[10px] font-bold tracking-[0.3em] uppercase"
+              style={{ color: "hsl(var(--aia-red) / 0.7)" }}
+            >
+              Service & Practice
+            </div>
           </div>
           <h1 className="font-display text-[clamp(28px,6vw,48px)] text-foreground tracking-[0.05em] leading-[1.1] mb-6">
             Leadership Through{" "}
