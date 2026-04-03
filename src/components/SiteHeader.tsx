@@ -165,25 +165,23 @@ const SiteHeader = ({ onToggleCarousel, carouselOpen, scrollRef }: SiteHeaderPro
             <div className="flex gap-[7px] items-center">
               <a
                 href="mailto:info@rayaaniforpresident.com"
-                className="w-[33px] h-[33px] rounded-[7px] flex items-center justify-center transition-all duration-200 hover:scale-110"
+                className="w-[28px] h-[28px] rounded-[5px] flex items-center justify-center transition-all duration-200 hover:scale-110"
                 style={{
-                  border: "1.5px solid rgba(255,255,255,0.6)",
-                  background: "rgba(255,255,255,0.1)",
-                  boxShadow: "inset 0 1px 0 rgba(255,255,255,0.25)",
+                  border: "1px solid rgba(255,255,255,0.5)",
+                  background: "transparent",
                 }}
               >
-                <Mail className="w-[15px] h-[15px] text-foreground" strokeWidth={1.6} />
+                <Mail className="w-[13px] h-[13px] text-foreground" strokeWidth={1.5} />
               </a>
               <a
                 href="tel:+1"
-                className="w-[33px] h-[33px] rounded-[7px] flex items-center justify-center transition-all duration-200 hover:scale-110"
+                className="w-[28px] h-[28px] rounded-[5px] flex items-center justify-center transition-all duration-200 hover:scale-110"
                 style={{
-                  border: "1.5px solid rgba(255,255,255,0.6)",
-                  background: "rgba(255,255,255,0.1)",
-                  boxShadow: "inset 0 1px 0 rgba(255,255,255,0.25)",
+                  border: "1px solid rgba(255,255,255,0.5)",
+                  background: "transparent",
                 }}
               >
-                <Phone className="w-[15px] h-[15px] text-foreground" strokeWidth={1.6} />
+                <Phone className="w-[13px] h-[13px] text-foreground" strokeWidth={1.5} />
               </a>
             </div>
           </div>
