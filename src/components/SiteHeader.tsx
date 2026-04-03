@@ -174,18 +174,19 @@ const SiteHeader = ({ onToggleCarousel, carouselOpen }: SiteHeaderProps) => {
           </div>
         </div>
 
-        {/* Gray Videos Bar — auto-scrolling thumbnails */}
+        {/* Gray Videos Bar — middle layer z-20, tucks under red bar */}
         <div
-          className="overflow-hidden transition-transform duration-300 cursor-pointer"
+          className="relative z-20 overflow-hidden cursor-pointer"
           style={{
             background: "rgba(90,90,100,0.6)",
             backdropFilter: "blur(20px) saturate(1.4)",
             WebkitBackdropFilter: "blur(20px) saturate(1.4)",
-            boxShadow: "inset 0 1px 0 rgba(255,255,255,0.1)",
-            transform:
+            boxShadow: "inset 0 1px 0 rgba(255,255,255,0.1), 0 4px 8px rgba(0,0,0,0.2)",
+            marginTop:
               hideState === "hide-videos" || hideState === "hide-all"
-                ? "translateY(-100%)"
-                : "translateY(0)",
+                ? "-60px"
+                : "0",
+            transition: "margin-top 0.5s cubic-bezier(0.65, 0, 0.35, 1)",
           }}
           onClick={onToggleCarousel}
         >
