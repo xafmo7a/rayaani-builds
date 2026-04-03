@@ -94,7 +94,7 @@ const AIASection = () => {
             <span className="italic text-foreground/60">Public Service</span>
           </h2>
           <div className="aspect-square rounded-md overflow-hidden">
-            <img
+            <ImageLightbox
               src="/images/portrait.png"
               alt="Raya Ani portrait"
               className="w-full h-full object-cover"
