@@ -117,7 +117,7 @@ const DropdownMenu = ({ open, onClose }: DropdownMenuProps) => {
         }}
       />
 
-      <div className="mt-auto px-5 pb-10 pt-6 flex flex-col gap-0 min-h-screen justify-center">
+      <div className="px-5 pb-10 pt-24 md:pt-6 flex flex-col gap-0 min-h-screen justify-center">
         {/* Tab buttons */}
         <div className="flex justify-center gap-2.5 pb-7 flex-wrap">
           {tabs.map((tab) => (
