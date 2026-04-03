@@ -172,24 +172,23 @@ const SiteHeader = ({ onToggleCarousel, carouselOpen }: SiteHeaderProps) => {
           onClick={onToggleCarousel}
         >
           <div
-            className="flex gap-2 py-1.5 px-2 w-max"
+            className="flex gap-0 py-1.5 w-max"
             style={{
               animation: "tickerScroll 40s linear infinite",
-              maskImage: "linear-gradient(90deg, transparent 0%, black 3%, black 97%, transparent 100%)",
-              WebkitMaskImage: "linear-gradient(90deg, transparent 0%, black 3%, black 97%, transparent 100%)",
             }}
           >
-            {[...videoIds, ...videoIds, ...videoIds].map((id, i) => (
+            {[...videoIds, ...videoIds].map((id, i) => (
               <div
                 key={`${id}-${i}`}
-                className="flex-shrink-0 w-[80px] rounded-md overflow-hidden relative"
-                style={{ border: "1px solid rgba(255,255,255,0.15)" }}
+                className="flex-shrink-0 w-[82px] px-[1px]"
               >
-                <img
-                  src={`https://img.youtube.com/vi/${id}/mqdefault.jpg`}
-                  alt=""
-                  className="w-full aspect-video object-cover block"
-                />
+                <div className="rounded-md overflow-hidden" style={{ border: "1px solid rgba(255,255,255,0.15)" }}>
+                  <img
+                    src={`https://img.youtube.com/vi/${id}/mqdefault.jpg`}
+                    alt=""
+                    className="w-full aspect-video object-cover block"
+                  />
+                </div>
               </div>
             ))}
           </div>
