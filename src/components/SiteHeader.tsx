@@ -77,10 +77,10 @@ const SiteHeader = ({ onToggleCarousel, carouselOpen, scrollRef }: SiteHeaderPro
         className="fixed top-0 left-0 right-0 z-[1000] flex flex-col overflow-hidden"
         style={{
           borderRadius: "0 0 20px 20px",
-          boxShadow: headerRetracted ? "none" : "0 8px 32px rgba(0,0,0,0.45)",
+          boxShadow: (headerRetracted || menuOpen) ? "none" : "0 8px 32px rgba(0,0,0,0.45)",
           animation: "slideDown 0.5s cubic-bezier(0.22,1,0.36,1) forwards",
-          transform: headerRetracted ? "translateY(-100%)" : "translateY(0)",
-          opacity: headerRetracted ? 0 : 1,
+          transform: (headerRetracted || menuOpen) ? "translateY(-100%)" : "translateY(0)",
+          opacity: (headerRetracted || menuOpen) ? 0 : 1,
           transition: "transform 0.7s cubic-bezier(0.65, 0, 0.35, 1), opacity 0.6s ease, box-shadow 0.4s ease",
         }}
       >
