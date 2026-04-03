@@ -4,6 +4,7 @@ import { Toaster as Sonner } from "@/components/ui/sonner";
 import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import Index from "./pages/Index";
+import ServicePageRoute from "./pages/ServicePageRoute";
 import BuildingPageRoute from "./pages/BuildingPageRoute";
 import LeadershipPageRoute from "./pages/LeadershipPageRoute";
 import NotFound from "./pages/NotFound";
@@ -19,6 +20,7 @@ const App = () => (
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/building" element={<BuildingPageRoute />} />
+          <Route path="/service" element={<ServicePageRoute />} />
           <Route path="/leadership" element={<LeadershipPageRoute />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
