@@ -4,6 +4,7 @@ import FeatureBar from "@/components/sections/FeatureBar";
 import TwoColumn from "@/components/sections/TwoColumn";
 import ImagePanel from "@/components/sections/ImagePanel";
 import PressArchive from "@/components/sections/PressArchive";
+import ImageLightbox from "@/components/ui/ImageLightbox";
 
 const stats = [
   { value: "128K+", label: "Global Followers" },
@@ -49,7 +50,7 @@ const PublicSection = () => {
             <span className="italic text-foreground/60">Grit and Excellence</span>
           </h2>
           <div className="aspect-square rounded-md overflow-hidden">
-            <img
+            <ImageLightbox
               src="/images/portrait.png"
               alt="Raya Ani portrait"
               className="w-full h-full object-cover"

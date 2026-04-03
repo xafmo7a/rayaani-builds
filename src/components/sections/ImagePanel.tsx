@@ -1,3 +1,5 @@
+import ImageLightbox from "@/components/ui/ImageLightbox";
+
 const ImagePanel = ({
   src,
   alt,
@@ -26,11 +28,10 @@ const ImagePanel = ({
       </div>
     )}
     <div className="px-5 md:px-10 pb-6">
-      <img
+      <ImageLightbox
         src={src}
         alt={alt}
         className="w-full h-auto rounded-md"
-        loading="lazy"
       />
     </div>
   </div>

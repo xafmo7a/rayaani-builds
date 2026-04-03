@@ -2,6 +2,7 @@ import SectionHero from "@/components/sections/SectionHero";
 import StatsRow from "@/components/sections/StatsRow";
 import FeatureBar from "@/components/sections/FeatureBar";
 import TwoColumn from "@/components/sections/TwoColumn";
+import ImageLightbox from "@/components/ui/ImageLightbox";
 
 const stats = [
   { value: "FAIA", label: "Fellow, AIA" },
@@ -93,7 +94,7 @@ const AIASection = () => {
             <span className="italic text-foreground/60">Public Service</span>
           </h2>
           <div className="aspect-square rounded-md overflow-hidden">
-            <img
+            <ImageLightbox
               src="/images/portrait.png"
               alt="Raya Ani portrait"
               className="w-full h-full object-cover"
