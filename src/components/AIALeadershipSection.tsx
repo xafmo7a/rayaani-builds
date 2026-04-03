@@ -135,7 +135,6 @@ const SectionCard = ({
 );
 
 const AIALeadershipSection = () => {
-  const navigate = useNavigate();
   return (
     <section
       className="relative w-full min-h-screen flex items-center pt-[160px] pb-16 md:pb-24 overflow-hidden"
