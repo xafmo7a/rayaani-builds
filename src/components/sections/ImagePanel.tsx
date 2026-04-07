@@ -9,7 +9,7 @@ const ImagePanel = ({
   alt: string;
   label?: string;
 }) => (
-  <div className="w-full" style={{ borderBottom: "1px solid hsl(0 0% 12%)" }}>
+  <div className="w-full" style={{ background: "hsl(0 0% 100%)", borderBottom: "1px solid hsl(0 0% 88%)" }}>
     {label && (
       <div className="px-5 md:px-10 pt-6 pb-3">
         <div
@@ -21,7 +21,7 @@ const ImagePanel = ({
         />
         <h3
           className="text-[9px] font-semibold tracking-[0.28em] uppercase"
-          style={{ color: "hsl(0 0% 40%)" }}
+          style={{ color: "hsl(0 0% 45%)" }}
         >
           {label}
         </h3>

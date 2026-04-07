@@ -114,13 +114,13 @@ const PracticeAreaCard = ({
   <div
     className="relative rounded-2xl overflow-hidden transition-all duration-500"
     style={{
-      background: "hsl(0 0% 4% / 0.7)",
+      background: "hsl(0 0% 96%)",
       border: expanded
         ? "1px solid hsl(var(--aia-red) / 0.3)"
-        : "1px solid hsl(0 0% 100% / 0.06)",
+        : "1px solid hsl(0 0% 88%)",
       boxShadow: expanded
-        ? "0 8px 40px hsl(var(--aia-red) / 0.1), inset 0 1px 0 hsl(0 0% 100% / 0.06)"
-        : "0 4px 16px hsl(0 0% 0% / 0.3), inset 0 1px 0 hsl(0 0% 100% / 0.04)",
+        ? "0 8px 40px hsl(var(--aia-red) / 0.08)"
+        : "0 2px 8px hsl(0 0% 0% / 0.05)",
     }}
   >
     {/* Header */}
@@ -140,15 +140,15 @@ const PracticeAreaCard = ({
         {String(index + 1).padStart(2, "0")}
       </div>
       <div className="flex-1 min-w-0">
-        <h3 className="text-[14px] md:text-[17px] font-bold text-foreground tracking-[0.02em] leading-[1.3]">
+        <h3 className="text-[14px] md:text-[17px] font-bold text-black tracking-[0.02em] leading-[1.3]">
           {area.title}
         </h3>
       </div>
       <div
-        className="w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0 text-foreground/50 text-[18px] transition-transform duration-300"
+        className="w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0 text-black/50 text-[18px] transition-transform duration-300"
         style={{
-          background: "hsl(0 0% 100% / 0.04)",
-          border: "1px solid hsl(0 0% 100% / 0.08)",
+          background: "hsl(0 0% 0% / 0.04)",
+          border: "1px solid hsl(0 0% 0% / 0.08)",
           transform: expanded ? "rotate(45deg)" : "rotate(0deg)",
         }}
       >
@@ -183,8 +183,8 @@ const PracticeAreaCard = ({
                 }}
               />
               <div>
-                <span className="text-[13px] md:text-[14px] font-bold text-foreground/90">{item.label}: </span>
-                <span className="text-[12px] md:text-[13px] text-foreground/55 leading-[1.6]">{item.desc}</span>
+                <span className="text-[13px] md:text-[14px] font-bold text-black/85">{item.label}: </span>
+                <span className="text-[12px] md:text-[13px] text-black/55 leading-[1.6]">{item.desc}</span>
               </div>
             </div>
           ))}
@@ -206,12 +206,12 @@ const PracticeAreaCard = ({
           </div>
           <div className="flex flex-wrap gap-2">
             {area.selected.map((work) => (
-              <span
+                <span
                 key={work}
-                className="text-[10px] md:text-[11px] font-medium text-foreground/60 px-2.5 py-1 rounded-md"
+                className="text-[10px] md:text-[11px] font-medium text-black/55 px-2.5 py-1 rounded-md"
                 style={{
-                  background: "hsl(0 0% 100% / 0.04)",
-                  border: "1px solid hsl(0 0% 100% / 0.06)",
+                  background: "hsl(0 0% 0% / 0.04)",
+                  border: "1px solid hsl(0 0% 0% / 0.08)",
                 }}
               >
                 {work}
@@ -248,8 +248,7 @@ const ServiceSection = () => {
     <section
       className="relative w-full min-h-screen overflow-hidden pt-[200px] pb-16 md:pb-24"
       style={{
-        background:
-          "radial-gradient(ellipse at 50% 0%, hsl(var(--aia-red) / 0.04) 0%, transparent 50%), linear-gradient(180deg, hsl(0 0% 0%) 0%, hsl(0 0% 3%) 20%, hsl(0 0% 2%) 80%, hsl(0 0% 0%) 100%)",
+        background: "hsl(0 0% 100%)",
       }}
     >
       {/* Top line */}
@@ -270,7 +269,7 @@ const ServiceSection = () => {
               Service & Practice
             </div>
           </div>
-          <h1 className="font-display text-[clamp(28px,6vw,48px)] text-foreground tracking-[0.05em] leading-[1.1] mb-6">
+          <h1 className="font-display text-[clamp(28px,6vw,48px)] text-black tracking-[0.05em] leading-[1.1] mb-6">
             Leadership Through{" "}
             <span style={{ color: "hsl(var(--aia-red))" }}>Practice</span>
           </h1>
@@ -278,18 +277,18 @@ const ServiceSection = () => {
             className="w-20 h-[2px] mb-8 rounded-full"
             style={{ background: "repeating-linear-gradient(90deg, hsl(var(--aia-red)) 0px, hsl(var(--aia-red)) 4px, transparent 4px, transparent 9px)" }}
           />
-          <p className="text-[14px] md:text-[16px] text-foreground/55 leading-[1.8] max-w-3xl font-light tracking-[0.01em]">
+          <p className="text-[14px] md:text-[16px] text-black/55 leading-[1.8] max-w-3xl font-light tracking-[0.01em]">
             My work operates across regions, shaped through projects, collaborations, and leadership developed over three decades of practice. With a physical presence and strategic engagement in New York, Dubai, and India, I work within a global network connecting North America, the Middle East, Europe, and Asia. This practice is defined by the cross-pollination of ideas, knowledge, and practices across contexts—linking localized cultural intelligence with advanced design, technology, and delivery.
           </p>
         </div>
 
         {/* ===== ADVANCING THE PROFESSION ===== */}
         <div className="mb-16 md:mb-20">
-          <h2 className="font-display text-[clamp(22px,4vw,36px)] text-foreground tracking-[0.06em] leading-[1.2] mb-3">
+          <h2 className="font-display text-[clamp(22px,4vw,36px)] text-black tracking-[0.06em] leading-[1.2] mb-3">
             Advancing the{" "}
             <span style={{ color: "hsl(var(--aia-red))" }}>Profession</span>
           </h2>
-          <p className="text-[13px] md:text-[15px] text-foreground/45 leading-[1.7] max-w-2xl mb-10 font-light">
+          <p className="text-[13px] md:text-[15px] text-black/50 leading-[1.7] max-w-2xl mb-10 font-light">
             I build platforms that advance the profession through design innovation, technology, environmental thinking, and global engagement.
           </p>
 
@@ -318,10 +317,10 @@ const ServiceSection = () => {
                 boxShadow: "0 8px 24px hsl(var(--aia-red) / 0.1)",
               }}
             >
-              <span className="font-display text-[22px] md:text-[26px] text-foreground tracking-[0.05em]">30</span>
+              <span className="font-display text-[22px] md:text-[26px] text-black tracking-[0.05em]">30</span>
             </div>
             <div>
-              <h2 className="font-display text-[clamp(22px,4vw,36px)] text-foreground tracking-[0.06em] leading-[1.2]">
+              <h2 className="font-display text-[clamp(22px,4vw,36px)] text-black tracking-[0.06em] leading-[1.2]">
                 Years of <span style={{ color: "hsl(var(--aia-red))" }}>Service</span>
               </h2>
             </div>
@@ -342,7 +341,7 @@ const ServiceSection = () => {
                   <div
                     className="absolute -left-6 md:-left-8 top-1.5 w-[15px] h-[15px] md:w-[19px] md:h-[19px] rounded-full"
                     style={{
-                      background: "hsl(0 0% 0%)",
+                      background: "hsl(0 0% 100%)",
                       border: "2px solid hsl(var(--aia-red) / 0.6)",
                       boxShadow: "0 0 8px hsl(var(--aia-red) / 0.2)",
                     }}
@@ -351,9 +350,9 @@ const ServiceSection = () => {
                   <div
                     className="rounded-xl p-5 md:p-6"
                     style={{
-                      background: "hsl(0 0% 4% / 0.5)",
-                      border: "1px solid hsl(0 0% 100% / 0.05)",
-                      boxShadow: "0 2px 12px hsl(0 0% 0% / 0.3)",
+                      background: "hsl(0 0% 96%)",
+                      border: "1px solid hsl(0 0% 88%)",
+                      boxShadow: "0 2px 8px hsl(0 0% 0% / 0.05)",
                     }}
                   >
                     <div className="flex flex-wrap items-center gap-2 mb-2">
@@ -367,19 +366,19 @@ const ServiceSection = () => {
                       >
                         {item.period}
                       </span>
-                      <span className="text-[10px] md:text-[11px] text-foreground/40 tracking-[0.08em]">
+                      <span className="text-[10px] md:text-[11px] text-black/40 tracking-[0.08em]">
                         {item.location}
                       </span>
                     </div>
-                    <h4 className="text-[14px] md:text-[16px] font-bold text-foreground/90 leading-[1.3] mb-1.5">
+                    <h4 className="text-[14px] md:text-[16px] font-bold text-black/85 leading-[1.3] mb-1.5">
                       {item.title}
                     </h4>
                     {item.org && (
-                      <div className="text-[11px] md:text-[12px] font-semibold text-foreground/40 mb-2 italic">
+                      <div className="text-[11px] md:text-[12px] font-semibold text-black/40 mb-2 italic">
                         {item.org}
                       </div>
                     )}
-                    <p className="text-[12px] md:text-[13px] text-foreground/45 leading-[1.7] font-light">
+                    <p className="text-[12px] md:text-[13px] text-black/50 leading-[1.7] font-light">
                       {item.desc}
                     </p>
                   </div>
@@ -393,11 +392,9 @@ const ServiceSection = () => {
         <div
           className="relative rounded-2xl md:rounded-3xl p-6 md:p-10 overflow-hidden"
           style={{
-            background: "hsl(0 0% 3% / 0.8)",
-            backdropFilter: "blur(30px) saturate(1.6)",
-            WebkitBackdropFilter: "blur(30px) saturate(1.6)",
+            background: "hsl(0 0% 5%)",
             border: "1px solid hsl(var(--aia-red) / 0.15)",
-            boxShadow: "0 24px 80px hsl(0 0% 0% / 0.5), inset 0 1px 0 hsl(0 0% 100% / 0.05)",
+            boxShadow: "0 24px 80px hsl(0 0% 0% / 0.15)",
           }}
         >
           {/* Corner marks */}
@@ -419,10 +416,10 @@ const ServiceSection = () => {
             </span>
           </div>
 
-          <h3 className="font-display text-[clamp(22px,4vw,34px)] text-foreground tracking-[0.05em] leading-[1.15] mb-2">
+          <h3 className="font-display text-[clamp(22px,4vw,34px)] text-white tracking-[0.05em] leading-[1.15] mb-2">
             RAW-NYC <span style={{ color: "hsl(var(--aia-red))" }}>Architects</span>
           </h3>
-          <p className="text-[13px] md:text-[15px] text-foreground/50 leading-[1.8] max-w-3xl mb-8 font-light">
+          <p className="text-[13px] md:text-[15px] text-white/50 leading-[1.8] max-w-3xl mb-8 font-light">
             Founded RAW-NYC Architects, a woman-founded and woman-led architectural practice, established independently without partners. The firm advances architecture, urbanism, and cultural projects through hands-on design and practice leadership, with a strong commitment to mentoring and empowering the next generation of leaders in architecture.
           </p>
 
@@ -441,10 +438,10 @@ const ServiceSection = () => {
                   border: "1px solid hsl(0 0% 100% / 0.06)",
                 }}
               >
-                <div className="text-[14px] md:text-[16px] font-bold text-foreground/85 tracking-[0.02em]">
+                <div className="text-[14px] md:text-[16px] font-bold text-white/85 tracking-[0.02em]">
                   {office.city}
                 </div>
-                <div className="text-[10px] text-foreground/40 tracking-[0.1em] uppercase mt-0.5">
+                <div className="text-[10px] text-white/40 tracking-[0.1em] uppercase mt-0.5">
                   {office.country} · {office.type}
                 </div>
               </div>
@@ -453,11 +450,11 @@ const ServiceSection = () => {
 
           {/* Collaborations */}
           <div className="flex flex-wrap gap-2 mb-6">
-            <span className="text-[10px] text-foreground/35 tracking-[0.1em] uppercase mr-2 self-center">Collaborations:</span>
+            <span className="text-[10px] text-white/35 tracking-[0.1em] uppercase mr-2 self-center">Collaborations:</span>
             {["Belgrade, Serbia", "Bucharest, Romania"].map((c) => (
               <span
                 key={c}
-                className="text-[11px] font-medium text-foreground/55 px-3 py-1 rounded-md"
+                className="text-[11px] font-medium text-white/55 px-3 py-1 rounded-md"
                 style={{
                   background: "hsl(0 0% 100% / 0.04)",
                   border: "1px solid hsl(0 0% 100% / 0.06)",
@@ -474,10 +471,10 @@ const ServiceSection = () => {
           />
 
           <div className="space-y-4">
-            <p className="text-[12px] md:text-[13px] text-foreground/45 leading-[1.8] font-light">
+              <p className="text-[12px] md:text-[13px] text-white/45 leading-[1.8] font-light">
               Through RAW-NYC Architects, I have prioritized mentorship and leadership development, guiding students, recent graduates, and emerging professionals entering the field. While I have actively supported the advancement of women in architecture, management, and construction, my mentorship extends broadly across the profession.
             </p>
-            <p className="text-[12px] md:text-[13px] text-foreground/45 leading-[1.8] font-light">
+            <p className="text-[12px] md:text-[13px] text-white/45 leading-[1.8] font-light">
               Through my practice, I have also led site construction coordination, supervision, and project management, demonstrating the role of women in construction leadership and technical execution.
             </p>
           </div>
@@ -485,7 +482,7 @@ const ServiceSection = () => {
 
         {/* ===== PROJECT GALLERIES ===== */}
         <div className="mt-16 md:mt-20 space-y-6">
-          <h2 className="font-display text-[clamp(22px,4vw,36px)] text-foreground tracking-[0.06em] leading-[1.2] mb-8">
+          <h2 className="font-display text-[clamp(22px,4vw,36px)] text-black tracking-[0.06em] leading-[1.2] mb-8">
             Selected <span style={{ color: "hsl(var(--aia-red))" }}>Work</span>
           </h2>
           <ImagePanel src="/images/service/spheres.png" alt="Multiple Spheres of Influence" label="Multiple Spheres of Influence — Global Reach" />

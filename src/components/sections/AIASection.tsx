@@ -67,7 +67,7 @@ const AIASection = () => {
         title={
           <>
             The Architecture of{" "}
-            <span className="italic text-foreground/60">Empowerment</span>
+            <span className="italic text-white/60">Empowerment</span>
           </>
         }
         label="AIA"
@@ -80,7 +80,7 @@ const AIASection = () => {
       {/* The Why */}
       <div
         className="grid grid-cols-1 md:grid-cols-[1fr_1px_1.6fr]"
-        style={{ borderBottom: "1px solid hsl(0 0% 12%)" }}
+        style={{ background: "hsl(0 0% 100%)", borderBottom: "1px solid hsl(0 0% 88%)" }}
       >
         <div className="p-5 md:p-8 md:pr-6">
           <div
@@ -89,9 +89,9 @@ const AIASection = () => {
           >
             The Why
           </div>
-          <h2 className="font-display text-[clamp(22px,3vw,36px)] font-light text-foreground leading-[1.2] mb-4">
+          <h2 className="font-display text-[clamp(22px,3vw,36px)] font-light text-black leading-[1.2] mb-4">
             Architects at the Center of{" "}
-            <span className="italic text-foreground/60">Public Service</span>
+            <span className="italic text-black/50">Public Service</span>
           </h2>
           <div className="aspect-square rounded-md overflow-hidden">
             <ImageLightbox
@@ -101,19 +101,16 @@ const AIASection = () => {
             />
           </div>
         </div>
-        <div
-          className="hidden md:block"
-          style={{ background: "hsl(0 0% 12%)" }}
-        />
+        <div className="hidden md:block" style={{ background: "hsl(0 0% 88%)" }} />
         <div className="p-5 md:p-8 md:pl-6">
-          <div className="text-[13px] leading-[1.9] text-foreground/50 font-normal space-y-4">
-            <p className="italic text-foreground/70 text-[14px] leading-[1.8]">
+          <div className="text-[13px] leading-[1.9] text-black/55 font-normal space-y-4">
+            <p className="italic text-black/70 text-[14px] leading-[1.8]">
               "There is a story behind my accent—one shaped by resilience and
               defined by leadership. I was born in Washington, D.C., but my
               perspective was forged growing up in Baghdad during the Gulf War.
               Living through war changes you on a cellular level. It teaches you
               what it means to feel powerless—and why{" "}
-              <strong className="text-foreground font-semibold">
+              <strong className="text-black font-semibold">
                 invisibility is dangerous for Architects
               </strong>
               ."
@@ -139,7 +136,7 @@ const AIASection = () => {
 
       <div
         className="px-5 md:px-10 py-8"
-        style={{ borderBottom: "1px solid hsl(0 0% 12%)" }}
+        style={{ background: "hsl(0 0% 100%)", borderBottom: "1px solid hsl(0 0% 88%)" }}
       >
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           {tracks.map((track) => (
@@ -147,8 +144,8 @@ const AIASection = () => {
               key={track.num}
               className="rounded-xl p-5 md:p-6"
               style={{
-                background: "hsl(0 0% 4% / 0.6)",
-                border: "1px solid hsl(0 0% 100% / 0.06)",
+                background: "hsl(0 0% 96%)",
+                border: "1px solid hsl(0 0% 88%)",
               }}
             >
               <div className="flex items-center gap-3 mb-4">
@@ -164,19 +161,19 @@ const AIASection = () => {
                 </span>
                 <span
                   className="text-[9px] font-semibold tracking-[0.2em] uppercase"
-                  style={{ color: "hsl(0 0% 40%)" }}
+                  style={{ color: "hsl(0 0% 50%)" }}
                 >
                   Pillar: {track.pillar}
                 </span>
               </div>
-              <h3 className="text-[16px] md:text-[18px] font-bold text-foreground/90 mb-3 tracking-[0.02em]">
+              <h3 className="text-[16px] md:text-[18px] font-bold text-black/85 mb-3 tracking-[0.02em]">
                 {track.name}
               </h3>
               <ul className="space-y-2">
                 {track.points.map((point, i) => (
                   <li
                     key={i}
-                    className="flex items-start gap-2.5 text-[12px] md:text-[13px] text-foreground/50 leading-[1.6]"
+                    className="flex items-start gap-2.5 text-[12px] md:text-[13px] text-black/55 leading-[1.6]"
                   >
                     <span
                       className="inline-block w-1 h-1 rounded-full flex-shrink-0 mt-[7px]"
