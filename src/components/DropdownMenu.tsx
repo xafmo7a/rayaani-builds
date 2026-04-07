@@ -1,107 +1,22 @@
-import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { Home, Users, Globe, Shield, BookOpen, Building2, Landmark, Layers, ArrowRight } from "lucide-react";
 
 interface DropdownMenuProps {
   open: boolean;
   onClose: () => void;
 }
 
-const tabs = [
-  { id: "aia", label: "AIA" },
-  { id: "public", label: "Public" },
-  { id: "service", label: "Service" },
+const menuItems = [
+  { label: "AIA", path: "/aia" },
+  { label: "Public", path: "/public" },
+  { label: "Service", path: "/services" },
 ] as const;
-
-type TabId = (typeof tabs)[number]["id"];
-
-const panelData: Record<
-  TabId,
-  {
-    title: string;
-    subtitle: string;
-    cards: { icon: typeof Home; label: string; text: string }[];
-  }
-> = {
-  aia: {
-    title: "AIA",
-    subtitle: "Leadership & commitment to the American Institute of Architects",
-    cards: [
-      {
-        icon: Landmark,
-        label: "Membership",
-        text: "Decades of active AIA membership and leadership across local and national chapters.",
-      },
-      {
-        icon: Globe,
-        label: "Vision",
-        text: "A future where architects lead public discourse and shape policy at every level.",
-      },
-      {
-        icon: Users,
-        label: "Network",
-        text: "Connected to AIA chapters, councils, and international bodies worldwide.",
-      },
-    ],
-  },
-  public: {
-    title: "Public",
-    subtitle: "Architecture as a force for public good and civic engagement",
-    cards: [
-      {
-        icon: Shield,
-        label: "Advocacy",
-        text: "Championing architects' role in public policy, equity, and community development.",
-      },
-      {
-        icon: BookOpen,
-        label: "Education",
-        text: "Investing in the next generation through mentorship and programs.",
-      },
-      {
-        icon: Globe,
-        label: "Global Reach",
-        text: "Bridging American and international architectural communities.",
-      },
-    ],
-  },
-  service: {
-    title: "Service",
-    subtitle: "A lifetime dedicated to architecture as public service",
-    cards: [
-      {
-        icon: Building2,
-        label: "Iraq Pavilion",
-        text: "Designer of the acclaimed Iraq Pavilion — a landmark of cultural diplomacy.",
-      },
-      {
-        icon: Layers,
-        label: "RAW — NYC",
-        text: "Founder of RAW, a New York practice at the intersection of innovation and identity.",
-      },
-      {
-        icon: Shield,
-        label: "Public Mission",
-        text: "Every project rooted in service — to community, culture, and the built environment.",
-      },
-    ],
-  },
-};
-
-const tabRoutes: Record<TabId, string> = {
-  aia: "/aia",
-  public: "/public",
-  service: "/services",
-};
 
 const DropdownMenu = ({ open, onClose }: DropdownMenuProps) => {
   const navigate = useNavigate();
-  const [activeTab, setActiveTab] = useState<TabId>("aia");
-  const panel = panelData[activeTab];
 
   return (
     <div
-      className="fixed inset-0 z-[999] flex flex-col overflow-y-auto transition-opacity duration-300"
+      className="fixed inset-0 z-[999] flex flex-col items-center justify-center transition-opacity duration-300"
       style={{
         opacity: open ? 1 : 0,
         pointerEvents: open ? "all" : "none",
@@ -111,109 +26,38 @@ const DropdownMenu = ({ open, onClose }: DropdownMenuProps) => {
       <div
         className="fixed inset-0 -z-[1]"
         style={{
-          background: "rgba(0,0,0,0.88)",
-          backdropFilter: "blur(12px) saturate(1.4)",
-          WebkitBackdropFilter: "blur(12px) saturate(1.4)",
+          background: "rgba(0,0,0,0.92)",
+          backdropFilter: "blur(16px) saturate(1.4)",
+          WebkitBackdropFilter: "blur(16px) saturate(1.4)",
         }}
+        onClick={onClose}
       />
 
-      <div className="px-5 pb-10 pt-24 md:pt-6 flex flex-col gap-0 min-h-screen justify-center">
-        {/* Tab buttons */}
-        <div className="flex justify-center gap-2.5 pb-7 flex-wrap">
-          {tabs.map((tab) => (
-            <button
-              key={tab.id}
-              onClick={() => setActiveTab(tab.id)}
-              className="px-7 py-2.5 rounded-full text-[13px] font-bold tracking-[0.22em] uppercase cursor-pointer transition-all duration-200"
-              style={{
-                border: `1px solid ${activeTab === tab.id ? "rgba(255,80,60,0.4)" : "rgba(255,255,255,0.18)"}`,
-                background:
-                  activeTab === tab.id
-                    ? "linear-gradient(135deg, rgba(192,57,43,0.8), rgba(120,20,10,0.6))"
-                    : "rgba(255,255,255,0.06)",
-                color: activeTab === tab.id ? "white" : "rgba(255,255,255,0.65)",
-                boxShadow:
-                  activeTab === tab.id
-                    ? "0 4px 16px rgba(192,57,43,0.4), inset 0 1px 0 rgba(255,255,255,0.15)"
-                    : "inset 0 1px 0 rgba(255,255,255,0.1)",
-              }}
-            >
-              {tab.label}
-            </button>
-          ))}
-        </div>
-
-        {/* Panel */}
-        <div className="px-0" style={{ animation: "panelIn 0.3s ease" }} key={activeTab}>
-          <h2
-            className="font-display text-[clamp(32px,9vw,52px)] text-foreground tracking-[0.14em] text-center mb-2"
-            style={{ textShadow: "0 2px 20px rgba(192,57,43,0.4)" }}
+      {/* Menu items */}
+      <nav className="flex flex-col items-center gap-6">
+        {menuItems.map((item) => (
+          <button
+            key={item.path}
+            onClick={() => {
+              navigate(item.path);
+              onClose();
+            }}
+            className="font-display text-[clamp(48px,12vw,96px)] tracking-[0.18em] uppercase text-foreground/80 hover:text-foreground transition-all duration-300 hover:scale-105 cursor-pointer leading-tight"
+            style={{
+              textShadow: "0 2px 24px rgba(192,57,43,0.3)",
+            }}
           >
-            {panel.title}
-          </h2>
-          <p className="text-[13px] font-light text-foreground/60 tracking-[0.08em] text-center mb-6 leading-relaxed">
-            {panel.subtitle}
-          </p>
+            {item.label}
+          </button>
+        ))}
+      </nav>
 
-          {/* Cards grid */}
-          <div
-            className="grid grid-cols-1 md:grid-cols-3 gap-3 md:gap-4 max-w-3xl mx-auto"
-          >
-            {panel.cards.map((card) => {
-              const Icon = card.icon;
-              return (
-                <div
-                  key={card.label}
-                  className="rounded-[14px] p-[18px] md:p-5"
-                  style={{
-                    background: "rgba(255,255,255,0.06)",
-                    border: "1px solid rgba(255,255,255,0.12)",
-                    backdropFilter: "blur(10px)",
-                  }}
-                >
-                  <div
-                    className="w-12 h-12 rounded-full flex items-center justify-center mb-2.5"
-                    style={{
-                      background: "rgba(192,57,43,0.3)",
-                      border: "1px solid rgba(192,57,43,0.4)",
-                    }}
-                  >
-                    <Icon className="w-[22px] h-[22px]" style={{ stroke: "rgba(255,150,130,0.9)" }} strokeWidth={1.6} />
-                  </div>
-                  <div className="text-[12px] font-semibold tracking-[0.12em] uppercase mb-1.5" style={{ color: "rgba(255,180,160,0.9)" }}>
-                    {card.label}
-                  </div>
-                  <div className="text-[12px] font-light text-foreground/60 leading-relaxed">
-                    {card.text}
-                  </div>
-                </div>
-              );
-            })}
-          </div>
-        </div>
-
-
-          {/* Go to section button */}
-          <div className="flex justify-center mt-5">
-            <button
-              onClick={() => { navigate(tabRoutes[activeTab]); onClose(); }}
-              className="flex items-center gap-2 px-6 py-2.5 rounded-full text-[12px] font-bold tracking-[0.15em] uppercase cursor-pointer transition-all duration-200 hover:scale-105"
-              style={{
-                background: "linear-gradient(135deg, hsl(var(--aia-red)), hsl(var(--aia-red-glow)))",
-                border: "1px solid rgba(255,120,80,0.3)",
-                color: "white",
-                boxShadow: "0 4px 20px hsl(var(--aia-red) / 0.4), inset 0 1px 0 rgba(255,255,255,0.2)",
-              }}
-            >
-              Go to {panel.title} <ArrowRight className="w-3.5 h-3.5" />
-            </button>
-          </div>
-        <div
-          className="text-center mt-6 text-[11px] font-semibold tracking-[0.18em] uppercase text-foreground/30 cursor-pointer transition-colors duration-200 hover:text-foreground/60"
-          onClick={onClose}
-        >
-          ✕ &nbsp; Close
-        </div>
+      {/* Close */}
+      <div
+        className="absolute bottom-10 text-[11px] font-semibold tracking-[0.18em] uppercase text-foreground/30 cursor-pointer transition-colors duration-200 hover:text-foreground/60"
+        onClick={onClose}
+      >
+        ✕ &nbsp; Close
       </div>
     </div>
   );
