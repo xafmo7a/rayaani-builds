@@ -117,10 +117,9 @@ const LinkGroup = ({ title, links }: { title: string; links: { label: string; ur
 
 const PressArchive = () => (
   <div>
-    {/* Black banner title */}
     <div
-      className="px-5 md:px-10 py-4"
-      style={{ background: "hsl(0 0% 5%)", borderBottom: "1px solid hsl(0 0% 15%)" }}
+      className="px-5 md:px-10 py-4 text-center"
+      style={{ background: "hsl(0 0% 0%)", borderBottom: "1px solid hsl(0 0% 15%)" }}
     >
       <h2 className="font-display text-[clamp(16px,2.5vw,24px)] font-normal tracking-[0.12em] uppercase text-white">
         Indexed References & Press Archive
