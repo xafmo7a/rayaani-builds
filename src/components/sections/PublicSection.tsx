@@ -1,22 +1,38 @@
+import { ArrowLeft } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 import FeatureBar from "@/components/sections/FeatureBar";
 import ImagePanel from "@/components/sections/ImagePanel";
 import PressArchive from "@/components/sections/PressArchive";
 
-const BlackBanner = ({ title, tag }: { title: string; tag?: string }) => (
-  <div
-    className="px-5 md:px-10 py-4 text-center"
-    style={{ background: "hsl(0 0% 5%)", borderBottom: "1px solid hsl(0 0% 15%)" }}
-  >
-    <h2 className="font-display text-[clamp(16px,2.5vw,24px)] font-normal tracking-[0.12em] uppercase text-white">
-      {title}
-    </h2>
-    {tag && (
-      <div className="text-[9px] font-semibold tracking-[0.28em] uppercase mt-1" style={{ color: "hsl(var(--aia-red))" }}>
-        {tag}
-      </div>
-    )}
-  </div>
-);
+const BlackBanner = ({ title, tag, showBack }: { title: string; tag?: string; showBack?: boolean }) => {
+  const navigate = useNavigate();
+  return (
+    <div
+      className="px-5 md:px-10 py-4 text-center relative"
+      style={{ background: "hsl(0 0% 5%)", borderBottom: "1px solid hsl(0 0% 15%)" }}
+    >
+      {showBack && (
+        <button
+          onClick={() => navigate("/")}
+          className="absolute left-5 md:left-10 top-1/2 -translate-y-1/2 flex items-center gap-2 text-[10px] font-semibold tracking-[0.2em] uppercase cursor-pointer transition-colors duration-200"
+          style={{ color: "hsl(0 0% 100% / 0.5)" }}
+          onMouseEnter={(e) => (e.currentTarget.style.color = "hsl(0 0% 100% / 0.8)")}
+          onMouseLeave={(e) => (e.currentTarget.style.color = "hsl(0 0% 100% / 0.5)")}
+        >
+          <ArrowLeft className="w-4 h-4" /> Back
+        </button>
+      )}
+      <h2 className="font-display text-[clamp(16px,2.5vw,24px)] font-normal tracking-[0.12em] uppercase text-white">
+        {title}
+      </h2>
+      {tag && (
+        <div className="text-[9px] font-semibold tracking-[0.28em] uppercase mt-1" style={{ color: "hsl(var(--aia-red))" }}>
+          {tag}
+        </div>
+      )}
+    </div>
+  );
+};
 
 const ContentBlock = ({ children }: { children: React.ReactNode }) => (
   <div
@@ -34,7 +50,7 @@ const PublicSection = () => {
     <div>
 
       {/* A Trajectory of Grit and Excellence */}
-      <BlackBanner title="A Trajectory of Grit and Excellence" tag="Background" />
+      <BlackBanner title="A Trajectory of Grit and Excellence" showBack />
       <ContentBlock>
         <p>
           While my perspective was forged in the dualities of{" "}
