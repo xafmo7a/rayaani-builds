@@ -38,7 +38,7 @@ const LinkGroup = ({ title, links }: { title: string; links: { label: string; ur
             href={link.url}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-2 text-[12px] md:text-[13px] text-foreground/50 hover:text-foreground/80 transition-colors duration-200 leading-[1.5]"
+            className="flex items-center gap-2 text-[12px] md:text-[13px] text-black/50 hover:text-black/80 transition-colors duration-200 leading-[1.5]"
           >
             <ExternalLink className="w-3 h-3 flex-shrink-0" style={{ color: "hsl(var(--aia-red) / 0.5)" }} />
             {link.label}
@@ -50,14 +50,14 @@ const LinkGroup = ({ title, links }: { title: string; links: { label: string; ur
 );
 
 const PressArchive = () => (
-  <div className="px-5 md:px-10 py-8" style={{ borderBottom: "1px solid hsl(0 0% 12%)" }}>
+  <div className="px-5 md:px-10 py-8" style={{ background: "hsl(0 0% 100%)", borderBottom: "1px solid hsl(0 0% 88%)" }}>
     <div
       className="h-px mb-6"
       style={{ background: "linear-gradient(to right, hsl(var(--aia-red)), transparent 60%)" }}
     />
     <h3
       className="text-[9px] font-semibold tracking-[0.28em] uppercase mb-6"
-      style={{ color: "hsl(0 0% 40%)" }}
+      style={{ color: "hsl(0 0% 45%)" }}
     >
       Indexed References & Press Archive
     </h3>
