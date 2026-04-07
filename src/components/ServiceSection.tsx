@@ -258,25 +258,22 @@ const ServiceSection = () => {
       />
 
       <div className="relative z-10 max-w-5xl mx-auto px-5 md:px-10">
-        {/* ===== LEADERSHIP THROUGH PRACTICE ===== */}
-        <div className="mb-16 md:mb-20">
-          <div className="flex items-center gap-3 mb-3">
+        {/* ===== LEADERSHIP THROUGH PRACTICE — Black Banner ===== */}
+        <div
+          className="-mx-5 md:-mx-10 mb-10 px-5 md:px-10 py-5"
+          style={{ background: "hsl(0 0% 5%)", borderBottom: "1px solid hsl(0 0% 15%)" }}
+        >
+          <div className="flex items-center gap-3 mb-2">
             <BackButton />
-            <div
-              className="text-[9px] md:text-[10px] font-bold tracking-[0.3em] uppercase"
-              style={{ color: "hsl(var(--aia-red) / 0.7)" }}
-            >
+            <div className="text-[9px] md:text-[10px] font-bold tracking-[0.3em] uppercase" style={{ color: "hsl(var(--aia-red))" }}>
               Service & Practice
             </div>
           </div>
-          <h1 className="font-display text-[clamp(28px,6vw,48px)] text-black tracking-[0.05em] leading-[1.1] mb-6">
-            Leadership Through{" "}
-            <span style={{ color: "hsl(var(--aia-red))" }}>Practice</span>
+          <h1 className="font-display text-[clamp(22px,5vw,40px)] tracking-[0.1em] uppercase text-white leading-[1.15]">
+            Leadership Through Practice
           </h1>
-          <div
-            className="w-20 h-[2px] mb-8 rounded-full"
-            style={{ background: "repeating-linear-gradient(90deg, hsl(var(--aia-red)) 0px, hsl(var(--aia-red)) 4px, transparent 4px, transparent 9px)" }}
-          />
+        </div>
+        <div className="mb-16 md:mb-20">
           <p className="text-[14px] md:text-[16px] text-black/55 leading-[1.8] max-w-3xl font-light tracking-[0.01em]">
             My work operates across regions, shaped through projects, collaborations, and leadership developed over three decades of practice. With a physical presence and strategic engagement in New York, Dubai, and India, I work within a global network connecting North America, the Middle East, Europe, and Asia. This practice is defined by the cross-pollination of ideas, knowledge, and practices across contexts—linking localized cultural intelligence with advanced design, technology, and delivery.
           </p>
@@ -284,13 +281,14 @@ const ServiceSection = () => {
 
         {/* ===== ADVANCING THE PROFESSION ===== */}
         <div className="mb-16 md:mb-20">
-          <h2 className="font-display text-[clamp(22px,4vw,36px)] text-black tracking-[0.06em] leading-[1.2] mb-3">
-            Advancing the{" "}
-            <span style={{ color: "hsl(var(--aia-red))" }}>Profession</span>
+        <div
+          className="-mx-5 md:-mx-10 mb-10 px-5 md:px-10 py-5"
+          style={{ background: "hsl(0 0% 5%)", borderBottom: "1px solid hsl(0 0% 15%)" }}
+        >
+          <h2 className="font-display text-[clamp(18px,3vw,28px)] tracking-[0.12em] uppercase text-white leading-[1.15]">
+            Advancing the Profession
           </h2>
-          <p className="text-[13px] md:text-[15px] text-black/50 leading-[1.7] max-w-2xl mb-10 font-light">
-            I build platforms that advance the profession through design innovation, technology, environmental thinking, and global engagement.
-          </p>
+        </div>
 
           {/* Practice area cards */}
           <div className="space-y-3">
@@ -308,23 +306,14 @@ const ServiceSection = () => {
 
         {/* ===== 30 YEARS OF SERVICE ===== */}
         <div className="mb-16 md:mb-20">
-          <div className="flex items-center gap-4 mb-10">
-            <div
-              className="w-14 h-14 md:w-16 md:h-16 rounded-2xl flex items-center justify-center flex-shrink-0"
-              style={{
-                background: "linear-gradient(135deg, hsl(var(--aia-red) / 0.2), hsl(var(--aia-red) / 0.06))",
-                border: "1px solid hsl(var(--aia-red) / 0.25)",
-                boxShadow: "0 8px 24px hsl(var(--aia-red) / 0.1)",
-              }}
-            >
-              <span className="font-display text-[22px] md:text-[26px] text-black tracking-[0.05em]">30</span>
-            </div>
-            <div>
-              <h2 className="font-display text-[clamp(22px,4vw,36px)] text-black tracking-[0.06em] leading-[1.2]">
-                Years of <span style={{ color: "hsl(var(--aia-red))" }}>Service</span>
-              </h2>
-            </div>
-          </div>
+        <div
+          className="-mx-5 md:-mx-10 mb-10 px-5 md:px-10 py-5"
+          style={{ background: "hsl(0 0% 5%)", borderBottom: "1px solid hsl(0 0% 15%)" }}
+        >
+          <h2 className="font-display text-[clamp(18px,3vw,28px)] tracking-[0.12em] uppercase text-white leading-[1.15]">
+            30 Years of Service
+          </h2>
+        </div>
 
           {/* Timeline */}
           <div className="relative pl-6 md:pl-8">
