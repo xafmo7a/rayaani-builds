@@ -33,22 +33,24 @@ const PublicSection = () => {
       {/* Stats */}
       <StatsRow stats={stats} />
 
-      {/* Journey / Background */}
+      {/* Journey / Background — Black Banner Title */}
+      <div
+        className="px-5 md:px-10 py-4"
+        style={{ background: "hsl(0 0% 5%)", borderBottom: "1px solid hsl(0 0% 15%)" }}
+      >
+        <h2 className="font-display text-[clamp(18px,3vw,28px)] font-normal tracking-[0.12em] uppercase text-white">
+          A Trajectory of Grit and Excellence
+        </h2>
+        <div className="text-[9px] font-semibold tracking-[0.28em] uppercase mt-1" style={{ color: "hsl(var(--aia-red))" }}>
+          Background
+        </div>
+      </div>
+
       <div
         className="grid grid-cols-1 md:grid-cols-[1fr_1px_1.6fr]"
         style={{ background: "hsl(0 0% 100%)", borderBottom: "1px solid hsl(0 0% 88%)" }}
       >
         <div className="p-5 md:p-8 md:pr-6">
-          <div
-            className="text-[9px] font-semibold tracking-[0.28em] uppercase mb-4"
-            style={{ color: "hsl(var(--aia-red))" }}
-          >
-            Background
-          </div>
-          <h2 className="font-display text-[clamp(22px,3vw,36px)] font-light text-black leading-[1.2] mb-4">
-            A Trajectory of<br />
-            <span className="italic text-black/50">Grit and Excellence</span>
-          </h2>
           <div className="aspect-square rounded-md overflow-hidden">
             <ImageLightbox
               src="/images/portrait.png"
