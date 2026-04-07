@@ -392,11 +392,9 @@ const ServiceSection = () => {
         <div
           className="relative rounded-2xl md:rounded-3xl p-6 md:p-10 overflow-hidden"
           style={{
-            background: "hsl(0 0% 3% / 0.8)",
-            backdropFilter: "blur(30px) saturate(1.6)",
-            WebkitBackdropFilter: "blur(30px) saturate(1.6)",
+            background: "hsl(0 0% 5%)",
             border: "1px solid hsl(var(--aia-red) / 0.15)",
-            boxShadow: "0 24px 80px hsl(0 0% 0% / 0.5), inset 0 1px 0 hsl(0 0% 100% / 0.05)",
+            boxShadow: "0 24px 80px hsl(0 0% 0% / 0.15)",
           }}
         >
           {/* Corner marks */}
@@ -418,10 +416,10 @@ const ServiceSection = () => {
             </span>
           </div>
 
-          <h3 className="font-display text-[clamp(22px,4vw,34px)] text-foreground tracking-[0.05em] leading-[1.15] mb-2">
+          <h3 className="font-display text-[clamp(22px,4vw,34px)] text-white tracking-[0.05em] leading-[1.15] mb-2">
             RAW-NYC <span style={{ color: "hsl(var(--aia-red))" }}>Architects</span>
           </h3>
-          <p className="text-[13px] md:text-[15px] text-foreground/50 leading-[1.8] max-w-3xl mb-8 font-light">
+          <p className="text-[13px] md:text-[15px] text-white/50 leading-[1.8] max-w-3xl mb-8 font-light">
             Founded RAW-NYC Architects, a woman-founded and woman-led architectural practice, established independently without partners. The firm advances architecture, urbanism, and cultural projects through hands-on design and practice leadership, with a strong commitment to mentoring and empowering the next generation of leaders in architecture.
           </p>
 
@@ -440,10 +438,10 @@ const ServiceSection = () => {
                   border: "1px solid hsl(0 0% 100% / 0.06)",
                 }}
               >
-                <div className="text-[14px] md:text-[16px] font-bold text-foreground/85 tracking-[0.02em]">
+                <div className="text-[14px] md:text-[16px] font-bold text-white/85 tracking-[0.02em]">
                   {office.city}
                 </div>
-                <div className="text-[10px] text-foreground/40 tracking-[0.1em] uppercase mt-0.5">
+                <div className="text-[10px] text-white/40 tracking-[0.1em] uppercase mt-0.5">
                   {office.country} · {office.type}
                 </div>
               </div>
@@ -452,11 +450,11 @@ const ServiceSection = () => {
 
           {/* Collaborations */}
           <div className="flex flex-wrap gap-2 mb-6">
-            <span className="text-[10px] text-foreground/35 tracking-[0.1em] uppercase mr-2 self-center">Collaborations:</span>
+            <span className="text-[10px] text-white/35 tracking-[0.1em] uppercase mr-2 self-center">Collaborations:</span>
             {["Belgrade, Serbia", "Bucharest, Romania"].map((c) => (
               <span
                 key={c}
-                className="text-[11px] font-medium text-foreground/55 px-3 py-1 rounded-md"
+                className="text-[11px] font-medium text-white/55 px-3 py-1 rounded-md"
                 style={{
                   background: "hsl(0 0% 100% / 0.04)",
                   border: "1px solid hsl(0 0% 100% / 0.06)",
@@ -473,10 +471,10 @@ const ServiceSection = () => {
           />
 
           <div className="space-y-4">
-            <p className="text-[12px] md:text-[13px] text-foreground/45 leading-[1.8] font-light">
+              <p className="text-[12px] md:text-[13px] text-white/45 leading-[1.8] font-light">
               Through RAW-NYC Architects, I have prioritized mentorship and leadership development, guiding students, recent graduates, and emerging professionals entering the field. While I have actively supported the advancement of women in architecture, management, and construction, my mentorship extends broadly across the profession.
             </p>
-            <p className="text-[12px] md:text-[13px] text-foreground/45 leading-[1.8] font-light">
+            <p className="text-[12px] md:text-[13px] text-white/45 leading-[1.8] font-light">
               Through my practice, I have also led site construction coordination, supervision, and project management, demonstrating the role of women in construction leadership and technical execution.
             </p>
           </div>
@@ -484,7 +482,7 @@ const ServiceSection = () => {
 
         {/* ===== PROJECT GALLERIES ===== */}
         <div className="mt-16 md:mt-20 space-y-6">
-          <h2 className="font-display text-[clamp(22px,4vw,36px)] text-foreground tracking-[0.06em] leading-[1.2] mb-8">
+          <h2 className="font-display text-[clamp(22px,4vw,36px)] text-black tracking-[0.06em] leading-[1.2] mb-8">
             Selected <span style={{ color: "hsl(var(--aia-red))" }}>Work</span>
           </h2>
           <ImagePanel src="/images/service/spheres.png" alt="Multiple Spheres of Influence" label="Multiple Spheres of Influence — Global Reach" />
