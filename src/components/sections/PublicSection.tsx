@@ -1,10 +1,9 @@
 import { ArrowLeft } from "lucide-react";
 import { useNavigate } from "react-router-dom";
-import FeatureBar from "@/components/sections/FeatureBar";
 import ImagePanel from "@/components/sections/ImagePanel";
 import PressArchive from "@/components/sections/PressArchive";
 
-const BlackBanner = ({ title, tag, showBack }: { title: string; tag?: string; showBack?: boolean }) => {
+const BlackBanner = ({ title, showBack }: { title: string; showBack?: boolean }) => {
   const navigate = useNavigate();
   return (
     <div
@@ -25,11 +24,6 @@ const BlackBanner = ({ title, tag, showBack }: { title: string; tag?: string; sh
       <h2 className="font-display text-[clamp(16px,2.5vw,24px)] font-normal tracking-[0.12em] uppercase text-white">
         {title}
       </h2>
-      {tag && (
-        <div className="text-[9px] font-semibold tracking-[0.28em] uppercase mt-1" style={{ color: "hsl(var(--aia-red))" }}>
-          {tag}
-        </div>
-      )}
     </div>
   );
 };
@@ -45,11 +39,21 @@ const ContentBlock = ({ children }: { children: React.ReactNode }) => (
   </div>
 );
 
+const SubTitle = ({ children }: { children: React.ReactNode }) => (
+  <div
+    className="px-5 md:px-10 py-5"
+    style={{ background: "hsl(0 0% 100%)", borderBottom: "1px solid hsl(0 0% 88%)" }}
+  >
+    <h3 className="font-display text-[clamp(16px,2.2vw,22px)] font-semibold tracking-[0.08em] uppercase text-black">
+      {children}
+    </h3>
+  </div>
+);
+
 const PublicSection = () => {
   return (
     <div>
-
-      {/* A Trajectory of Grit and Excellence */}
+      {/* ═══ BLACK BANNER 1 ═══ */}
       <BlackBanner title="A Trajectory of Grit and Excellence" showBack />
       <ContentBlock>
         <p>
@@ -104,7 +108,7 @@ const PublicSection = () => {
         label="Credentials & Milestones"
       />
 
-      {/* A Voice for the Profession */}
+      {/* ═══ BLACK BANNER 2 ═══ */}
       <BlackBanner title="A Voice for the Profession" />
       <ContentBlock>
         <p>
@@ -112,11 +116,8 @@ const PublicSection = () => {
         </p>
       </ContentBlock>
 
-      {/* Recognition that Advances the Profession */}
-      <div className="px-5 md:px-10 py-4" style={{ background: "hsl(0 0% 100%)", borderBottom: "1px solid hsl(0 0% 88%)" }}>
-        <h3 className="font-display text-[clamp(14px,2vw,20px)] font-semibold tracking-[0.1em] uppercase text-black">Recognition that Advances the Profession</h3>
-        <div className="text-[9px] font-semibold tracking-[0.28em] uppercase mt-1" style={{ color: "hsl(var(--aia-red))" }}>FAIA</div>
-      </div>
+      {/* Sub-section: Recognition */}
+      <SubTitle>Recognition that Advances the Profession</SubTitle>
       <ContentBlock>
         <p>
           Raya Ani's contributions to architecture and public life have been recognized through national and international honors reflecting leadership, professional service, and influence on the built environment. In 2016, she was selected by Cadillac and Black Tomato as one of the most influential global figures. She was elevated to{" "}
@@ -144,10 +145,8 @@ const PublicSection = () => {
         label="Awards & Honors"
       />
 
-      {/* Professional Stewardship */}
-      <div className="px-5 md:px-10 py-4" style={{ background: "hsl(0 0% 100%)", borderBottom: "1px solid hsl(0 0% 88%)" }}>
-        <h3 className="font-display text-[clamp(14px,2vw,20px)] font-semibold tracking-[0.1em] uppercase text-black">Professional Stewardship of the Discipline</h3>
-      </div>
+      {/* Sub-section: Professional Stewardship */}
+      <SubTitle>Professional Stewardship of the Discipline</SubTitle>
       <ContentBlock>
         <p>
           The advancement of architecture also relies on professional stewardship through the evaluation of design excellence and cultural initiatives. Raya Ani has contributed to this role through service on major international juries. She served as{" "}
@@ -157,11 +156,8 @@ const PublicSection = () => {
         </p>
       </ContentBlock>
 
-      {/* Public Dialogue and Global Forums */}
-      <div className="px-5 md:px-10 py-4" style={{ background: "hsl(0 0% 100%)", borderBottom: "1px solid hsl(0 0% 88%)" }}>
-        <h3 className="font-display text-[clamp(14px,2vw,20px)] font-semibold tracking-[0.1em] uppercase text-black">Public Dialogue and Global Forums</h3>
-        <div className="text-[9px] font-semibold tracking-[0.28em] uppercase mt-1" style={{ color: "hsl(var(--aia-red))" }}>Speaking Engagements</div>
-      </div>
+      {/* Sub-section: Public Dialogue */}
+      <SubTitle>Public Dialogue and Global Forums</SubTitle>
       <ContentBlock>
         <p>
           Architecture evolves through dialogue across disciplines, cultures, and institutions. Raya Ani contributes to international conversations on innovation, sustainability, technology, and the social responsibilities of design through lectures, conferences, and media appearances across the United States, Europe, and the Middle East. She has been invited to speak at global forums including{" "}
@@ -185,11 +181,8 @@ const PublicSection = () => {
         label="Public Dialogue & Speaking Engagements"
       />
 
-      {/* Academic Engagement */}
-      <div className="px-5 md:px-10 py-4" style={{ background: "hsl(0 0% 100%)", borderBottom: "1px solid hsl(0 0% 88%)" }}>
-        <h3 className="font-display text-[clamp(14px,2vw,20px)] font-semibold tracking-[0.1em] uppercase text-black">Academic Engagement and Mentorship</h3>
-        <div className="text-[9px] font-semibold tracking-[0.28em] uppercase mt-1" style={{ color: "hsl(var(--aia-red))" }}>Education</div>
-      </div>
+      {/* Sub-section: Academic */}
+      <SubTitle>Academic Engagement and Mentorship</SubTitle>
       <ContentBlock>
         <p>
           Education plays an important role in shaping future generations of architects. Raya Ani has contributed to architectural education through teaching, research, and academic critique. She served as a Teaching Assistant at the{" "}
@@ -206,11 +199,8 @@ const PublicSection = () => {
         label="Academic Institutions"
       />
 
-      {/* Publications and Media Coverage */}
-      <div className="px-5 md:px-10 py-4" style={{ background: "hsl(0 0% 100%)", borderBottom: "1px solid hsl(0 0% 88%)" }}>
-        <h3 className="font-display text-[clamp(14px,2vw,20px)] font-semibold tracking-[0.1em] uppercase text-black">Publications and Media Coverage</h3>
-        <div className="text-[9px] font-semibold tracking-[0.28em] uppercase mt-1" style={{ color: "hsl(var(--aia-red))" }}>Media</div>
-      </div>
+      {/* Sub-section: Publications */}
+      <SubTitle>Publications and Media Coverage</SubTitle>
       <ContentBlock>
         <p>
           Raya Ani's work and ideas have been featured in international architectural, cultural, and mainstream media, contributing to public understanding of architecture's role in society. Her projects and research have been covered by publications including{" "}
@@ -238,7 +228,7 @@ const PublicSection = () => {
         label="Broadcast Interviews"
       />
 
-      {/* Press Archive */}
+      {/* ═══ BLACK BANNER 3 ═══ */}
       <PressArchive />
     </div>
   );
