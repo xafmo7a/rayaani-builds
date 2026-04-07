@@ -9,7 +9,7 @@ const BlackBanner = ({ title, tag, showBack }: { title: string; tag?: string; sh
   return (
     <div
       className="px-5 md:px-10 py-4 text-center relative"
-      style={{ background: "hsl(0 0% 5%)", borderBottom: "1px solid hsl(0 0% 15%)" }}
+      style={{ background: "hsl(0 0% 0%)", borderBottom: "1px solid hsl(0 0% 15%)" }}
     >
       {showBack && (
         <button
