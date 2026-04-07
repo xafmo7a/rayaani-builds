@@ -5,31 +5,44 @@ interface ColumnData {
 }
 
 const TwoColumn = ({ left, right }: { left: ColumnData; right: ColumnData }) => (
-  <div
-    className="grid grid-cols-1 md:grid-cols-[1fr_1px_1fr]"
-    style={{ background: "hsl(0 0% 100%)", borderBottom: "1px solid hsl(0 0% 88%)" }}
-  >
-    <div className="p-5 md:p-8">
-      <div className="text-[9px] font-semibold tracking-[0.28em] uppercase mb-3" style={{ color: "hsl(var(--aia-red))" }}>
-        {left.tag}
+  <div style={{ borderBottom: "1px solid hsl(0 0% 88%)" }}>
+    {/* Black banner with both tags */}
+    <div
+      className="grid grid-cols-1 md:grid-cols-2"
+      style={{ background: "hsl(0 0% 5%)", borderBottom: "1px solid hsl(0 0% 15%)" }}
+    >
+      <div className="px-5 md:px-8 py-4">
+        <h3 className="font-display text-[clamp(14px,2vw,18px)] font-normal tracking-[0.12em] uppercase text-white">
+          {left.heading}
+        </h3>
+        <div className="text-[9px] font-semibold tracking-[0.28em] uppercase mt-1" style={{ color: "hsl(var(--aia-red))" }}>
+          {left.tag}
+        </div>
       </div>
-      <h3 className="font-display text-[20px] font-normal text-black mb-3 leading-[1.3]">
-        {left.heading}
-      </h3>
-      <div className="text-[12.5px] leading-[1.85] text-black/60 font-normal tracking-[0.015em]">
-        {left.body}
+      <div className="px-5 md:px-8 py-4 border-t md:border-t-0 md:border-l" style={{ borderColor: "hsl(0 0% 15%)" }}>
+        <h3 className="font-display text-[clamp(14px,2vw,18px)] font-normal tracking-[0.12em] uppercase text-white">
+          {right.heading}
+        </h3>
+        <div className="text-[9px] font-semibold tracking-[0.28em] uppercase mt-1" style={{ color: "hsl(var(--aia-red))" }}>
+          {right.tag}
+        </div>
       </div>
     </div>
-    <div className="hidden md:block" style={{ background: "hsl(0 0% 88%)" }} />
-    <div className="p-5 md:p-8 border-t md:border-t-0" style={{ borderColor: "hsl(0 0% 88%)" }}>
-      <div className="text-[9px] font-semibold tracking-[0.28em] uppercase mb-3" style={{ color: "hsl(var(--aia-red))" }}>
-        {right.tag}
+    {/* White content */}
+    <div
+      className="grid grid-cols-1 md:grid-cols-[1fr_1px_1fr]"
+      style={{ background: "hsl(0 0% 100%)" }}
+    >
+      <div className="p-5 md:p-8">
+        <div className="text-[12.5px] leading-[1.85] text-black/60 font-normal tracking-[0.015em]">
+          {left.body}
+        </div>
       </div>
-      <h3 className="font-display text-[20px] font-normal text-black mb-3 leading-[1.3]">
-        {right.heading}
-      </h3>
-      <div className="text-[12.5px] leading-[1.85] text-black/60 font-normal tracking-[0.015em]">
-        {right.body}
+      <div className="hidden md:block" style={{ background: "hsl(0 0% 88%)" }} />
+      <div className="p-5 md:p-8 border-t md:border-t-0" style={{ borderColor: "hsl(0 0% 88%)" }}>
+        <div className="text-[12.5px] leading-[1.85] text-black/60 font-normal tracking-[0.015em]">
+          {right.body}
+        </div>
       </div>
     </div>
   </div>
