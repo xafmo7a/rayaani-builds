@@ -192,15 +192,32 @@ const SiteHeader = ({ onToggleCarousel, carouselOpen, scrollRef }: SiteHeaderPro
 
         {/* Black Banner between menu and carousel */}
         <div
-          className="relative z-25 flex items-center justify-center px-4 py-2.5"
+          className="relative z-25 overflow-hidden"
           style={{
             background: "hsl(0 0% 5%)",
             boxShadow: "inset 0 1px 0 rgba(255,255,255,0.07)",
           }}
         >
-          <span className="text-[clamp(11px,2.5vw,14px)] font-semibold tracking-[0.14em] uppercase text-white/80">
-            ✦ Vote Raya Ani for AIA President Elect ✦
-          </span>
+          <div
+            className="flex gap-16 whitespace-nowrap w-max py-2.5"
+            style={{ animation: "tickerScroll 25s linear infinite" }}
+          >
+            {[...Array(2)].flatMap((_, r) =>
+              [
+                "✦ Vote Raya Ani for AIA President Elect",
+                "🏛️ Architects at Public Service",
+                "✦ Vote Raya Ani for AIA President Elect",
+                "🏛️ Leadership · Vision · Service",
+              ].map((msg, i) => (
+                <span
+                  key={`${r}-${i}`}
+                  className="text-[clamp(11px,2.5vw,14px)] font-semibold tracking-[0.14em] uppercase text-white/80"
+                >
+                  {msg}
+                </span>
+              ))
+            )}
+          </div>
         </div>
 
         {/* Gray Videos Bar — tucks under black banner */}
