@@ -172,13 +172,13 @@ const DropdownMenu = ({ open, onClose }: DropdownMenuProps) => {
                   }}
                 >
                   <div
-                    className="w-9 h-9 rounded-[10px] flex items-center justify-center mb-2.5"
+                    className="w-12 h-12 rounded-full flex items-center justify-center mb-2.5"
                     style={{
                       background: "rgba(192,57,43,0.3)",
                       border: "1px solid rgba(192,57,43,0.4)",
                     }}
                   >
-                    <Icon className="w-[18px] h-[18px]" style={{ stroke: "rgba(255,150,130,0.9)" }} strokeWidth={1.6} />
+                    <Icon className="w-[22px] h-[22px]" style={{ stroke: "rgba(255,150,130,0.9)" }} strokeWidth={1.6} />
                   </div>
                   <div className="text-[12px] font-semibold tracking-[0.12em] uppercase mb-1.5" style={{ color: "rgba(255,180,160,0.9)" }}>
                     {card.label}
