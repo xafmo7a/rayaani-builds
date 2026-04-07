@@ -205,9 +205,9 @@ const SiteHeader = ({ onToggleCarousel, carouselOpen, scrollRef }: SiteHeaderPro
             {[...Array(2)].flatMap((_, r) =>
               [
                 "✦ Vote Raya Ani for AIA President Elect",
-                "🏛️ Architects at Public Service",
+                "Architects at Public Service",
                 "✦ Vote Raya Ani for AIA President Elect",
-                "🏛️ Leadership · Vision · Service",
+                "Leadership · Vision · Service",
               ].map((msg, i) => (
                 <span
                   key={`${r}-${i}`}
