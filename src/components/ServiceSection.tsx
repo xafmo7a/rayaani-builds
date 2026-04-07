@@ -317,10 +317,10 @@ const ServiceSection = () => {
                 boxShadow: "0 8px 24px hsl(var(--aia-red) / 0.1)",
               }}
             >
-              <span className="font-display text-[22px] md:text-[26px] text-foreground tracking-[0.05em]">30</span>
+              <span className="font-display text-[22px] md:text-[26px] text-black tracking-[0.05em]">30</span>
             </div>
             <div>
-              <h2 className="font-display text-[clamp(22px,4vw,36px)] text-foreground tracking-[0.06em] leading-[1.2]">
+              <h2 className="font-display text-[clamp(22px,4vw,36px)] text-black tracking-[0.06em] leading-[1.2]">
                 Years of <span style={{ color: "hsl(var(--aia-red))" }}>Service</span>
               </h2>
             </div>
@@ -341,7 +341,7 @@ const ServiceSection = () => {
                   <div
                     className="absolute -left-6 md:-left-8 top-1.5 w-[15px] h-[15px] md:w-[19px] md:h-[19px] rounded-full"
                     style={{
-                      background: "hsl(0 0% 0%)",
+                      background: "hsl(0 0% 100%)",
                       border: "2px solid hsl(var(--aia-red) / 0.6)",
                       boxShadow: "0 0 8px hsl(var(--aia-red) / 0.2)",
                     }}
@@ -350,9 +350,9 @@ const ServiceSection = () => {
                   <div
                     className="rounded-xl p-5 md:p-6"
                     style={{
-                      background: "hsl(0 0% 4% / 0.5)",
-                      border: "1px solid hsl(0 0% 100% / 0.05)",
-                      boxShadow: "0 2px 12px hsl(0 0% 0% / 0.3)",
+                      background: "hsl(0 0% 96%)",
+                      border: "1px solid hsl(0 0% 88%)",
+                      boxShadow: "0 2px 8px hsl(0 0% 0% / 0.05)",
                     }}
                   >
                     <div className="flex flex-wrap items-center gap-2 mb-2">
@@ -366,19 +366,19 @@ const ServiceSection = () => {
                       >
                         {item.period}
                       </span>
-                      <span className="text-[10px] md:text-[11px] text-foreground/40 tracking-[0.08em]">
+                      <span className="text-[10px] md:text-[11px] text-black/40 tracking-[0.08em]">
                         {item.location}
                       </span>
                     </div>
-                    <h4 className="text-[14px] md:text-[16px] font-bold text-foreground/90 leading-[1.3] mb-1.5">
+                    <h4 className="text-[14px] md:text-[16px] font-bold text-black/85 leading-[1.3] mb-1.5">
                       {item.title}
                     </h4>
                     {item.org && (
-                      <div className="text-[11px] md:text-[12px] font-semibold text-foreground/40 mb-2 italic">
+                      <div className="text-[11px] md:text-[12px] font-semibold text-black/40 mb-2 italic">
                         {item.org}
                       </div>
                     )}
-                    <p className="text-[12px] md:text-[13px] text-foreground/45 leading-[1.7] font-light">
+                    <p className="text-[12px] md:text-[13px] text-black/50 leading-[1.7] font-light">
                       {item.desc}
                     </p>
                   </div>
