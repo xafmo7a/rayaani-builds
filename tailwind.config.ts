@@ -14,8 +14,9 @@ export default {
     },
     extend: {
       fontFamily: {
-        display: ["Italiana", "serif"],
-        body: ["Raleway", "sans-serif"],
+        display: ["Calibri", "Italiana", "serif"],
+        body: ["Calibri", "Raleway", "sans-serif"],
+        sans: ["Calibri", "Raleway", "sans-serif"],
       },
       colors: {
         border: "hsl(var(--border))",
