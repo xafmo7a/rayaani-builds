@@ -21,7 +21,7 @@ const Index = () => {
         <BuildingPage />
         <AIALeadershipSection />
       </div>
-      <Ticker />
+      
     </div>
   );
 };

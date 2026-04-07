@@ -20,7 +20,7 @@ const SectionPageLayout = ({ children }: { children: React.ReactNode }) => {
       <div ref={scrollRef} className="h-screen overflow-y-auto">
         <div className="pt-[160px]">{children}</div>
       </div>
-      <Ticker />
+      
     </div>
   );
 };
