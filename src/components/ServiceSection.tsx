@@ -269,7 +269,7 @@ const ServiceSection = () => {
               Service & Practice
             </div>
           </div>
-          <h1 className="font-display text-[clamp(28px,6vw,48px)] text-foreground tracking-[0.05em] leading-[1.1] mb-6">
+          <h1 className="font-display text-[clamp(28px,6vw,48px)] text-black tracking-[0.05em] leading-[1.1] mb-6">
             Leadership Through{" "}
             <span style={{ color: "hsl(var(--aia-red))" }}>Practice</span>
           </h1>
@@ -277,18 +277,18 @@ const ServiceSection = () => {
             className="w-20 h-[2px] mb-8 rounded-full"
             style={{ background: "repeating-linear-gradient(90deg, hsl(var(--aia-red)) 0px, hsl(var(--aia-red)) 4px, transparent 4px, transparent 9px)" }}
           />
-          <p className="text-[14px] md:text-[16px] text-foreground/55 leading-[1.8] max-w-3xl font-light tracking-[0.01em]">
+          <p className="text-[14px] md:text-[16px] text-black/55 leading-[1.8] max-w-3xl font-light tracking-[0.01em]">
             My work operates across regions, shaped through projects, collaborations, and leadership developed over three decades of practice. With a physical presence and strategic engagement in New York, Dubai, and India, I work within a global network connecting North America, the Middle East, Europe, and Asia. This practice is defined by the cross-pollination of ideas, knowledge, and practices across contexts—linking localized cultural intelligence with advanced design, technology, and delivery.
           </p>
         </div>
 
         {/* ===== ADVANCING THE PROFESSION ===== */}
         <div className="mb-16 md:mb-20">
-          <h2 className="font-display text-[clamp(22px,4vw,36px)] text-foreground tracking-[0.06em] leading-[1.2] mb-3">
+          <h2 className="font-display text-[clamp(22px,4vw,36px)] text-black tracking-[0.06em] leading-[1.2] mb-3">
             Advancing the{" "}
             <span style={{ color: "hsl(var(--aia-red))" }}>Profession</span>
           </h2>
-          <p className="text-[13px] md:text-[15px] text-foreground/45 leading-[1.7] max-w-2xl mb-10 font-light">
+          <p className="text-[13px] md:text-[15px] text-black/50 leading-[1.7] max-w-2xl mb-10 font-light">
             I build platforms that advance the profession through design innovation, technology, environmental thinking, and global engagement.
           </p>
 
