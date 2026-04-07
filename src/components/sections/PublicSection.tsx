@@ -113,7 +113,10 @@ const PublicSection = () => {
       </ContentBlock>
 
       {/* Recognition that Advances the Profession */}
-      <BlackBanner title="Recognition that Advances the Profession" tag="FAIA" />
+      <div className="px-5 md:px-10 py-4" style={{ background: "hsl(0 0% 100%)", borderBottom: "1px solid hsl(0 0% 88%)" }}>
+        <h3 className="font-display text-[clamp(14px,2vw,20px)] font-semibold tracking-[0.1em] uppercase text-black">Recognition that Advances the Profession</h3>
+        <div className="text-[9px] font-semibold tracking-[0.28em] uppercase mt-1" style={{ color: "hsl(var(--aia-red))" }}>FAIA</div>
+      </div>
       <ContentBlock>
         <p>
           Raya Ani's contributions to architecture and public life have been recognized through national and international honors reflecting leadership, professional service, and influence on the built environment. In 2016, she was selected by Cadillac and Black Tomato as one of the most influential global figures. She was elevated to{" "}
@@ -142,7 +145,9 @@ const PublicSection = () => {
       />
 
       {/* Professional Stewardship */}
-      <BlackBanner title="Professional Stewardship of the Discipline" />
+      <div className="px-5 md:px-10 py-4" style={{ background: "hsl(0 0% 100%)", borderBottom: "1px solid hsl(0 0% 88%)" }}>
+        <h3 className="font-display text-[clamp(14px,2vw,20px)] font-semibold tracking-[0.1em] uppercase text-black">Professional Stewardship of the Discipline</h3>
+      </div>
       <ContentBlock>
         <p>
           The advancement of architecture also relies on professional stewardship through the evaluation of design excellence and cultural initiatives. Raya Ani has contributed to this role through service on major international juries. She served as{" "}
@@ -153,7 +158,10 @@ const PublicSection = () => {
       </ContentBlock>
 
       {/* Public Dialogue and Global Forums */}
-      <BlackBanner title="Public Dialogue and Global Forums" tag="Speaking Engagements" />
+      <div className="px-5 md:px-10 py-4" style={{ background: "hsl(0 0% 100%)", borderBottom: "1px solid hsl(0 0% 88%)" }}>
+        <h3 className="font-display text-[clamp(14px,2vw,20px)] font-semibold tracking-[0.1em] uppercase text-black">Public Dialogue and Global Forums</h3>
+        <div className="text-[9px] font-semibold tracking-[0.28em] uppercase mt-1" style={{ color: "hsl(var(--aia-red))" }}>Speaking Engagements</div>
+      </div>
       <ContentBlock>
         <p>
           Architecture evolves through dialogue across disciplines, cultures, and institutions. Raya Ani contributes to international conversations on innovation, sustainability, technology, and the social responsibilities of design through lectures, conferences, and media appearances across the United States, Europe, and the Middle East. She has been invited to speak at global forums including{" "}
@@ -178,7 +186,10 @@ const PublicSection = () => {
       />
 
       {/* Academic Engagement */}
-      <BlackBanner title="Academic Engagement and Mentorship" tag="Education" />
+      <div className="px-5 md:px-10 py-4" style={{ background: "hsl(0 0% 100%)", borderBottom: "1px solid hsl(0 0% 88%)" }}>
+        <h3 className="font-display text-[clamp(14px,2vw,20px)] font-semibold tracking-[0.1em] uppercase text-black">Academic Engagement and Mentorship</h3>
+        <div className="text-[9px] font-semibold tracking-[0.28em] uppercase mt-1" style={{ color: "hsl(var(--aia-red))" }}>Education</div>
+      </div>
       <ContentBlock>
         <p>
           Education plays an important role in shaping future generations of architects. Raya Ani has contributed to architectural education through teaching, research, and academic critique. She served as a Teaching Assistant at the{" "}
@@ -196,7 +207,10 @@ const PublicSection = () => {
       />
 
       {/* Publications and Media Coverage */}
-      <BlackBanner title="Publications and Media Coverage" tag="Media" />
+      <div className="px-5 md:px-10 py-4" style={{ background: "hsl(0 0% 100%)", borderBottom: "1px solid hsl(0 0% 88%)" }}>
+        <h3 className="font-display text-[clamp(14px,2vw,20px)] font-semibold tracking-[0.1em] uppercase text-black">Publications and Media Coverage</h3>
+        <div className="text-[9px] font-semibold tracking-[0.28em] uppercase mt-1" style={{ color: "hsl(var(--aia-red))" }}>Media</div>
+      </div>
       <ContentBlock>
         <p>
           Raya Ani's work and ideas have been featured in international architectural, cultural, and mainstream media, contributing to public understanding of architecture's role in society. Her projects and research have been covered by publications including{" "}
