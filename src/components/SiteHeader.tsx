@@ -130,13 +130,13 @@ const SiteHeader = ({ onToggleCarousel, carouselOpen, scrollRef }: SiteHeaderPro
                   key={label}
                   href={href}
                   aria-label={label}
-                  className="w-[28px] h-[28px] rounded-[5px] flex items-center justify-center transition-all duration-200 hover:scale-110"
+                  className="w-[34px] h-[34px] rounded-full flex items-center justify-center transition-all duration-200 hover:scale-110"
                   style={{
                     border: "1px solid rgba(255,255,255,0.5)",
                     background: "transparent",
                   }}
                 >
-                  <Icon className="w-[13px] h-[13px] text-foreground" strokeWidth={1.5} />
+                  <Icon className="w-[15px] h-[15px] text-foreground" strokeWidth={1.5} />
                 </a>
               ))}
             </div>
@@ -168,23 +168,23 @@ const SiteHeader = ({ onToggleCarousel, carouselOpen, scrollRef }: SiteHeaderPro
                 href="https://www.aia.org/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-[28px] h-[28px] rounded-[5px] flex items-center justify-center transition-all duration-200 hover:scale-110"
+                className="w-[34px] h-[34px] rounded-full flex items-center justify-center transition-all duration-200 hover:scale-110"
                 style={{
                   border: "1px solid rgba(255,255,255,0.5)",
                   background: "transparent",
                 }}
               >
-                <img src={aiaLogo} alt="AIA" className="w-[16px] h-[16px] object-contain" />
+                <img src={aiaLogo} alt="AIA" className="w-[18px] h-[18px] object-contain" />
               </a>
               <a
                 href="tel:+1"
-                className="w-[28px] h-[28px] rounded-[5px] flex items-center justify-center transition-all duration-200 hover:scale-110"
+                className="w-[34px] h-[34px] rounded-full flex items-center justify-center transition-all duration-200 hover:scale-110"
                 style={{
                   border: "1px solid rgba(255,255,255,0.5)",
                   background: "transparent",
                 }}
               >
-                <Phone className="w-[13px] h-[13px] text-foreground" strokeWidth={1.5} />
+                <Phone className="w-[15px] h-[15px] text-foreground" strokeWidth={1.5} />
               </a>
             </div>
           </div>
