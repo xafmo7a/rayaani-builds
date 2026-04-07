@@ -1,19 +1,10 @@
-import SectionHero from "@/components/sections/SectionHero";
-import StatsRow from "@/components/sections/StatsRow";
 import FeatureBar from "@/components/sections/FeatureBar";
 import ImagePanel from "@/components/sections/ImagePanel";
 import PressArchive from "@/components/sections/PressArchive";
 
-const stats = [
-  { value: "128K+", label: "Global Followers" },
-  { value: "2019", label: "Elevated to FAIA" },
-  { value: "10+", label: "Power List Years" },
-  { value: "30+", label: "Global Speaking Engagements" },
-];
-
 const BlackBanner = ({ title, tag }: { title: string; tag?: string }) => (
   <div
-    className="px-5 md:px-10 py-4"
+    className="px-5 md:px-10 py-4 text-center"
     style={{ background: "hsl(0 0% 5%)", borderBottom: "1px solid hsl(0 0% 15%)" }}
   >
     <h2 className="font-display text-[clamp(16px,2.5vw,24px)] font-normal tracking-[0.12em] uppercase text-white">
@@ -41,22 +32,6 @@ const ContentBlock = ({ children }: { children: React.ReactNode }) => (
 const PublicSection = () => {
   return (
     <div>
-      {/* Hero */}
-      <SectionHero
-        eyebrow="A Voice for the Profession"
-        title={
-          <>
-            Architecture carries<br />
-            <span className="italic text-white/60">responsibilities</span><br />
-            beyond buildings
-          </>
-        }
-        label="PUB"
-        sublabel="Public Impact & Recognition"
-      />
-
-      {/* Stats */}
-      <StatsRow stats={stats} />
 
       {/* A Trajectory of Grit and Excellence */}
       <BlackBanner title="A Trajectory of Grit and Excellence" tag="Background" />
