@@ -114,13 +114,13 @@ const PracticeAreaCard = ({
   <div
     className="relative rounded-2xl overflow-hidden transition-all duration-500"
     style={{
-      background: "hsl(0 0% 4% / 0.7)",
+      background: "hsl(0 0% 96%)",
       border: expanded
         ? "1px solid hsl(var(--aia-red) / 0.3)"
-        : "1px solid hsl(0 0% 100% / 0.06)",
+        : "1px solid hsl(0 0% 88%)",
       boxShadow: expanded
-        ? "0 8px 40px hsl(var(--aia-red) / 0.1), inset 0 1px 0 hsl(0 0% 100% / 0.06)"
-        : "0 4px 16px hsl(0 0% 0% / 0.3), inset 0 1px 0 hsl(0 0% 100% / 0.04)",
+        ? "0 8px 40px hsl(var(--aia-red) / 0.08)"
+        : "0 2px 8px hsl(0 0% 0% / 0.05)",
     }}
   >
     {/* Header */}
@@ -140,15 +140,15 @@ const PracticeAreaCard = ({
         {String(index + 1).padStart(2, "0")}
       </div>
       <div className="flex-1 min-w-0">
-        <h3 className="text-[14px] md:text-[17px] font-bold text-foreground tracking-[0.02em] leading-[1.3]">
+        <h3 className="text-[14px] md:text-[17px] font-bold text-black tracking-[0.02em] leading-[1.3]">
           {area.title}
         </h3>
       </div>
       <div
-        className="w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0 text-foreground/50 text-[18px] transition-transform duration-300"
+        className="w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0 text-black/50 text-[18px] transition-transform duration-300"
         style={{
-          background: "hsl(0 0% 100% / 0.04)",
-          border: "1px solid hsl(0 0% 100% / 0.08)",
+          background: "hsl(0 0% 0% / 0.04)",
+          border: "1px solid hsl(0 0% 0% / 0.08)",
           transform: expanded ? "rotate(45deg)" : "rotate(0deg)",
         }}
       >
@@ -183,8 +183,8 @@ const PracticeAreaCard = ({
                 }}
               />
               <div>
-                <span className="text-[13px] md:text-[14px] font-bold text-foreground/90">{item.label}: </span>
-                <span className="text-[12px] md:text-[13px] text-foreground/55 leading-[1.6]">{item.desc}</span>
+                <span className="text-[13px] md:text-[14px] font-bold text-black/85">{item.label}: </span>
+                <span className="text-[12px] md:text-[13px] text-black/55 leading-[1.6]">{item.desc}</span>
               </div>
             </div>
           ))}
@@ -206,12 +206,12 @@ const PracticeAreaCard = ({
           </div>
           <div className="flex flex-wrap gap-2">
             {area.selected.map((work) => (
-              <span
+                <span
                 key={work}
-                className="text-[10px] md:text-[11px] font-medium text-foreground/60 px-2.5 py-1 rounded-md"
+                className="text-[10px] md:text-[11px] font-medium text-black/55 px-2.5 py-1 rounded-md"
                 style={{
-                  background: "hsl(0 0% 100% / 0.04)",
-                  border: "1px solid hsl(0 0% 100% / 0.06)",
+                  background: "hsl(0 0% 0% / 0.04)",
+                  border: "1px solid hsl(0 0% 0% / 0.08)",
                 }}
               >
                 {work}
