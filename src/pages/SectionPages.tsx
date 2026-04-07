@@ -1,6 +1,6 @@
 import { useState, useRef } from "react";
 import SiteHeader from "@/components/SiteHeader";
-import Ticker from "@/components/Ticker";
+
 import SectionHero from "@/components/sections/SectionHero";
 import PublicSection from "@/components/sections/PublicSection";
 import AIASection from "@/components/sections/AIASection";

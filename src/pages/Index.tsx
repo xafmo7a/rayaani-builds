@@ -3,7 +3,7 @@ import SiteHeader from "@/components/SiteHeader";
 import HeroPage from "@/components/HeroPage";
 import BuildingPage from "@/components/BuildingPage";
 import AIALeadershipSection from "@/components/AIALeadershipSection";
-import Ticker from "@/components/Ticker";
+
 
 const Index = () => {
   const [carouselOpen, setCarouselOpen] = useState(false);
