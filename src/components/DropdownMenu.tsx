@@ -42,9 +42,11 @@ const DropdownMenu = ({ open, onClose }: DropdownMenuProps) => {
               navigate(item.path);
               onClose();
             }}
-            className="font-display text-[clamp(48px,12vw,96px)] tracking-[0.18em] uppercase text-foreground/80 hover:text-foreground transition-all duration-300 hover:scale-105 cursor-pointer leading-tight"
+            className="w-[280px] md:w-[360px] py-5 rounded-full font-display text-[clamp(24px,5vw,36px)] tracking-[0.22em] uppercase text-white cursor-pointer transition-all duration-300 hover:scale-105"
             style={{
-              textShadow: "0 2px 24px rgba(192,57,43,0.3)",
+              background: "linear-gradient(135deg, hsl(var(--aia-red)), hsl(var(--aia-red-glow)))",
+              border: "1px solid rgba(255,120,80,0.3)",
+              boxShadow: "0 6px 24px hsl(var(--aia-red) / 0.35), inset 0 1px 0 rgba(255,255,255,0.15)",
             }}
           >
             {item.label}
