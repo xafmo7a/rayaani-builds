@@ -50,6 +50,20 @@ const SubTitle = ({ children }: { children: React.ReactNode }) => (
   </div>
 );
 
+const RedSubTitle = ({ children }: { children: React.ReactNode }) => (
+  <div
+    className="px-5 md:px-10 py-4"
+    style={{ background: "hsl(0 0% 100%)", borderBottom: "1px solid hsl(0 0% 88%)" }}
+  >
+    <h3
+      className="font-display text-[clamp(14px,2vw,20px)] font-semibold tracking-[0.1em] uppercase"
+      style={{ color: "hsl(var(--aia-red))" }}
+    >
+      {children}
+    </h3>
+  </div>
+);
+
 const PublicSection = () => {
   return (
     <div>
