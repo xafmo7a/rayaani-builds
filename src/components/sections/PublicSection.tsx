@@ -33,7 +33,7 @@ const ContentBlock = ({ children }: { children: React.ReactNode }) => (
     className="px-5 md:px-10 py-8"
     style={{ background: "hsl(0 0% 100%)", borderBottom: "1px solid hsl(0 0% 88%)" }}
   >
-    <div className="text-[13px] leading-[1.9] text-black/55 font-normal space-y-4 max-w-4xl">
+    <div className="text-[12px] leading-[1.9] text-black font-normal space-y-4 text-justify font-body">
       {children}
     </div>
   </div>
@@ -45,6 +45,20 @@ const SubTitle = ({ children }: { children: React.ReactNode }) => (
     style={{ background: "hsl(0 0% 100%)", borderBottom: "1px solid hsl(0 0% 88%)" }}
   >
     <h3 className="font-display text-[clamp(16px,2.2vw,22px)] font-semibold tracking-[0.08em] uppercase text-black">
+      {children}
+    </h3>
+  </div>
+);
+
+const RedSubTitle = ({ children }: { children: React.ReactNode }) => (
+  <div
+    className="px-5 md:px-10 py-4"
+    style={{ background: "hsl(0 0% 100%)", borderBottom: "1px solid hsl(0 0% 88%)" }}
+  >
+    <h3
+      className="font-display text-[clamp(14px,2vw,20px)] font-semibold tracking-[0.1em] uppercase"
+      style={{ color: "hsl(var(--aia-red))" }}
+    >
       {children}
     </h3>
   </div>
@@ -97,7 +111,6 @@ const PublicSection = () => {
           In <strong className="text-black font-semibold">2004</strong>, I became a licensed
           architect in the State of New York and a{" "}
           <strong className="text-black font-semibold">LEED Accredited Professional</strong>.
-          Those years built the foundation for the public impact that followed.
         </p>
       </ContentBlock>
 
@@ -105,8 +118,11 @@ const PublicSection = () => {
       <ImagePanel
         src="/images/public/credentials.png"
         alt="Credentials & Milestones — AIA, LEED, NY Registration, MIT, University of Baghdad"
-        label="Credentials & Milestones"
       />
+
+      <ContentBlock>
+        <p>Those years built the foundation for the public impact that followed.</p>
+      </ContentBlock>
 
       {/* ═══ BLACK BANNER 2 ═══ */}
       <BlackBanner title="A Voice for the Profession" />
@@ -117,7 +133,6 @@ const PublicSection = () => {
       </ContentBlock>
 
       {/* Sub-section: Recognition */}
-      <SubTitle>Recognition that Advances the Profession</SubTitle>
       <ContentBlock>
         <p>
           Raya Ani's contributions to architecture and public life have been recognized through national and international honors reflecting leadership, professional service, and influence on the built environment. In 2016, she was selected by Cadillac and Black Tomato as one of the most influential global figures. She was elevated to{" "}
@@ -135,18 +150,10 @@ const PublicSection = () => {
       <ImagePanel
         src="/images/public/recognition.png"
         alt="Recognition — Power Lists, Forbes 50 Over 50, FAIA Fellowship, UNESCO Jury President"
-        label="Recognition & Power List"
-      />
-
-      {/* Awards */}
-      <ImagePanel
-        src="/images/public/awards.png"
-        alt="Awards & Honors — Takreem, IDA Gold Winner, RTF Awards, AIA Merit Awards"
-        label="Awards & Honors"
       />
 
       {/* Sub-section: Professional Stewardship */}
-      <SubTitle>Professional Stewardship of the Discipline</SubTitle>
+      <RedSubTitle>Professional Stewardship of the Discipline</RedSubTitle>
       <ContentBlock>
         <p>
           The advancement of architecture also relies on professional stewardship through the evaluation of design excellence and cultural initiatives. Raya Ani has contributed to this role through service on major international juries. She served as{" "}
@@ -156,8 +163,14 @@ const PublicSection = () => {
         </p>
       </ContentBlock>
 
+      {/* Awards */}
+      <ImagePanel
+        src="/images/public/awards.png"
+        alt="Awards & Honors — Takreem, IDA Gold Winner, RTF Awards, AIA Merit Awards"
+      />
+
       {/* Sub-section: Public Dialogue */}
-      <SubTitle>Public Dialogue and Global Forums</SubTitle>
+      <RedSubTitle>Public Dialogue and Global Forums</RedSubTitle>
       <ContentBlock>
         <p>
           Architecture evolves through dialogue across disciplines, cultures, and institutions. Raya Ani contributes to international conversations on innovation, sustainability, technology, and the social responsibilities of design through lectures, conferences, and media appearances across the United States, Europe, and the Middle East. She has been invited to speak at global forums including{" "}
@@ -178,11 +191,10 @@ const PublicSection = () => {
       <ImagePanel
         src="/images/public/speaking.png"
         alt="Speaking Engagements — TEDx Baghdad, AIA Conference, Global Real Estate Summit, and more"
-        label="Public Dialogue & Speaking Engagements"
       />
 
       {/* Sub-section: Academic */}
-      <SubTitle>Academic Engagement and Mentorship</SubTitle>
+      <RedSubTitle>Academic Engagement and Mentorship</RedSubTitle>
       <ContentBlock>
         <p>
           Education plays an important role in shaping future generations of architects. Raya Ani has contributed to architectural education through teaching, research, and academic critique. She served as a Teaching Assistant at the{" "}
@@ -196,11 +208,10 @@ const PublicSection = () => {
       <ImagePanel
         src="/images/public/academic.png"
         alt="Academic Experience — MIT, Columbia University, FIT, AUS, Zayed University"
-        label="Academic Institutions"
       />
 
       {/* Sub-section: Publications */}
-      <SubTitle>Publications and Media Coverage</SubTitle>
+      <RedSubTitle>Publications and Media Coverage</RedSubTitle>
       <ContentBlock>
         <p>
           Raya Ani's work and ideas have been featured in international architectural, cultural, and mainstream media, contributing to public understanding of architecture's role in society. Her projects and research have been covered by publications including{" "}
@@ -218,14 +229,12 @@ const PublicSection = () => {
       <ImagePanel
         src="/images/public/media.png"
         alt="Media Coverage — WKND, Top Architects, designMENA, Emirates Magazine, Inhabitat"
-        label="Publications & Media Coverage"
       />
 
       {/* TV Interviews */}
       <ImagePanel
         src="/images/public/interviews.png"
         alt="TV Interviews — Al Sharqiya, NBC, MSNBC, Arab TV, Sky News Arabia, Abu Dhabi TV"
-        label="Broadcast Interviews"
       />
 
       {/* ═══ BLACK BANNER 3 ═══ */}
