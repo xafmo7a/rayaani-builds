@@ -133,7 +133,6 @@ const PublicSection = () => {
       </ContentBlock>
 
       {/* Sub-section: Recognition */}
-      <SubTitle>Recognition that Advances the Profession</SubTitle>
       <ContentBlock>
         <p>
           Raya Ani's contributions to architecture and public life have been recognized through national and international honors reflecting leadership, professional service, and influence on the built environment. In 2016, she was selected by Cadillac and Black Tomato as one of the most influential global figures. She was elevated to{" "}
@@ -209,7 +208,6 @@ const PublicSection = () => {
       <ImagePanel
         src="/images/public/academic.png"
         alt="Academic Experience — MIT, Columbia University, FIT, AUS, Zayed University"
-        label="Academic Institutions"
       />
 
       {/* Sub-section: Publications */}
@@ -231,7 +229,6 @@ const PublicSection = () => {
       <ImagePanel
         src="/images/public/media.png"
         alt="Media Coverage — WKND, Top Architects, designMENA, Emirates Magazine, Inhabitat"
-        label="Publications & Media Coverage"
       />
 
       {/* TV Interviews */}
