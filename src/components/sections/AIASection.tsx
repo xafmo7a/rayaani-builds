@@ -167,18 +167,12 @@ const AIASection = () => {
         <p>
           The profession's credibility and public standing, upheld through its rules, standards, governance, access, and responsibility.
         </p>
-        <p>
-          <strong className="text-black font-semibold">Ground</strong> the profession in clear standards, ethical conduct, and a shared understanding of its role and obligations.
-        </p>
-        <p>
-          <strong className="text-black font-semibold">Govern</strong> through transparent governance, ethical leadership, and institutional accountability.
-        </p>
-        <p>
-          <strong className="text-black font-semibold">Enable</strong> equitable access to participation, leadership, and opportunity—removing structural barriers across regions and practice scales.
-        </p>
-        <p>
-          <strong className="text-black font-semibold">Protect</strong> the profession's responsibility to the public by reinforcing health, safety, and welfare, clarifying liability, and safeguarding professional scope.
-        </p>
+        <ul className="list-none space-y-3 mt-2">
+          <li><strong className="text-black font-semibold">Ground</strong> the profession in clear standards, ethical conduct, and a shared understanding of its role and obligations.</li>
+          <li><strong className="text-black font-semibold">Govern</strong> through transparent governance, ethical leadership, and institutional accountability.</li>
+          <li><strong className="text-black font-semibold">Enable</strong> equitable access to participation, leadership, and opportunity—removing structural barriers across regions and practice scales.</li>
+          <li><strong className="text-black font-semibold">Protect</strong> the profession's responsibility to the public by reinforcing health, safety, and welfare, clarifying liability, and safeguarding professional scope.</li>
+        </ul>
       </ContentBlock>
 
       {/* Track 2 */}
@@ -190,18 +184,12 @@ const AIASection = () => {
         <p>
           The strength and viability of architectural practice, supported through alignment, continuity, and coordinated systems across the Institute.
         </p>
-        <p>
-          <strong className="text-black font-semibold">Connect</strong> AIA National, state, and local components into a cohesive system—ensuring continuity across leadership cycles and consistency with strategic priorities.
-        </p>
-        <p>
-          <strong className="text-black font-semibold">Coordinate</strong> communication, committees, and networks to strengthen collaboration across the Institute and reduce fragmentation in execution.
-        </p>
-        <p>
-          <strong className="text-black font-semibold">Support</strong> firms across scales—particularly small and mid-sized practices—by connecting resources, knowledge, and networks that strengthen business viability and competitive capacity.
-        </p>
-        <p>
-          <strong className="text-black font-semibold">Advance</strong> shared capability through knowledge systems, research exchange, and the integration of data, tools, and emerging technologies that support practice excellence.
-        </p>
+        <ul className="list-none space-y-3 mt-2">
+          <li><strong className="text-black font-semibold">Connect</strong> AIA National, state, and local components into a cohesive system—ensuring continuity across leadership cycles and consistency with strategic priorities.</li>
+          <li><strong className="text-black font-semibold">Coordinate</strong> communication, committees, and networks to strengthen collaboration across the Institute and reduce fragmentation in execution.</li>
+          <li><strong className="text-black font-semibold">Support</strong> firms across scales—particularly small and mid-sized practices—by connecting resources, knowledge, and networks that strengthen business viability and competitive capacity.</li>
+          <li><strong className="text-black font-semibold">Advance</strong> shared capability through knowledge systems, research exchange, and the integration of data, tools, and emerging technologies that support practice excellence.</li>
+        </ul>
       </ContentBlock>
 
       {/* Track 3 */}
@@ -213,18 +201,12 @@ const AIASection = () => {
         <p>
           The profession's presence and influence in shaping public policy, partnerships, and civic impact.
         </p>
-        <p>
-          <strong className="text-black font-semibold">Lead</strong> on public policy—engaging federal, state, and local stakeholders to shape legislative priorities and regulatory direction affecting the built environment and emerging technologies.
-        </p>
-        <p>
-          <strong className="text-black font-semibold">Represent</strong> the value of architects—advancing design excellence and communicating the profession's role in delivering housing, climate action, resilient communities, and high-performance outcomes aligned with 2030 commitments.
-        </p>
-        <p>
-          <strong className="text-black font-semibold">Partner</strong> with government stakeholders and across the AEC industry—building coordinated efforts that strengthen influence, expand capacity, support disaster response, and align the profession around shared priorities.
-        </p>
-        <p>
-          <strong className="text-black font-semibold">Advance</strong> policy and procurement frameworks that expand access to work, support small and mid-sized firms, and enable housing, climate, resilience, and regenerative outcomes in the built environment.
-        </p>
+        <ul className="list-none space-y-3 mt-2">
+          <li><strong className="text-black font-semibold">Lead</strong> on public policy—engaging federal, state, and local stakeholders to shape legislative priorities and regulatory direction affecting the built environment and emerging technologies.</li>
+          <li><strong className="text-black font-semibold">Represent</strong> the value of architects—advancing design excellence and communicating the profession's role in delivering housing, climate action, resilient communities, and high-performance outcomes aligned with 2030 commitments.</li>
+          <li><strong className="text-black font-semibold">Partner</strong> with government stakeholders and across the AEC industry—building coordinated efforts that strengthen influence, expand capacity, support disaster response, and align the profession around shared priorities.</li>
+          <li><strong className="text-black font-semibold">Advance</strong> policy and procurement frameworks that expand access to work, support small and mid-sized firms, and enable housing, climate, resilience, and regenerative outcomes in the built environment.</li>
+        </ul>
       </ContentBlock>
 
       {/* Track 4 */}
@@ -236,18 +218,12 @@ const AIASection = () => {
         <p>
           The profession's capacity to understand, adapt to, and lead within emerging technological and systemic conditions.
         </p>
-        <p>
-          <strong className="text-black font-semibold">Advance</strong> digital fluency across the profession—ensuring architects can operate effectively within data-driven and technology-enabled environments.
-        </p>
-        <p>
-          <strong className="text-black font-semibold">Integrate</strong> artificial intelligence and emerging technologies into practice—enhancing design capability, productivity, and data-informed decision-making.
-        </p>
-        <p>
-          <strong className="text-black font-semibold">Apply</strong> regenerative and high-performance knowledge systems—establishing measurable standards that translate ambition into practical outcomes.
-        </p>
-        <p>
-          <strong className="text-black font-semibold">Evolve</strong> practice and delivery models through emerging technologies and systems—supporting new forms of collaboration, project delivery, and professional positioning.
-        </p>
+        <ul className="list-none space-y-3 mt-2">
+          <li><strong className="text-black font-semibold">Advance</strong> digital fluency across the profession—ensuring architects can operate effectively within data-driven and technology-enabled environments.</li>
+          <li><strong className="text-black font-semibold">Integrate</strong> artificial intelligence and emerging technologies into practice—enhancing design capability, productivity, and data-informed decision-making.</li>
+          <li><strong className="text-black font-semibold">Apply</strong> regenerative and high-performance knowledge systems—establishing measurable standards that translate ambition into practical outcomes.</li>
+          <li><strong className="text-black font-semibold">Evolve</strong> practice and delivery models through emerging technologies and systems—supporting new forms of collaboration, project delivery, and professional positioning.</li>
+        </ul>
       </ContentBlock>
     </div>
   );
