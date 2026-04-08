@@ -33,7 +33,7 @@ const ContentBlock = ({ children }: { children: React.ReactNode }) => (
     className="px-5 md:px-10 py-8"
     style={{ background: "hsl(0 0% 100%)", borderBottom: "1px solid hsl(0 0% 88%)" }}
   >
-    <div className="text-[13px] leading-[1.9] text-black/55 font-normal space-y-4 text-justify">
+    <div className="text-[12px] leading-[1.9] text-black font-normal space-y-4 text-justify font-body">
       {children}
     </div>
   </div>
