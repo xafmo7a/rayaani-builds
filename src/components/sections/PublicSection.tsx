@@ -208,7 +208,6 @@ const PublicSection = () => {
       <ImagePanel
         src="/images/public/academic.png"
         alt="Academic Experience — MIT, Columbia University, FIT, AUS, Zayed University"
-        />
       />
 
       {/* Sub-section: Publications */}
@@ -230,7 +229,6 @@ const PublicSection = () => {
       <ImagePanel
         src="/images/public/media.png"
         alt="Media Coverage — WKND, Top Architects, designMENA, Emirates Magazine, Inhabitat"
-        />
       />
 
       {/* TV Interviews */}
