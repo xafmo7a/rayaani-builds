@@ -111,16 +111,19 @@ const PublicSection = () => {
           In <strong className="text-black font-semibold">2004</strong>, I became a licensed
           architect in the State of New York and a{" "}
           <strong className="text-black font-semibold">LEED Accredited Professional</strong>.
-          Those years built the foundation for the public impact that followed.
         </p>
       </ContentBlock>
 
       {/* Credentials */}
+      <RedSubTitle>Credentials & Milestones</RedSubTitle>
       <ImagePanel
         src="/images/public/credentials.png"
         alt="Credentials & Milestones — AIA, LEED, NY Registration, MIT, University of Baghdad"
-        label="Credentials & Milestones"
       />
+
+      <ContentBlock>
+        <p>Those years built the foundation for the public impact that followed.</p>
+      </ContentBlock>
 
       {/* ═══ BLACK BANNER 2 ═══ */}
       <BlackBanner title="A Voice for the Profession" />
