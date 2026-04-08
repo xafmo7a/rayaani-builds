@@ -50,6 +50,20 @@ const SubTitle = ({ children }: { children: React.ReactNode }) => (
   </div>
 );
 
+const RedSubTitle = ({ children }: { children: React.ReactNode }) => (
+  <div
+    className="px-5 md:px-10 py-4"
+    style={{ background: "hsl(0 0% 100%)", borderBottom: "1px solid hsl(0 0% 88%)" }}
+  >
+    <h3
+      className="font-display text-[clamp(14px,2vw,20px)] font-semibold tracking-[0.1em] uppercase"
+      style={{ color: "hsl(var(--aia-red))" }}
+    >
+      {children}
+    </h3>
+  </div>
+);
+
 const PublicSection = () => {
   return (
     <div>
@@ -97,16 +111,19 @@ const PublicSection = () => {
           In <strong className="text-black font-semibold">2004</strong>, I became a licensed
           architect in the State of New York and a{" "}
           <strong className="text-black font-semibold">LEED Accredited Professional</strong>.
-          Those years built the foundation for the public impact that followed.
         </p>
       </ContentBlock>
 
       {/* Credentials */}
+      <RedSubTitle>Credentials & Milestones</RedSubTitle>
       <ImagePanel
         src="/images/public/credentials.png"
         alt="Credentials & Milestones — AIA, LEED, NY Registration, MIT, University of Baghdad"
-        label="Credentials & Milestones"
       />
+
+      <ContentBlock>
+        <p>Those years built the foundation for the public impact that followed.</p>
+      </ContentBlock>
 
       {/* ═══ BLACK BANNER 2 ═══ */}
       <BlackBanner title="A Voice for the Profession" />
@@ -132,17 +149,17 @@ const PublicSection = () => {
       </ContentBlock>
 
       {/* Recognition Images */}
+      <RedSubTitle>Recognition & Power List</RedSubTitle>
       <ImagePanel
         src="/images/public/recognition.png"
         alt="Recognition — Power Lists, Forbes 50 Over 50, FAIA Fellowship, UNESCO Jury President"
-        label="Recognition & Power List"
       />
 
       {/* Awards */}
+      <RedSubTitle>Awards & Honors</RedSubTitle>
       <ImagePanel
         src="/images/public/awards.png"
         alt="Awards & Honors — Takreem, IDA Gold Winner, RTF Awards, AIA Merit Awards"
-        label="Awards & Honors"
       />
 
       {/* Sub-section: Professional Stewardship */}
@@ -175,10 +192,10 @@ const PublicSection = () => {
       </ContentBlock>
 
       {/* Speaking Images */}
+      <RedSubTitle>Public Dialogue & Speaking Engagements</RedSubTitle>
       <ImagePanel
         src="/images/public/speaking.png"
         alt="Speaking Engagements — TEDx Baghdad, AIA Conference, Global Real Estate Summit, and more"
-        label="Public Dialogue & Speaking Engagements"
       />
 
       {/* Sub-section: Academic */}
