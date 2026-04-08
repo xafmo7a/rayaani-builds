@@ -168,24 +168,24 @@ const SiteHeader = ({ onToggleCarousel, carouselOpen, scrollRef }: SiteHeaderPro
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="WhatsApp"
-                className="w-[34px] h-[34px] rounded-full flex items-center justify-center transition-all duration-200 hover:scale-110"
+                className="w-[38px] h-[38px] rounded-full flex items-center justify-center transition-all duration-200 hover:scale-110"
               >
-                <img src={iconWhatsapp} alt="WhatsApp" className="w-[28px] h-[28px] object-contain invert" />
+                <img src={iconWhatsapp} alt="WhatsApp" className="w-[34px] h-[34px] object-contain invert" />
               </a>
               <a
                 href="mailto:contact@rayaani.com"
                 aria-label="Email"
-                className="w-[34px] h-[34px] rounded-full flex items-center justify-center transition-all duration-200 hover:scale-110"
+                className="w-[38px] h-[38px] rounded-full flex items-center justify-center transition-all duration-200 hover:scale-110"
               >
-                <img src={iconEmail} alt="Email" className="w-[28px] h-[28px] object-contain invert" />
+                <img src={iconEmail} alt="Email" className="w-[34px] h-[34px] object-contain invert" />
               </a>
               <a
                 href="https://www.aia.org/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-[34px] h-[34px] rounded-full flex items-center justify-center transition-all duration-200 hover:scale-110"
+                className="w-[38px] h-[38px] rounded-full flex items-center justify-center transition-all duration-200 hover:scale-110"
               >
-                <img src={aiaLogo} alt="AIA" className="w-[18px] h-[18px] object-contain" />
+                <img src={aiaLogo} alt="AIA" className="w-[22px] h-[22px] object-contain" />
               </a>
             </div>
           </div>
