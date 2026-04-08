@@ -127,24 +127,28 @@ const SiteHeader = ({ onToggleCarousel, carouselOpen, scrollRef }: SiteHeaderPro
             {/* Social Links */}
             <div className="flex gap-2 items-center">
               {[
-                { icon: Facebook, label: "Facebook", href: "#" },
-                { icon: Instagram, label: "Instagram", href: "#" },
-                { icon: Linkedin, label: "LinkedIn", href: "#" },
-                { icon: Youtube, label: "YouTube", href: "#" },
-              ].map(({ icon: Icon, label, href }) => (
+                { src: iconFacebook, label: "Facebook", href: "#" },
+                { src: iconInstagram, label: "Instagram", href: "#" },
+                { src: iconLinkedin, label: "LinkedIn", href: "#" },
+                { src: iconYoutube, label: "YouTube", href: "#" },
+              ].map(({ src, label, href }) => (
                 <a
                   key={label}
                   href={href}
                   aria-label={label}
                   className="w-[34px] h-[34px] rounded-full flex items-center justify-center transition-all duration-200 hover:scale-110"
-                  style={{
-                    border: "1px solid rgba(255,255,255,0.5)",
-                    background: "transparent",
-                  }}
                 >
-                  <Icon className="w-[15px] h-[15px] text-foreground" strokeWidth={1.5} />
+                  <img src={src} alt={label} className="w-[28px] h-[28px] object-contain invert" />
                 </a>
               ))}
+              <a
+                href="https://rayaani.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-[34px] h-[34px] rounded-full flex items-center justify-center transition-all duration-200 hover:scale-110"
+              >
+                <img src={rawLogo} alt="RAW" className="h-[22px] w-auto" />
+              </a>
             </div>
 
             {/* Center Hamburger */}
