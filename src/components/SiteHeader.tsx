@@ -11,10 +11,15 @@ import iconYoutube from "@/assets/icon-youtube.png";
 import iconWhatsapp from "@/assets/icon-whatsapp.png";
 import iconEmail from "@/assets/icon-email.png";
 
-const videoIds = [
+const rayaAniVideos = [
   "P1UgHTA8DP8", "EBs2KYQk1Mw", "xkYiWUhd-Qw", "GF6qOeUbyhU",
+];
+
+const aiaVideos = [
   "kgIr6sUIglI", "K_Skn9w68wc", "kt9HqoJ7tmU",
 ];
+
+const videoIds = [...rayaAniVideos, ...aiaVideos];
 
 interface SiteHeaderProps {
   onToggleCarousel?: () => void;
