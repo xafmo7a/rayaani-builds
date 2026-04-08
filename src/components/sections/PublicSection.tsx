@@ -235,7 +235,6 @@ const PublicSection = () => {
       <ImagePanel
         src="/images/public/interviews.png"
         alt="TV Interviews — Al Sharqiya, NBC, MSNBC, Arab TV, Sky News Arabia, Abu Dhabi TV"
-        label="Broadcast Interviews"
       />
 
       {/* ═══ BLACK BANNER 3 ═══ */}
