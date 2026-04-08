@@ -91,7 +91,7 @@ const AIASection = () => {
       </ContentBlock>
 
       {/* The Catalyst */}
-      <RedTitle>The Catalyst: A Leadership of Scale</RedTitle>
+      <BlackBanner title="The Catalyst: A Leadership of Scale" />
 
       <ContentBlock>
         <p>
@@ -169,7 +169,7 @@ const AIASection = () => {
       </ContentBlock>
 
       {/* 4-Track System */}
-      <RedTitle>The 4-Track Architectural Leadership System</RedTitle>
+      <BlackBanner title="The 4-Track Architectural Leadership System" />
 
       <ContentBlock>
         <p>
