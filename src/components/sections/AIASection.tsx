@@ -96,58 +96,34 @@ const AIASection = () => {
         </p>
       </ContentBlock>
 
-      <RedSubTitle>Visionary Leadership</RedSubTitle>
-      <div
-        className="px-5 md:px-10 py-3"
-        style={{ background: "hsl(0 0% 100%)", borderBottom: "1px solid hsl(0 0% 88%)" }}
-      >
-        <h4 className="font-display text-[clamp(13px,1.8vw,18px)] font-semibold tracking-[0.08em] uppercase text-black">
-          Systems of the Future
-        </h4>
-      </div>
       <ContentBlock>
-        <p>
-          I lead with the belief that architecture is a catalyst for evolution. The glory of our art is that it can not only survive change, it can lead it. I apply this to our profession by integrating innovation with regenerative urban models, advancing architecture as a system that links sustainability and technology. This includes designing and delivering <strong className="text-black font-semibold">New York City's first public green school (P.S. 59)</strong> and the <strong className="text-black font-semibold">Liberland master plan</strong>, a winning international competition proposing a regenerative urban model for a 7 km² territory in Europe.
-        </p>
+        <ul className="list-none space-y-6">
+          <li>
+            <p><strong className="text-black font-semibold">Visionary Leadership: Systems of the Future</strong></p>
+            <p>
+              I lead with the belief that architecture is a catalyst for evolution. The glory of our art is that it can not only survive change, it can lead it. I apply this to our profession by integrating innovation with regenerative urban models, advancing architecture as a system that links sustainability and technology. This includes designing and delivering <strong className="text-black font-semibold">New York City's first public green school (P.S. 59)</strong> and the <strong className="text-black font-semibold">Liberland master plan</strong>, a winning international competition proposing a regenerative urban model for a 7 km² territory in Europe.
+            </p>
+          </li>
+          <li>
+            <p><strong className="text-black font-semibold">Institutional Leadership: A Global AIA Member for a Global Institute</strong></p>
+            <p>
+              I lead by expanding the Institute's global impact, a journey that began with the AIA New York Chapter in 2004 and led to my Fellowship (FAIA) elevation by the AIANY in 2019. I made history as the <strong className="text-black font-semibold">first woman elected to the AIA Middle East Presidency (2016–2018)</strong>, a term where I established country representation in Jordan and Iraq and served as Curator of the AIA International Conference "10,958 Days." My leadership service since 2012 includes roles as Director of Events (2012–2016) and Director at Large (2019–present), consistently representing the AIA as a Jury President and Keynote Speaker at global forums.
+            </p>
+          </li>
+          <li>
+            <p><strong className="text-black font-semibold">Strategic Leadership: Bridging Institutions and Global Networks</strong></p>
+            <p>
+              I lead by uniting institutions, governments, and professional networks to solve complex civic challenges. My leadership is grounded in graduate studies at MIT, where focusing on history, theory, and criticism strengthened the analytical thinking I apply to global advocacy. I served as a <strong className="text-black font-semibold">UNESCO advisor and Jury President</strong> for an international architectural competition in Iraq, ensuring the process met strict UNESCO–UIA international standards. Additionally, I led the advocacy, fundraising, and design of the <strong className="text-black font-semibold">Iraq Pavilion at Expo 2020 Dubai</strong>, securing a vital presence for the nation on the global stage.
+            </p>
+          </li>
+          <li>
+            <p><strong className="text-black font-semibold">Civic Leadership: Empowering Vulnerable Communities</strong></p>
+            <p>
+              I lead with a fierce humanity, applying architectural purpose to serve society and advocate for vulnerable populations. In New York, I was shortlisted among leading women architects to transform the <strong className="text-black font-semibold">Bayview Women's Prison in Manhattan</strong> into a hub for women's empowerment. My global civic commitment includes volunteer workshops to build schools and homes in Tanzania, and the design of the <strong className="text-black font-semibold">Safe House of Innovation</strong>, a facility specifically created to support and uplift homeless children and orphans in Iraq.
+            </p>
+          </li>
+        </ul>
       </ContentBlock>
-
-      <RedSubTitle>Institutional Leadership</RedSubTitle>
-      <div
-        className="px-5 md:px-10 py-3"
-        style={{ background: "hsl(0 0% 100%)", borderBottom: "1px solid hsl(0 0% 88%)" }}
-      >
-        <h4 className="font-display text-[clamp(13px,1.8vw,18px)] font-semibold tracking-[0.08em] uppercase text-black">
-          A Global AIA Member for a Global Institute
-        </h4>
-      </div>
-      <ContentBlock>
-        <p>
-          I lead by expanding the Institute's global impact, a journey that began with the AIA New York Chapter in 2004 and led to my Fellowship (FAIA) elevation by the AIANY in 2019. I made history as the <strong className="text-black font-semibold">first woman elected to the AIA Middle East Presidency (2016–2018)</strong>, a term where I established country representation in Jordan and Iraq and served as Curator of the AIA International Conference "10,958 Days." My leadership service since 2012 includes roles as Director of Events (2012–2016) and Director at Large (2019–present), consistently representing the AIA as a Jury President and Keynote Speaker at global forums.
-        </p>
-      </ContentBlock>
-
-      <RedSubTitle>Strategic Leadership</RedSubTitle>
-      <div
-        className="px-5 md:px-10 py-3"
-        style={{ background: "hsl(0 0% 100%)", borderBottom: "1px solid hsl(0 0% 88%)" }}
-      >
-        <h4 className="font-display text-[clamp(13px,1.8vw,18px)] font-semibold tracking-[0.08em] uppercase text-black">
-          Bridging Institutions and Global Networks
-        </h4>
-      </div>
-      <ContentBlock>
-        <p>
-          I lead by uniting institutions, governments, and professional networks to solve complex civic challenges. My leadership is grounded in graduate studies at MIT, where focusing on history, theory, and criticism strengthened the analytical thinking I apply to global advocacy. I served as a <strong className="text-black font-semibold">UNESCO advisor and Jury President</strong> for an international architectural competition in Iraq, ensuring the process met strict UNESCO–UIA international standards. Additionally, I led the advocacy, fundraising, and design of the <strong className="text-black font-semibold">Iraq Pavilion at Expo 2020 Dubai</strong>, securing a vital presence for the nation on the global stage.
-        </p>
-      </ContentBlock>
-
-      <RedSubTitle>Civic Leadership</RedSubTitle>
-      <div
-        className="px-5 md:px-10 py-3"
-        style={{ background: "hsl(0 0% 100%)", borderBottom: "1px solid hsl(0 0% 88%)" }}
-      >
-        <h4 className="font-display text-[clamp(13px,1.8vw,18px)] font-semibold tracking-[0.08em] uppercase text-black">
-          Empowering Vulnerable Communities
         </h4>
       </div>
       <ContentBlock>
