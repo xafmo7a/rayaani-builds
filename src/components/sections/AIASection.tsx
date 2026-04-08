@@ -69,10 +69,7 @@ const AIASection = () => {
   return (
     <div>
       {/* ═══ BLACK BANNER ═══ */}
-      <BlackBanner title="AIA Presidential Candidate" showBack />
-
-      {/* The Why */}
-      <RedTitle>The Why: The Architecture of Empowerment</RedTitle>
+      <BlackBanner title="The Why: The Architecture of Empowerment" showBack />
 
       <ContentBlock>
         <p>
