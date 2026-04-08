@@ -142,21 +142,16 @@ const SiteHeader = ({ onToggleCarousel, carouselOpen, scrollRef }: SiteHeaderPro
               />
               <button
                 onClick={toggleMenu}
-                className="flex flex-col items-center gap-0 cursor-pointer px-4 py-2 rounded-full transition-all duration-200"
-                style={{
-                  background: "rgba(255,255,255,0.1)",
-                  border: "1px solid rgba(255,255,255,0.18)",
-                  backdropFilter: "blur(8px)",
-                }}
+                className="flex flex-col items-center gap-1 cursor-pointer px-2 py-1 transition-all duration-200"
               >
                 {menuOpen ? (
                   <X className="w-5 h-5 text-foreground" />
                 ) : (
-                  <div className="flex flex-col gap-1 items-center">
+                  <>
                     <span className="block w-5 h-[1.5px] bg-foreground/90 rounded-sm" />
                     <span className="block w-5 h-[1.5px] bg-foreground/90 rounded-sm" />
                     <span className="block w-5 h-[1.5px] bg-foreground/90 rounded-sm" />
-                  </div>
+                  </>
                 )}
               </button>
             </div>
