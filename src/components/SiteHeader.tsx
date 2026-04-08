@@ -2,6 +2,7 @@ import { useState, useEffect, useCallback, RefObject } from "react";
 import { X, Play } from "lucide-react";
 import DropdownMenu from "./DropdownMenu";
 import rawLogo from "@/assets/raw-logo.png";
+import portrait from "@/assets/raya-ani-portrait.png";
 import aiaLogo from "@/assets/aia-logo.png";
 import iconFacebook from "@/assets/icon-facebook.png";
 import iconInstagram from "@/assets/icon-instagram.png";
@@ -103,18 +104,6 @@ const SiteHeader = ({ onToggleCarousel, carouselOpen, scrollRef }: SiteHeaderPro
             boxShadow: "inset 0 1px 0 rgba(255,255,255,0.22), inset 0 -1px 0 rgba(0,0,0,0.12), 0 4px 12px rgba(0,0,0,0.3)",
           }}
         >
-          <div className="flex items-center justify-between w-full mb-1.5">
-            <a
-              href="https://raw-nyc.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-[9px] font-medium tracking-[0.12em] uppercase transition-opacity duration-200 hover:opacity-80"
-              style={{ color: "rgba(255,255,255,0.6)" }}
-            >
-              raw-nyc.com
-            </a>
-          </div>
-
           <div className="w-full flex items-center justify-between relative min-h-[58px]">
             {/* Social Links */}
             <div className="flex gap-2 items-center">
@@ -128,41 +117,49 @@ const SiteHeader = ({ onToggleCarousel, carouselOpen, scrollRef }: SiteHeaderPro
                   key={label}
                   href={href}
                   aria-label={label}
-                  className="w-[34px] h-[34px] rounded-full flex items-center justify-center transition-all duration-200 hover:scale-110"
+                  className="w-[38px] h-[38px] rounded-full flex items-center justify-center transition-all duration-200 hover:scale-110"
                 >
-                  <img src={src} alt={label} className="w-[28px] h-[28px] object-contain invert" />
+                  <img src={src} alt={label} className="w-[34px] h-[34px] object-contain invert" />
                 </a>
               ))}
               <a
                 href="https://rayaani.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-[34px] h-[34px] rounded-full flex items-center justify-center transition-all duration-200 hover:scale-110"
+                className="w-[38px] h-[38px] rounded-full flex items-center justify-center transition-all duration-200 hover:scale-110"
               >
-                <img src={rawLogo} alt="RAW" className="h-[22px] w-auto" />
+                <img src={rawLogo} alt="RAW" className="h-[26px] w-auto" />
               </a>
             </div>
 
-            {/* Center Hamburger */}
-            <button
-              onClick={toggleMenu}
-              className="absolute left-1/2 -translate-x-1/2 flex flex-col items-center gap-0 cursor-pointer z-10 px-4 py-2 rounded-full transition-all duration-200"
-              style={{
-                background: "rgba(255,255,255,0.1)",
-                border: "1px solid rgba(255,255,255,0.18)",
-                backdropFilter: "blur(8px)",
-              }}
-            >
-              {menuOpen ? (
-                <X className="w-5 h-5 text-foreground" />
-              ) : (
-                <div className="flex flex-col gap-1 items-center">
-                  <span className="block w-5 h-[1.5px] bg-foreground/90 rounded-sm" />
-                  <span className="block w-5 h-[1.5px] bg-foreground/90 rounded-sm" />
-                  <span className="block w-5 h-[1.5px] bg-foreground/90 rounded-sm" />
-                </div>
-              )}
-            </button>
+            {/* Center: Portrait + Hamburger */}
+            <div className="absolute left-1/2 -translate-x-1/2 flex flex-col items-center gap-1.5 z-10">
+              <img
+                src={portrait}
+                alt="Raya Ani"
+                className="w-[36px] h-[36px] rounded-full object-cover"
+                style={{ border: "2px solid rgba(255,255,255,0.5)" }}
+              />
+              <button
+                onClick={toggleMenu}
+                className="flex flex-col items-center gap-0 cursor-pointer px-4 py-2 rounded-full transition-all duration-200"
+                style={{
+                  background: "rgba(255,255,255,0.1)",
+                  border: "1px solid rgba(255,255,255,0.18)",
+                  backdropFilter: "blur(8px)",
+                }}
+              >
+                {menuOpen ? (
+                  <X className="w-5 h-5 text-foreground" />
+                ) : (
+                  <div className="flex flex-col gap-1 items-center">
+                    <span className="block w-5 h-[1.5px] bg-foreground/90 rounded-sm" />
+                    <span className="block w-5 h-[1.5px] bg-foreground/90 rounded-sm" />
+                    <span className="block w-5 h-[1.5px] bg-foreground/90 rounded-sm" />
+                  </div>
+                )}
+              </button>
+            </div>
 
             {/* Contact Buttons */}
             <div className="flex gap-2 items-center">
@@ -171,24 +168,24 @@ const SiteHeader = ({ onToggleCarousel, carouselOpen, scrollRef }: SiteHeaderPro
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="WhatsApp"
-                className="w-[34px] h-[34px] rounded-full flex items-center justify-center transition-all duration-200 hover:scale-110"
+                className="w-[38px] h-[38px] rounded-full flex items-center justify-center transition-all duration-200 hover:scale-110"
               >
-                <img src={iconWhatsapp} alt="WhatsApp" className="w-[28px] h-[28px] object-contain invert" />
+                <img src={iconWhatsapp} alt="WhatsApp" className="w-[34px] h-[34px] object-contain invert" />
               </a>
               <a
                 href="mailto:contact@rayaani.com"
                 aria-label="Email"
-                className="w-[34px] h-[34px] rounded-full flex items-center justify-center transition-all duration-200 hover:scale-110"
+                className="w-[38px] h-[38px] rounded-full flex items-center justify-center transition-all duration-200 hover:scale-110"
               >
-                <img src={iconEmail} alt="Email" className="w-[28px] h-[28px] object-contain invert" />
+                <img src={iconEmail} alt="Email" className="w-[34px] h-[34px] object-contain invert" />
               </a>
               <a
                 href="https://www.aia.org/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-[34px] h-[34px] rounded-full flex items-center justify-center transition-all duration-200 hover:scale-110"
+                className="w-[38px] h-[38px] rounded-full flex items-center justify-center transition-all duration-200 hover:scale-110"
               >
-                <img src={aiaLogo} alt="AIA" className="w-[18px] h-[18px] object-contain" />
+                <img src={aiaLogo} alt="AIA" className="w-[22px] h-[22px] object-contain" />
               </a>
             </div>
           </div>
