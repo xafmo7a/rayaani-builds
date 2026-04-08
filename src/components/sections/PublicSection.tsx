@@ -149,17 +149,17 @@ const PublicSection = () => {
       </ContentBlock>
 
       {/* Recognition Images */}
+      <RedSubTitle>Recognition & Power List</RedSubTitle>
       <ImagePanel
         src="/images/public/recognition.png"
         alt="Recognition — Power Lists, Forbes 50 Over 50, FAIA Fellowship, UNESCO Jury President"
-        label="Recognition & Power List"
       />
 
       {/* Awards */}
+      <RedSubTitle>Awards & Honors</RedSubTitle>
       <ImagePanel
         src="/images/public/awards.png"
         alt="Awards & Honors — Takreem, IDA Gold Winner, RTF Awards, AIA Merit Awards"
-        label="Awards & Honors"
       />
 
       {/* Sub-section: Professional Stewardship */}
