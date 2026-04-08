@@ -173,28 +173,30 @@ const SiteHeader = ({ onToggleCarousel, carouselOpen, scrollRef }: SiteHeaderPro
             </button>
 
             {/* Contact Buttons */}
-            <div className="flex gap-[7px] items-center">
+            <div className="flex gap-2 items-center">
+              <a
+                href="https://wa.me/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="WhatsApp"
+                className="w-[34px] h-[34px] rounded-full flex items-center justify-center transition-all duration-200 hover:scale-110"
+              >
+                <img src={iconWhatsapp} alt="WhatsApp" className="w-[28px] h-[28px] object-contain invert" />
+              </a>
+              <a
+                href="mailto:contact@rayaani.com"
+                aria-label="Email"
+                className="w-[34px] h-[34px] rounded-full flex items-center justify-center transition-all duration-200 hover:scale-110"
+              >
+                <img src={iconEmail} alt="Email" className="w-[28px] h-[28px] object-contain invert" />
+              </a>
               <a
                 href="https://www.aia.org/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-[34px] h-[34px] rounded-full flex items-center justify-center transition-all duration-200 hover:scale-110"
-                style={{
-                  border: "1px solid rgba(255,255,255,0.5)",
-                  background: "transparent",
-                }}
               >
                 <img src={aiaLogo} alt="AIA" className="w-[18px] h-[18px] object-contain" />
-              </a>
-              <a
-                href="tel:+1"
-                className="w-[34px] h-[34px] rounded-full flex items-center justify-center transition-all duration-200 hover:scale-110"
-                style={{
-                  border: "1px solid rgba(255,255,255,0.5)",
-                  background: "transparent",
-                }}
-              >
-                <Phone className="w-[15px] h-[15px] text-foreground" strokeWidth={1.5} />
               </a>
             </div>
           </div>
