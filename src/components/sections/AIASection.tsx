@@ -124,13 +124,8 @@ const AIASection = () => {
           </li>
         </ul>
       </ContentBlock>
-        </h4>
-      </div>
-      <ContentBlock>
-        <p>
-          I lead with a fierce humanity, applying architectural purpose to serve society and advocate for vulnerable populations. In New York, I was shortlisted among leading women architects to transform the <strong className="text-black font-semibold">Bayview Women's Prison in Manhattan</strong> into a hub for women's empowerment. My global civic commitment includes volunteer workshops to build schools and homes in Tanzania, and the design of the <strong className="text-black font-semibold">Safe House of Innovation</strong>, a facility specifically created to support and uplift homeless children and orphans in Iraq.
-        </p>
-      </ContentBlock>
+
+
 
       {/* ═══ BLACK BANNER 3 ═══ */}
       <BlackBanner title="The Architecture of My Presidency" />
