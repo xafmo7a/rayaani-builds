@@ -34,7 +34,7 @@ const DropdownMenu = ({ open, onClose }: DropdownMenuProps) => {
       />
 
       {/* Menu items */}
-      <nav className="flex flex-col items-center gap-6">
+      <nav className="flex flex-col items-center gap-4">
         {menuItems.map((item) => (
           <button
             key={item.path}
@@ -42,11 +42,10 @@ const DropdownMenu = ({ open, onClose }: DropdownMenuProps) => {
               navigate(item.path);
               onClose();
             }}
-            className="w-[280px] md:w-[360px] py-5 rounded-full font-display text-[clamp(24px,5vw,36px)] tracking-[0.22em] uppercase text-white cursor-pointer transition-all duration-300 hover:scale-105"
+            className="w-[220px] md:w-[280px] py-4 font-body text-[clamp(16px,3vw,22px)] font-light tracking-[0.35em] uppercase text-white/90 cursor-pointer transition-all duration-300 hover:text-white hover:tracking-[0.45em]"
             style={{
-              background: "linear-gradient(135deg, hsl(var(--aia-red)), hsl(var(--aia-red-glow)))",
-              border: "1px solid rgba(255,120,80,0.3)",
-              boxShadow: "0 6px 24px hsl(var(--aia-red) / 0.35), inset 0 1px 0 rgba(255,255,255,0.15)",
+              background: "transparent",
+              borderBottom: "1px solid rgba(255,255,255,0.15)",
             }}
           >
             {item.label}
