@@ -115,7 +115,6 @@ const PublicSection = () => {
       </ContentBlock>
 
       {/* Credentials */}
-      <RedSubTitle>Credentials & Milestones</RedSubTitle>
       <ImagePanel
         src="/images/public/credentials.png"
         alt="Credentials & Milestones — AIA, LEED, NY Registration, MIT, University of Baghdad"
