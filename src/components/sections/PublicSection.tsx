@@ -192,10 +192,10 @@ const PublicSection = () => {
       </ContentBlock>
 
       {/* Speaking Images */}
+      <RedSubTitle>Public Dialogue & Speaking Engagements</RedSubTitle>
       <ImagePanel
         src="/images/public/speaking.png"
         alt="Speaking Engagements — TEDx Baghdad, AIA Conference, Global Real Estate Summit, and more"
-        label="Public Dialogue & Speaking Engagements"
       />
 
       {/* Sub-section: Academic */}
