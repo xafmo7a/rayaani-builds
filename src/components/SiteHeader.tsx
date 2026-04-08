@@ -105,14 +105,6 @@ const SiteHeader = ({ onToggleCarousel, carouselOpen, scrollRef }: SiteHeaderPro
         >
           <div className="flex items-center justify-between w-full mb-1.5">
             <a
-              href="https://rayaani.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="transition-opacity duration-200 hover:opacity-80"
-            >
-              <img src={rawLogo} alt="RAW" className="h-[22px] w-auto" />
-            </a>
-            <a
               href="https://raw-nyc.com"
               target="_blank"
               rel="noopener noreferrer"
