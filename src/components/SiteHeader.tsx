@@ -1,8 +1,14 @@
 import { useState, useEffect, useCallback, RefObject } from "react";
-import { Facebook, Instagram, Linkedin, Youtube, Phone, X, Play } from "lucide-react";
+import { X, Play } from "lucide-react";
 import DropdownMenu from "./DropdownMenu";
 import rawLogo from "@/assets/raw-logo.png";
 import aiaLogo from "@/assets/aia-logo.png";
+import iconFacebook from "@/assets/icon-facebook.png";
+import iconInstagram from "@/assets/icon-instagram.png";
+import iconLinkedin from "@/assets/icon-linkedin.png";
+import iconYoutube from "@/assets/icon-youtube.png";
+import iconWhatsapp from "@/assets/icon-whatsapp.png";
+import iconEmail from "@/assets/icon-email.png";
 
 const videoIds = [
   "P1UgHTA8DP8", "EBs2KYQk1Mw", "xkYiWUhd-Qw", "GF6qOeUbyhU",
