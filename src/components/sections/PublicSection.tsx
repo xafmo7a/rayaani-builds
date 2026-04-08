@@ -153,12 +153,6 @@ const PublicSection = () => {
         alt="Recognition — Power Lists, Forbes 50 Over 50, FAIA Fellowship, UNESCO Jury President"
       />
 
-      {/* Awards */}
-      <ImagePanel
-        src="/images/public/awards.png"
-        alt="Awards & Honors — Takreem, IDA Gold Winner, RTF Awards, AIA Merit Awards"
-      />
-
       {/* Sub-section: Professional Stewardship */}
       <SubTitle>Professional Stewardship of the Discipline</SubTitle>
       <ContentBlock>
@@ -169,6 +163,12 @@ const PublicSection = () => {
           <strong className="text-black font-semibold">Zukak & Mahala Initiative</strong>, a community empowerment program focused on rebuilding Iraqi communities and supporting local leadership through architecture and civic engagement.
         </p>
       </ContentBlock>
+
+      {/* Awards */}
+      <ImagePanel
+        src="/images/public/awards.png"
+        alt="Awards & Honors — Takreem, IDA Gold Winner, RTF Awards, AIA Merit Awards"
+      />
 
       {/* Sub-section: Public Dialogue */}
       <SubTitle>Public Dialogue and Global Forums</SubTitle>
