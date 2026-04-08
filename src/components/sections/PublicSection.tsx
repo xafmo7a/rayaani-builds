@@ -148,14 +148,12 @@ const PublicSection = () => {
       </ContentBlock>
 
       {/* Recognition Images */}
-      <RedSubTitle>Recognition & Power List</RedSubTitle>
       <ImagePanel
         src="/images/public/recognition.png"
         alt="Recognition — Power Lists, Forbes 50 Over 50, FAIA Fellowship, UNESCO Jury President"
       />
 
       {/* Awards */}
-      <RedSubTitle>Awards & Honors</RedSubTitle>
       <ImagePanel
         src="/images/public/awards.png"
         alt="Awards & Honors — Takreem, IDA Gold Winner, RTF Awards, AIA Merit Awards"
@@ -191,7 +189,6 @@ const PublicSection = () => {
       </ContentBlock>
 
       {/* Speaking Images */}
-      <RedSubTitle>Public Dialogue & Speaking Engagements</RedSubTitle>
       <ImagePanel
         src="/images/public/speaking.png"
         alt="Speaking Engagements — TEDx Baghdad, AIA Conference, Global Real Estate Summit, and more"
