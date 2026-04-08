@@ -1,16 +1,68 @@
-import { useState } from "react";
-import { useNavigate } from "react-router-dom";
 import { ArrowLeft } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 import ImagePanel from "@/components/sections/ImagePanel";
+
+/* ═══ Shared layout components (same as Public/AIA pages) ═══ */
+
+const BlackBanner = ({ title, showBack }: { title: string; showBack?: boolean }) => {
+  const navigate = useNavigate();
+  return (
+    <div
+      className="px-5 md:px-10 py-4 text-center relative"
+      style={{ background: "hsl(0 0% 0%)", borderBottom: "1px solid hsl(0 0% 15%)" }}
+    >
+      {showBack && (
+        <button
+          onClick={() => navigate("/")}
+          className="absolute left-5 md:left-10 top-1/2 -translate-y-1/2 flex items-center gap-2 text-[10px] font-semibold tracking-[0.2em] uppercase cursor-pointer transition-colors duration-200"
+          style={{ color: "hsl(0 0% 100% / 0.5)" }}
+          onMouseEnter={(e) => (e.currentTarget.style.color = "hsl(0 0% 100% / 0.8)")}
+          onMouseLeave={(e) => (e.currentTarget.style.color = "hsl(0 0% 100% / 0.5)")}
+        >
+          <ArrowLeft className="w-4 h-4" /> Back
+        </button>
+      )}
+      <h2 className="font-display text-[clamp(16px,2.5vw,24px)] font-normal tracking-[0.12em] uppercase text-white">
+        {title}
+      </h2>
+    </div>
+  );
+};
+
+const ContentBlock = ({ children }: { children: React.ReactNode }) => (
+  <div
+    className="px-5 md:px-10 py-8"
+    style={{ background: "hsl(0 0% 100%)", borderBottom: "1px solid hsl(0 0% 88%)" }}
+  >
+    <div className="text-[12px] leading-[1.9] text-black font-normal space-y-4 text-justify font-body">
+      {children}
+    </div>
+  </div>
+);
+
+const RedSubTitle = ({ children }: { children: React.ReactNode }) => (
+  <div
+    className="px-5 md:px-10 py-4"
+    style={{ background: "hsl(0 0% 100%)", borderBottom: "1px solid hsl(0 0% 88%)" }}
+  >
+    <h3
+      className="font-display text-[clamp(14px,2vw,20px)] font-semibold tracking-[0.1em] uppercase"
+      style={{ color: "hsl(var(--aia-red))" }}
+    >
+      {children}
+    </h3>
+  </div>
+);
+
+/* ═══ Data ═══ */
 
 const practiceAreas = [
   {
-    icon: "■",
     title: "Design Innovation & Competition Work",
     items: [
-      { label: "Built Work", desc: "Cultural, institutional, and civic projects grounded in design excellence and contextual response." },
-      { label: "Competition Work", desc: "International competitions addressing complex cultural and urban questions." },
-      { label: "Conceptual & Proposal Work", desc: "Forward-looking architectural strategies testing new programmatic and social models." },
+      "Built Work — Cultural, institutional, and civic projects grounded in design excellence and contextual response.",
+      "Competition Work — International competitions addressing complex cultural and urban questions.",
+      "Conceptual & Proposal Work — Forward-looking architectural strategies testing new programmatic and social models.",
     ],
     selected: [
       "NYC Green School (P.S. 59)",
@@ -24,12 +76,11 @@ const practiceAreas = [
     ],
   },
   {
-    icon: "■",
     title: "Technology & Emerging Systems",
     items: [
-      { label: "AI & Digital Integration", desc: "Direct application of artificial intelligence and computational tools to inform urban density, environmental performance, and design iteration." },
-      { label: "Advanced Fabrication", desc: "Integrating parametric design with large-scale 3D printing in architectural systems." },
-      { label: "Computational Systems", desc: "Using parametric and data-driven systems to shape architectural and urban design outcomes." },
+      "AI & Digital Integration — Direct application of artificial intelligence and computational tools to inform urban density, environmental performance, and design iteration.",
+      "Advanced Fabrication — Integrating parametric design with large-scale 3D printing in architectural systems.",
+      "Computational Systems — Using parametric and data-driven systems to shape architectural and urban design outcomes.",
     ],
     selected: [
       "Liberland Master Plan (First Place)",
@@ -39,11 +90,10 @@ const practiceAreas = [
     ],
   },
   {
-    icon: "■",
     title: "Sustainability & Environmental Thinking",
     items: [
-      { label: "Ecological Design", desc: "Moving beyond standard green building toward integrated environmental systems that respond to climate, context, and long-term performance." },
-      { label: "Strategic Resilience", desc: "Large-scale master planning focused on environmental, economic, and social sustainability across urban systems." },
+      "Ecological Design — Moving beyond standard green building toward integrated environmental systems that respond to climate, context, and long-term performance.",
+      "Strategic Resilience — Large-scale master planning focused on environmental, economic, and social sustainability across urban systems.",
     ],
     selected: [
       "Liberland Master Plan (7 km², Europe, First Place)",
@@ -55,11 +105,10 @@ const practiceAreas = [
     ],
   },
   {
-    icon: "■",
     title: "Global Practice & Strategic Initiatives",
     items: [
-      { label: "Global Practice Leadership", desc: "Sustained engagement across regions through projects, partnerships, and long-term collaborations connecting North America, the Middle East, Europe, and Asia." },
-      { label: "Institutional & Civic Engagement", desc: "Contributing to global platforms through conferences, juries, and advisory roles that connect professional practice with policy, culture, and public impact." },
+      "Global Practice Leadership — Sustained engagement across regions through projects, partnerships, and long-term collaborations connecting North America, the Middle East, Europe, and Asia.",
+      "Institutional & Civic Engagement — Contributing to global platforms through conferences, juries, and advisory roles that connect professional practice with policy, culture, and public impact.",
     ],
     selected: [
       "Iraq Pavilion (Expo 2020 Dubai)",
@@ -100,393 +149,141 @@ const timeline = [
   },
 ];
 
-const PracticeAreaCard = ({
-  area,
-  index,
-  expanded,
-  onToggle,
-}: {
-  area: (typeof practiceAreas)[0];
-  index: number;
-  expanded: boolean;
-  onToggle: () => void;
-}) => (
-  <div
-    className="relative rounded-2xl overflow-hidden transition-all duration-500"
-    style={{
-      background: "hsl(0 0% 96%)",
-      border: expanded
-        ? "1px solid hsl(var(--aia-red) / 0.3)"
-        : "1px solid hsl(0 0% 88%)",
-      boxShadow: expanded
-        ? "0 8px 40px hsl(var(--aia-red) / 0.08)"
-        : "0 2px 8px hsl(0 0% 0% / 0.05)",
-    }}
-  >
-    {/* Header */}
-    <button
-      onClick={onToggle}
-      className="w-full flex items-center gap-4 p-5 md:p-6 text-left cursor-pointer group"
-    >
-      <div
-        className="w-10 h-10 md:w-12 md:h-12 rounded-xl flex items-center justify-center flex-shrink-0 text-[14px] font-bold transition-all duration-300 group-hover:scale-105"
-        style={{
-          background: "linear-gradient(135deg, hsl(var(--aia-red) / 0.25), hsl(var(--aia-red) / 0.08))",
-          border: "1px solid hsl(var(--aia-red) / 0.3)",
-          boxShadow: "0 4px 12px hsl(var(--aia-red) / 0.12)",
-          color: "hsl(var(--aia-red))",
-        }}
-      >
-        {String(index + 1).padStart(2, "0")}
-      </div>
-      <div className="flex-1 min-w-0">
-        <h3 className="text-[14px] md:text-[17px] font-bold text-black tracking-[0.02em] leading-[1.3]">
-          {area.title}
-        </h3>
-      </div>
-      <div
-        className="w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0 text-black/50 text-[18px] transition-transform duration-300"
-        style={{
-          background: "hsl(0 0% 0% / 0.04)",
-          border: "1px solid hsl(0 0% 0% / 0.08)",
-          transform: expanded ? "rotate(45deg)" : "rotate(0deg)",
-        }}
-      >
-        +
-      </div>
-    </button>
-
-    {/* Expandable content */}
-    <div
-      className="overflow-hidden transition-all duration-500"
-      style={{
-        maxHeight: expanded ? "1200px" : "0px",
-        opacity: expanded ? 1 : 0,
-      }}
-    >
-      <div className="px-5 md:px-6 pb-6">
-        {/* Divider */}
-        <div
-          className="h-px mb-5"
-          style={{ background: "linear-gradient(90deg, transparent, hsl(var(--aia-red) / 0.3), transparent)" }}
-        />
-
-        {/* Items */}
-        <div className="space-y-4 mb-6">
-          {area.items.map((item) => (
-            <div key={item.label} className="flex gap-3">
-              <span
-                className="mt-1.5 block w-1.5 h-1.5 rounded-full flex-shrink-0"
-                style={{
-                  background: "hsl(var(--aia-red))",
-                  boxShadow: "0 0 6px hsl(var(--aia-red) / 0.4)",
-                }}
-              />
-              <div>
-                <span className="text-[13px] md:text-[14px] font-bold text-black/85">{item.label}: </span>
-                <span className="text-[12px] md:text-[13px] text-black/55 leading-[1.6]">{item.desc}</span>
-              </div>
-            </div>
-          ))}
-        </div>
-
-        {/* Selected work */}
-        <div
-          className="rounded-xl p-4 md:p-5"
-          style={{
-            background: "hsl(var(--aia-red) / 0.04)",
-            border: "1px solid hsl(var(--aia-red) / 0.1)",
-          }}
-        >
-          <div
-            className="text-[9px] md:text-[10px] font-bold tracking-[0.25em] uppercase mb-3"
-            style={{ color: "hsl(var(--aia-red) / 0.7)" }}
-          >
-            Selected Work
-          </div>
-          <div className="flex flex-wrap gap-2">
-            {area.selected.map((work) => (
-                <span
-                key={work}
-                className="text-[10px] md:text-[11px] font-medium text-black/55 px-2.5 py-1 rounded-md"
-                style={{
-                  background: "hsl(0 0% 0% / 0.04)",
-                  border: "1px solid hsl(0 0% 0% / 0.08)",
-                }}
-              >
-                {work}
-              </span>
-            ))}
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-);
-
-const BackButton = () => {
-  const navigate = useNavigate();
-  return (
-    <button
-      onClick={() => navigate("/")}
-      className="w-8 h-8 rounded-full flex items-center justify-center cursor-pointer transition-all duration-200 hover:scale-110 flex-shrink-0"
-      style={{
-        background: "hsl(var(--aia-red) / 0.12)",
-        border: "1px solid hsl(var(--aia-red) / 0.25)",
-        boxShadow: "0 2px 8px hsl(var(--aia-red) / 0.1)",
-      }}
-    >
-      <ArrowLeft className="w-4 h-4" style={{ color: "hsl(var(--aia-red))" }} />
-    </button>
-  );
-};
+/* ═══ Component ═══ */
 
 const ServiceSection = () => {
-  const [expandedIndex, setExpandedIndex] = useState<number | null>(0);
-
   return (
-    <section
-      className="relative w-full min-h-screen overflow-hidden pt-[200px] pb-16 md:pb-24"
-      style={{
-        background: "hsl(0 0% 100%)",
-      }}
-    >
-      {/* Top line */}
-      <div
-        className="absolute top-0 left-0 right-0 h-px"
-        style={{ background: "linear-gradient(90deg, transparent 5%, hsl(var(--aia-red) / 0.5) 50%, transparent 95%)" }}
-      />
+    <div>
+      {/* ═══ BLACK BANNER — Leadership Through Practice ═══ */}
+      <BlackBanner title="Leadership Through Practice" showBack />
 
-      <div className="relative z-10 max-w-5xl mx-auto px-5 md:px-10">
-        {/* ===== LEADERSHIP THROUGH PRACTICE — Black Banner ===== */}
-        <div
-          className="-mx-5 md:-mx-10 mb-10 px-5 md:px-10 py-5"
-          style={{ background: "hsl(0 0% 5%)", borderBottom: "1px solid hsl(0 0% 15%)" }}
-        >
-          <div className="flex items-center gap-3 mb-2">
-            <BackButton />
-            <div className="text-[9px] md:text-[10px] font-bold tracking-[0.3em] uppercase" style={{ color: "hsl(var(--aia-red))" }}>
-              Service & Practice
-            </div>
-          </div>
-          <h1 className="font-display text-[clamp(22px,5vw,40px)] tracking-[0.1em] uppercase text-white leading-[1.15]">
-            Leadership Through Practice
-          </h1>
-        </div>
-        <div className="mb-16 md:mb-20">
-          <p className="text-[14px] md:text-[16px] text-black/55 leading-[1.8] max-w-3xl font-light tracking-[0.01em]">
-            My work operates across regions, shaped through projects, collaborations, and leadership developed over three decades of practice. With a physical presence and strategic engagement in New York, Dubai, and India, I work within a global network connecting North America, the Middle East, Europe, and Asia. This practice is defined by the cross-pollination of ideas, knowledge, and practices across contexts—linking localized cultural intelligence with advanced design, technology, and delivery.
-          </p>
-        </div>
+      <ContentBlock>
+        <p>
+          My work operates across regions, shaped through projects, collaborations, and leadership developed over three decades of practice. With a physical presence and strategic engagement in New York, Dubai, and India, I work within a global network connecting North America, the Middle East, Europe, and Asia. This practice is defined by the cross-pollination of ideas, knowledge, and practices across contexts—linking localized cultural intelligence with advanced design, technology, and delivery.
+        </p>
+      </ContentBlock>
 
-        {/* ===== ADVANCING THE PROFESSION ===== */}
-        <div className="mb-16 md:mb-20">
-        <div
-          className="-mx-5 md:-mx-10 mb-10 px-5 md:px-10 py-5"
-          style={{ background: "hsl(0 0% 5%)", borderBottom: "1px solid hsl(0 0% 15%)" }}
-        >
-          <h2 className="font-display text-[clamp(18px,3vw,28px)] tracking-[0.12em] uppercase text-white leading-[1.15]">
-            Advancing the Profession
-          </h2>
-        </div>
+      {/* ═══ BLACK BANNER — Advancing the Profession ═══ */}
+      <BlackBanner title="Advancing the Profession" />
 
-          {/* Practice area cards */}
-          <div className="space-y-3">
-            {practiceAreas.map((area, i) => (
-              <PracticeAreaCard
-                key={area.title}
-                area={area}
-                index={i}
-                expanded={expandedIndex === i}
-                onToggle={() => setExpandedIndex(expandedIndex === i ? null : i)}
-              />
-            ))}
-          </div>
-        </div>
-
-        {/* ===== 30 YEARS OF SERVICE ===== */}
-        <div className="mb-16 md:mb-20">
-        <div
-          className="-mx-5 md:-mx-10 mb-10 px-5 md:px-10 py-5"
-          style={{ background: "hsl(0 0% 5%)", borderBottom: "1px solid hsl(0 0% 15%)" }}
-        >
-          <h2 className="font-display text-[clamp(18px,3vw,28px)] tracking-[0.12em] uppercase text-white leading-[1.15]">
-            30 Years of Service
-          </h2>
-        </div>
-
-          {/* Timeline */}
-          <div className="relative pl-6 md:pl-8">
-            {/* Vertical line */}
-            <div
-              className="absolute left-[7px] md:left-[9px] top-2 bottom-2 w-px"
-              style={{ background: "linear-gradient(180deg, hsl(var(--aia-red) / 0.5), hsl(var(--aia-red) / 0.1))" }}
-            />
-
-            <div className="space-y-8 md:space-y-10">
-              {timeline.map((item, i) => (
-                <div key={item.period} className="relative">
-                  {/* Dot */}
-                  <div
-                    className="absolute -left-6 md:-left-8 top-1.5 w-[15px] h-[15px] md:w-[19px] md:h-[19px] rounded-full"
-                    style={{
-                      background: "hsl(0 0% 100%)",
-                      border: "2px solid hsl(var(--aia-red) / 0.6)",
-                      boxShadow: "0 0 8px hsl(var(--aia-red) / 0.2)",
-                    }}
-                  />
-
-                  <div
-                    className="rounded-xl p-5 md:p-6"
-                    style={{
-                      background: "hsl(0 0% 96%)",
-                      border: "1px solid hsl(0 0% 88%)",
-                      boxShadow: "0 2px 8px hsl(0 0% 0% / 0.05)",
-                    }}
-                  >
-                    <div className="flex flex-wrap items-center gap-2 mb-2">
-                      <span
-                        className="text-[11px] md:text-[12px] font-bold tracking-[0.1em] px-2.5 py-0.5 rounded-md"
-                        style={{
-                          background: "hsl(var(--aia-red) / 0.12)",
-                          color: "hsl(var(--aia-red))",
-                          border: "1px solid hsl(var(--aia-red) / 0.15)",
-                        }}
-                      >
-                        {item.period}
-                      </span>
-                      <span className="text-[10px] md:text-[11px] text-black/40 tracking-[0.08em]">
-                        {item.location}
-                      </span>
-                    </div>
-                    <h4 className="text-[14px] md:text-[16px] font-bold text-black/85 leading-[1.3] mb-1.5">
-                      {item.title}
-                    </h4>
-                    {item.org && (
-                      <div className="text-[11px] md:text-[12px] font-semibold text-black/40 mb-2 italic">
-                        {item.org}
-                      </div>
-                    )}
-                    <p className="text-[12px] md:text-[13px] text-black/50 leading-[1.7] font-light">
-                      {item.desc}
-                    </p>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-
-        {/* ===== RAW-NYC ARCHITECTS ===== */}
-        <div
-          className="relative rounded-2xl md:rounded-3xl p-6 md:p-10 overflow-hidden"
-          style={{
-            background: "hsl(0 0% 5%)",
-            border: "1px solid hsl(var(--aia-red) / 0.15)",
-            boxShadow: "0 24px 80px hsl(0 0% 0% / 0.15)",
-          }}
-        >
-          {/* Corner marks */}
-          <div className="absolute top-3 left-3 w-4 h-4 border-t border-l rounded-tl-sm" style={{ borderColor: "hsl(var(--aia-red) / 0.3)" }} />
-          <div className="absolute top-3 right-3 w-4 h-4 border-t border-r rounded-tr-sm" style={{ borderColor: "hsl(var(--aia-red) / 0.3)" }} />
-          <div className="absolute bottom-3 left-3 w-4 h-4 border-b border-l rounded-bl-sm" style={{ borderColor: "hsl(var(--aia-red) / 0.3)" }} />
-          <div className="absolute bottom-3 right-3 w-4 h-4 border-b border-r rounded-br-sm" style={{ borderColor: "hsl(var(--aia-red) / 0.3)" }} />
-
-          <div className="flex items-center gap-3 mb-2">
-            <span
-              className="text-[10px] font-bold tracking-[0.2em] uppercase px-3 py-1 rounded-md"
-              style={{
-                background: "hsl(var(--aia-red) / 0.12)",
-                color: "hsl(var(--aia-red))",
-                border: "1px solid hsl(var(--aia-red) / 0.15)",
-              }}
-            >
-              2012–Present
-            </span>
-          </div>
-
-          <h3 className="font-display text-[clamp(22px,4vw,34px)] text-white tracking-[0.05em] leading-[1.15] mb-2">
-            RAW-NYC <span style={{ color: "hsl(var(--aia-red))" }}>Architects</span>
-          </h3>
-          <p className="text-[13px] md:text-[15px] text-white/50 leading-[1.8] max-w-3xl mb-8 font-light">
-            Founded RAW-NYC Architects, a woman-founded and woman-led architectural practice, established independently without partners. The firm advances architecture, urbanism, and cultural projects through hands-on design and practice leadership, with a strong commitment to mentoring and empowering the next generation of leaders in architecture.
-          </p>
-
-          {/* Offices grid */}
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-6">
-            {[
-              { city: "New York City", country: "USA", type: "Founding Office" },
-              { city: "Dubai", country: "UAE", type: "Founding Office" },
-              { city: "Kochi", country: "India", type: "Founding Office" },
-            ].map((office) => (
-              <div
-                key={office.city}
-                className="rounded-xl p-4 text-center"
-                style={{
-                  background: "hsl(0 0% 100% / 0.03)",
-                  border: "1px solid hsl(0 0% 100% / 0.06)",
-                }}
-              >
-                <div className="text-[14px] md:text-[16px] font-bold text-white/85 tracking-[0.02em]">
-                  {office.city}
-                </div>
-                <div className="text-[10px] text-white/40 tracking-[0.1em] uppercase mt-0.5">
-                  {office.country} · {office.type}
-                </div>
-              </div>
-            ))}
-          </div>
-
-          {/* Collaborations */}
-          <div className="flex flex-wrap gap-2 mb-6">
-            <span className="text-[10px] text-white/35 tracking-[0.1em] uppercase mr-2 self-center">Collaborations:</span>
-            {["Belgrade, Serbia", "Bucharest, Romania"].map((c) => (
+      {/* Practice Areas */}
+      {practiceAreas.map((area) => (
+        <div key={area.title}>
+          <RedSubTitle>{area.title}</RedSubTitle>
+          <ContentBlock>
+            {area.items.map((item, i) => {
+              const dashIdx = item.indexOf(" — ");
+              if (dashIdx > -1) {
+                return (
+                  <p key={i}>
+                    <strong className="text-black font-semibold">{item.substring(0, dashIdx)}</strong>
+                    {" — "}{item.substring(dashIdx + 3)}
+                  </p>
+                );
+              }
+              return <p key={i}>{item}</p>;
+            })}
+            <div className="pt-2">
               <span
-                key={c}
-                className="text-[11px] font-medium text-white/55 px-3 py-1 rounded-md"
+                className="text-[10px] font-semibold tracking-[0.2em] uppercase"
+                style={{ color: "hsl(var(--aia-red))" }}
+              >
+                Selected Work:
+              </span>
+              <span className="text-[12px] text-black/70 ml-2">
+                {area.selected.join(" · ")}
+              </span>
+            </div>
+          </ContentBlock>
+        </div>
+      ))}
+
+      {/* ═══ BLACK BANNER — 30 Years of Service ═══ */}
+      <BlackBanner title="30 Years of Service" />
+
+      {timeline.map((item) => (
+        <div key={item.period}>
+          <div
+            className="px-5 md:px-10 py-4"
+            style={{ background: "hsl(0 0% 100%)", borderBottom: "1px solid hsl(0 0% 88%)" }}
+          >
+            <div className="flex items-center gap-3 mb-1">
+              <span
+                className="text-[11px] font-semibold tracking-[0.1em] px-2.5 py-0.5 rounded"
                 style={{
-                  background: "hsl(0 0% 100% / 0.04)",
-                  border: "1px solid hsl(0 0% 100% / 0.06)",
+                  background: "hsl(var(--aia-red) / 0.1)",
+                  color: "hsl(var(--aia-red))",
                 }}
               >
-                {c}
+                {item.period}
               </span>
-            ))}
-          </div>
-
-          <div
-            className="h-px mb-6"
-            style={{ background: "linear-gradient(90deg, transparent, hsl(var(--aia-red) / 0.2), transparent)" }}
-          />
-
-          <div className="space-y-4">
-              <p className="text-[12px] md:text-[13px] text-white/45 leading-[1.8] font-light">
-              Through RAW-NYC Architects, I have prioritized mentorship and leadership development, guiding students, recent graduates, and emerging professionals entering the field. While I have actively supported the advancement of women in architecture, management, and construction, my mentorship extends broadly across the profession.
-            </p>
-            <p className="text-[12px] md:text-[13px] text-white/45 leading-[1.8] font-light">
-              Through my practice, I have also led site construction coordination, supervision, and project management, demonstrating the role of women in construction leadership and technical execution.
+              <span className="text-[11px] text-black/40 tracking-[0.06em]">{item.location}</span>
+            </div>
+            <h4 className="text-[13px] font-semibold text-black tracking-[0.02em] mb-1">{item.title}</h4>
+            {item.org && (
+              <div className="text-[11px] text-black/50 italic mb-1">{item.org}</div>
+            )}
+            <p className="text-[12px] leading-[1.9] text-black font-normal text-justify font-body">
+              {item.desc}
             </p>
           </div>
         </div>
+      ))}
 
-        {/* ===== PROJECT GALLERIES ===== */}
-        <div className="mt-16 md:mt-20 space-y-6">
-          <h2 className="font-display text-[clamp(22px,4vw,36px)] text-black tracking-[0.06em] leading-[1.2] mb-8">
-            Selected <span style={{ color: "hsl(var(--aia-red))" }}>Work</span>
-          </h2>
-          <ImagePanel src="/images/service/spheres.png" alt="Multiple Spheres of Influence" label="Multiple Spheres of Influence — Global Reach" />
-          <ImagePanel src="/images/service/education.png" alt="Education & Institutional Projects" label="Education & Institutional Projects" />
-          <ImagePanel src="/images/service/cultural.png" alt="Cultural & Sacred Architecture" label="Cultural & Sacred Architecture" />
-          <ImagePanel src="/images/service/masterplan.png" alt="Master Planning & Urban Design" label="Master Planning & Urban Design" />
-          <ImagePanel src="/images/service/corporate.png" alt="Corporate & Interior Architecture" label="Corporate & Interior Architecture" />
-          <ImagePanel src="/images/service/innovation.png" alt="Innovation & Research" label="Innovation & Research" />
-          <ImagePanel src="/images/service/urban.png" alt="Urban Development & Waterfront" label="Urban Development & Waterfront" />
-          <ImagePanel src="/images/service/iraq-pavilion.png" alt="Iraq Pavilion" label="Iraq Pavilion — Built Work" />
-          <ImagePanel src="/images/service/timeline.png" alt="Iraq Pavilion Timeline" label="Iraq Pavilion — Project Timeline" />
-          <ImagePanel src="/images/service/nyc-cultural.png" alt="NYC Cultural Projects" label="NYC Cultural & Sustainability Projects" />
+      {/* ═══ RAW-NYC Architects ═══ */}
+      <RedSubTitle>RAW-NYC Architects · 2012–Present</RedSubTitle>
+      <ContentBlock>
+        <p>
+          Founded RAW-NYC Architects, a woman-founded and woman-led architectural practice, established independently without partners. The firm advances architecture, urbanism, and cultural projects through hands-on design and practice leadership, with a strong commitment to mentoring and empowering the next generation of leaders in architecture.
+        </p>
+        <div className="pt-2">
+          <span
+            className="text-[10px] font-semibold tracking-[0.2em] uppercase"
+            style={{ color: "hsl(var(--aia-red))" }}
+          >
+            Offices:
+          </span>
+          <span className="text-[12px] text-black/70 ml-2">
+            New York City, USA · Dubai, UAE · Kochi, India
+          </span>
         </div>
+        <div>
+          <span
+            className="text-[10px] font-semibold tracking-[0.2em] uppercase"
+            style={{ color: "hsl(var(--aia-red))" }}
+          >
+            Collaborations:
+          </span>
+          <span className="text-[12px] text-black/70 ml-2">
+            Belgrade, Serbia · Bucharest, Romania
+          </span>
+        </div>
+        <p>
+          Through RAW-NYC Architects, I have prioritized mentorship and leadership development, guiding students, recent graduates, and emerging professionals entering the field. While I have actively supported the advancement of women in architecture, management, and construction, my mentorship extends broadly across the profession.
+        </p>
+        <p>
+          Through my practice, I have also led site construction coordination, supervision, and project management, demonstrating the role of women in construction leadership and technical execution.
+        </p>
+      </ContentBlock>
+
+      {/* ═══ Selected Work Gallery ═══ */}
+      <BlackBanner title="Selected Work" />
+      <div
+        className="px-5 md:px-10 py-8 space-y-6"
+        style={{ background: "hsl(0 0% 100%)" }}
+      >
+        <ImagePanel src="/images/service/spheres.png" alt="Multiple Spheres of Influence" label="Multiple Spheres of Influence — Global Reach" />
+        <ImagePanel src="/images/service/education.png" alt="Education & Institutional Projects" label="Education & Institutional Projects" />
+        <ImagePanel src="/images/service/cultural.png" alt="Cultural & Sacred Architecture" label="Cultural & Sacred Architecture" />
+        <ImagePanel src="/images/service/masterplan.png" alt="Master Planning & Urban Design" label="Master Planning & Urban Design" />
+        <ImagePanel src="/images/service/corporate.png" alt="Corporate & Interior Architecture" label="Corporate & Interior Architecture" />
+        <ImagePanel src="/images/service/innovation.png" alt="Innovation & Research" label="Innovation & Research" />
+        <ImagePanel src="/images/service/urban.png" alt="Urban Development & Waterfront" label="Urban Development & Waterfront" />
+        <ImagePanel src="/images/service/iraq-pavilion.png" alt="Iraq Pavilion" label="Iraq Pavilion — Built Work" />
+        <ImagePanel src="/images/service/timeline.png" alt="Iraq Pavilion Timeline" label="Iraq Pavilion — Project Timeline" />
+        <ImagePanel src="/images/service/nyc-cultural.png" alt="NYC Cultural Projects" label="NYC Cultural & Sustainability Projects" />
       </div>
-    </section>
+    </div>
   );
 };
 
