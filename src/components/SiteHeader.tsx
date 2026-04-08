@@ -268,25 +268,26 @@ const SiteHeader = ({ onToggleCarousel, carouselOpen, scrollRef }: SiteHeaderPro
       {/* Expanded video overlay */}
       {carouselOpen && (
         <div
-          className="fixed inset-0 z-[1100] flex flex-col items-center justify-center"
+          className="fixed inset-0 z-[1100] flex flex-col items-center justify-center gap-4"
           style={{
             background: "rgba(0,0,0,0.92)",
             backdropFilter: "blur(16px)",
             WebkitBackdropFilter: "blur(16px)",
           }}
         >
-          <h3 className="font-display text-[clamp(22px,5vw,36px)] text-foreground tracking-[0.1em] mb-6">
-            Videos
+          {/* Raya Ani Carousel */}
+          <h3 className="font-display text-[clamp(16px,3.5vw,26px)] text-foreground tracking-[0.12em] mb-1">
+            Raya Ani
           </h3>
           <div className="w-full overflow-hidden">
             <div
               className="flex gap-0 py-2 w-max"
-              style={{ animation: "tickerScroll 50s linear infinite" }}
+              style={{ animation: "tickerScroll 35s linear infinite" }}
             >
-              {[...videoIds, ...videoIds].map((id, i) => (
+              {[...rayaAniVideos, ...rayaAniVideos, ...rayaAniVideos].map((id, i) => (
                 <div
-                  key={`overlay-${id}-${i}`}
-                  className="flex-shrink-0 w-[284px] md:w-[364px] px-2"
+                  key={`ra-${id}-${i}`}
+                  className="flex-shrink-0 w-[240px] md:w-[320px] px-2"
                 >
                   <div
                     className="rounded-xl overflow-hidden cursor-pointer relative group transition-all duration-200 hover:scale-[1.03]"
@@ -303,10 +304,51 @@ const SiteHeader = ({ onToggleCarousel, carouselOpen, scrollRef }: SiteHeaderPro
                     />
                     <div className="absolute inset-0 flex items-center justify-center bg-black/20 group-hover:bg-black/5 transition-all">
                       <div
-                        className="w-14 h-14 rounded-full flex items-center justify-center transition-transform group-hover:scale-110"
+                        className="w-12 h-12 rounded-full flex items-center justify-center transition-transform group-hover:scale-110"
                         style={{ background: "rgba(192,57,43,0.9)", boxShadow: "0 4px 16px rgba(192,57,43,0.5)" }}
                       >
-                        <Play className="w-5 h-5 fill-foreground text-foreground ml-0.5" />
+                        <Play className="w-4 h-4 fill-foreground text-foreground ml-0.5" />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* AIA Carousel */}
+          <h3 className="font-display text-[clamp(16px,3.5vw,26px)] text-foreground tracking-[0.12em] mt-2 mb-1">
+            AIA
+          </h3>
+          <div className="w-full overflow-hidden">
+            <div
+              className="flex gap-0 py-2 w-max"
+              style={{ animation: "tickerScroll 30s linear infinite reverse" }}
+            >
+              {[...aiaVideos, ...aiaVideos, ...aiaVideos, ...aiaVideos].map((id, i) => (
+                <div
+                  key={`aia-${id}-${i}`}
+                  className="flex-shrink-0 w-[240px] md:w-[320px] px-2"
+                >
+                  <div
+                    className="rounded-xl overflow-hidden cursor-pointer relative group transition-all duration-200 hover:scale-[1.03]"
+                    style={{
+                      border: "1px solid rgba(255,255,255,0.12)",
+                      boxShadow: "0 4px 20px rgba(0,0,0,0.4)",
+                    }}
+                    onClick={(e) => { e.stopPropagation(); setActiveVideoId(id); }}
+                  >
+                    <img
+                      src={`https://img.youtube.com/vi/${id}/hqdefault.jpg`}
+                      alt=""
+                      className="w-full aspect-video object-cover block"
+                    />
+                    <div className="absolute inset-0 flex items-center justify-center bg-black/20 group-hover:bg-black/5 transition-all">
+                      <div
+                        className="w-12 h-12 rounded-full flex items-center justify-center transition-transform group-hover:scale-110"
+                        style={{ background: "rgba(192,57,43,0.9)", boxShadow: "0 4px 16px rgba(192,57,43,0.5)" }}
+                      >
+                        <Play className="w-4 h-4 fill-foreground text-foreground ml-0.5" />
                       </div>
                     </div>
                   </div>
@@ -318,7 +360,7 @@ const SiteHeader = ({ onToggleCarousel, carouselOpen, scrollRef }: SiteHeaderPro
           {/* Close button */}
           <button
             onClick={onToggleCarousel}
-            className="mt-8 w-14 h-14 rounded-full flex items-center justify-center text-foreground text-xl cursor-pointer transition-all duration-200 hover:scale-110"
+            className="mt-4 w-12 h-12 rounded-full flex items-center justify-center text-foreground text-xl cursor-pointer transition-all duration-200 hover:scale-110"
             style={{
               background: "rgba(192,57,43,0.85)",
               border: "2px solid rgba(255,255,255,0.25)",
