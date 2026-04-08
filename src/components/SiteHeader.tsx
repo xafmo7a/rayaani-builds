@@ -1,8 +1,14 @@
 import { useState, useEffect, useCallback, RefObject } from "react";
-import { Facebook, Instagram, Linkedin, Youtube, Phone, X, Play } from "lucide-react";
+import { X, Play } from "lucide-react";
 import DropdownMenu from "./DropdownMenu";
 import rawLogo from "@/assets/raw-logo.png";
 import aiaLogo from "@/assets/aia-logo.png";
+import iconFacebook from "@/assets/icon-facebook.png";
+import iconInstagram from "@/assets/icon-instagram.png";
+import iconLinkedin from "@/assets/icon-linkedin.png";
+import iconYoutube from "@/assets/icon-youtube.png";
+import iconWhatsapp from "@/assets/icon-whatsapp.png";
+import iconEmail from "@/assets/icon-email.png";
 
 const videoIds = [
   "P1UgHTA8DP8", "EBs2KYQk1Mw", "xkYiWUhd-Qw", "GF6qOeUbyhU",
@@ -99,14 +105,6 @@ const SiteHeader = ({ onToggleCarousel, carouselOpen, scrollRef }: SiteHeaderPro
         >
           <div className="flex items-center justify-between w-full mb-1.5">
             <a
-              href="https://rayaani.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="transition-opacity duration-200 hover:opacity-80"
-            >
-              <img src={rawLogo} alt="RAW" className="h-[22px] w-auto" />
-            </a>
-            <a
               href="https://raw-nyc.com"
               target="_blank"
               rel="noopener noreferrer"
@@ -121,24 +119,28 @@ const SiteHeader = ({ onToggleCarousel, carouselOpen, scrollRef }: SiteHeaderPro
             {/* Social Links */}
             <div className="flex gap-2 items-center">
               {[
-                { icon: Facebook, label: "Facebook", href: "#" },
-                { icon: Instagram, label: "Instagram", href: "#" },
-                { icon: Linkedin, label: "LinkedIn", href: "#" },
-                { icon: Youtube, label: "YouTube", href: "#" },
-              ].map(({ icon: Icon, label, href }) => (
+                { src: iconFacebook, label: "Facebook", href: "#" },
+                { src: iconInstagram, label: "Instagram", href: "#" },
+                { src: iconLinkedin, label: "LinkedIn", href: "#" },
+                { src: iconYoutube, label: "YouTube", href: "#" },
+              ].map(({ src, label, href }) => (
                 <a
                   key={label}
                   href={href}
                   aria-label={label}
                   className="w-[34px] h-[34px] rounded-full flex items-center justify-center transition-all duration-200 hover:scale-110"
-                  style={{
-                    border: "1px solid rgba(255,255,255,0.5)",
-                    background: "transparent",
-                  }}
                 >
-                  <Icon className="w-[15px] h-[15px] text-foreground" strokeWidth={1.5} />
+                  <img src={src} alt={label} className="w-[28px] h-[28px] object-contain invert" />
                 </a>
               ))}
+              <a
+                href="https://rayaani.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-[34px] h-[34px] rounded-full flex items-center justify-center transition-all duration-200 hover:scale-110"
+              >
+                <img src={rawLogo} alt="RAW" className="h-[22px] w-auto" />
+              </a>
             </div>
 
             {/* Center Hamburger */}
@@ -163,28 +165,30 @@ const SiteHeader = ({ onToggleCarousel, carouselOpen, scrollRef }: SiteHeaderPro
             </button>
 
             {/* Contact Buttons */}
-            <div className="flex gap-[7px] items-center">
+            <div className="flex gap-2 items-center">
+              <a
+                href="https://wa.me/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="WhatsApp"
+                className="w-[34px] h-[34px] rounded-full flex items-center justify-center transition-all duration-200 hover:scale-110"
+              >
+                <img src={iconWhatsapp} alt="WhatsApp" className="w-[28px] h-[28px] object-contain invert" />
+              </a>
+              <a
+                href="mailto:contact@rayaani.com"
+                aria-label="Email"
+                className="w-[34px] h-[34px] rounded-full flex items-center justify-center transition-all duration-200 hover:scale-110"
+              >
+                <img src={iconEmail} alt="Email" className="w-[28px] h-[28px] object-contain invert" />
+              </a>
               <a
                 href="https://www.aia.org/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-[34px] h-[34px] rounded-full flex items-center justify-center transition-all duration-200 hover:scale-110"
-                style={{
-                  border: "1px solid rgba(255,255,255,0.5)",
-                  background: "transparent",
-                }}
               >
                 <img src={aiaLogo} alt="AIA" className="w-[18px] h-[18px] object-contain" />
-              </a>
-              <a
-                href="tel:+1"
-                className="w-[34px] h-[34px] rounded-full flex items-center justify-center transition-all duration-200 hover:scale-110"
-                style={{
-                  border: "1px solid rgba(255,255,255,0.5)",
-                  background: "transparent",
-                }}
-              >
-                <Phone className="w-[15px] h-[15px] text-foreground" strokeWidth={1.5} />
               </a>
             </div>
           </div>
