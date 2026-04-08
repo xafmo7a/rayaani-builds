@@ -2,6 +2,7 @@ import { useState, useEffect, useCallback, RefObject } from "react";
 import { X, Play } from "lucide-react";
 import DropdownMenu from "./DropdownMenu";
 import rawLogo from "@/assets/raw-logo.png";
+import portrait from "@/assets/raya-ani-portrait.png";
 import aiaLogo from "@/assets/aia-logo.png";
 import iconFacebook from "@/assets/icon-facebook.png";
 import iconInstagram from "@/assets/icon-instagram.png";
