@@ -159,12 +159,18 @@ const ServiceSection = () => {
 
       <ContentBlock>
         <p>
-          My work operates across regions, shaped through projects, collaborations, and leadership developed over three decades of practice. With a physical presence and strategic engagement in New York, Dubai, and India, I work within a global network connecting North America, the Middle East, Europe, and Asia. This practice is defined by the cross-pollination of ideas, knowledge, and practices across contexts—linking localized cultural intelligence with advanced design, technology, and delivery.
+          My work operates across regions, shaped through projects, collaborations, and leadership developed over three decades of practice. With a physical presence and strategic engagement in New York, Dubai, and India, I work within a global network connecting North America, the Middle East, Europe, and Asia. This practice is defined by the cross-pollination of ideas, knowledge, and practices across contexts—linking localized cultural intelligence with advanced design, technology, and delivery. Across geographies and scales, I have led and contributed to projects that engage cities, institutions, and communities, advancing resilient and sustainable built environments.
         </p>
       </ContentBlock>
 
       {/* ═══ BLACK BANNER — Advancing the Profession ═══ */}
       <BlackBanner title="Advancing the Profession" />
+
+      <ContentBlock>
+        <p>
+          I build platforms that advance the profession through design innovation, technology, environmental thinking, and global engagement.
+        </p>
+      </ContentBlock>
 
       {/* Practice Areas */}
       {practiceAreas.map((area) => (
